@@ -1,0 +1,871 @@
+﻿*
+{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+}
+
+
+@font-face
+{
+    font-family: HelveCond;
+    src: url("/Styles/CSS/Font/HelveCond/VHELVCN_0.TTF");
+}
+
+@font-face
+{
+    font-family: HongHaHep;
+    src: url("/Styles/CSS/Font/HongHaHep/UVNHONGHAHEP.TTF");
+}
+
+.img
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.link
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+h1
+{
+    font-weight: normal;
+}
+
+body, .line-fix-parent-width, .container, .header
+{
+    float: left;
+    width: 100%;
+}
+
+body
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow
+{
+    float: left;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+    .slideshow .flexslider .flex-direction-nav
+    {
+        display: none !important;
+    }
+
+.articleslide
+{
+    position: relative;
+}
+
+.articleslide, .slides, .slides li
+{
+    height: 100%;
+}
+
+    .slides > li
+    {
+    }
+
+
+.header
+{
+    height: 162px;
+    position: relative;
+}
+
+.header-bar
+{
+    float: left;
+    width: 100%;
+    height: 29px;
+    background-color: #003e05;
+}
+
+/*CSS For icon bar - Start*/
+.header-bar-wrapper
+{
+    float: right;
+    width: 81.481%;
+    height: 100%;
+    margin-right: 9.259%;
+}
+
+.icon-bar
+{
+    float: right;
+    width: 22%;
+}
+
+.social-bar
+{
+    float: left;
+    width: 30.578%;
+    margin-top: 1.5%;
+    margin-right: 7.024%;
+    height: 90%;
+}
+
+.social-item
+{
+    float: left;
+    width: 28.378%;
+    margin-right: 5%;
+}
+
+    .social-item:last-child
+    {
+        margin-right: 0;
+    }
+
+.lang-bar
+{
+    float: left;
+    width: 62.396%;
+    margin-top: 2%;
+}
+
+.lang-name
+{
+    float: left;
+    font-family: Arial;
+    font-size: 11px;
+    color: #95daaf;
+}
+
+.lang-item:first-child
+{
+    float: left;
+    width: 51.655%;
+    margin-right: 12.582%;
+}
+
+    .lang-item:first-child .lang-icon
+    {
+        float: left;
+        width: 35.897%;
+    }
+
+    .lang-item:first-child .lang-name
+    {
+        width: 62%;
+        margin-left: 2%;
+        margin-top: 5%;
+    }
+
+
+.lang-item:last-child
+{
+    float: right;
+    width: 35.762%;
+}
+
+    .lang-item:last-child .lang-icon
+    {
+        float: left;
+        width: 51.851%;
+    }
+
+    .lang-item:last-child .lang-name
+    {
+        width: 45%;
+        margin-left: 3%;
+        margin-top: 9%;
+    }
+
+.header-nav
+{
+    float: left;
+    width: 100%;
+    height: 55px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    background-color: #005706;
+}
+
+
+/*CSS For navigation - Start*/
+.header-nav-wrapper
+{
+    float: right;
+    margin-right: 9.259%;
+}
+
+.nav
+{
+}
+
+    .nav ul
+    {
+        margin: 0 auto;
+    }
+
+
+        .nav ul li
+        {
+            float: left;
+            font-family: 'HongHaHep';
+        }
+
+            .nav ul li a
+            {
+                padding: 13px;
+                color: #FFF;
+                font-size: 13px;
+                float: left;
+            }
+
+    .nav > ul > li
+    {
+        border-left: 1px solid #004104;
+        border-right: 1px solid #036f0a;
+    }
+
+        .nav > ul > li > a
+        {
+            padding: 20px 22px;
+            font-size: 0.9em;
+        }
+
+        .nav > ul > li:first-child
+        {
+            border-left: none;
+        }
+
+        .nav > ul > li:last-child a
+        {
+            border-right: 1px solid #004104;
+        }
+
+
+    .nav li.active
+    {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+        .nav li.active > a
+        {
+            color: #FFF;
+        }
+
+    .nav > ul li:hover
+    {
+    }
+
+        .nav > ul li:hover a
+        {
+            color: #FFF;
+        }
+
+    .nav > ul > li:hover
+    {
+        color: #FFF;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav > ul > li.has-sub > ul
+    {
+        top: 101%;
+        left: 0;
+        z-index: 10;
+    }
+
+    .nav > ul > li.has-sub
+    {
+    }
+
+.has-sub span.arrow
+{
+    text-align: center;
+    margin-left: 3px;
+}
+
+
+.has-sub
+{
+    position: relative;
+}
+
+    .has-sub > ul
+    {
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        overflow: hidden;
+        transition: all .4s linear;
+    }
+
+        .has-sub > ul > li
+        {
+            background-color: rgba(0, 87, 6, 0.7);
+            width: 225px;
+            height: 0px;
+            overflow: hidden;
+            border-top: 1px solid #C0C0C0;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: left;
+        }
+
+
+            .has-sub > ul > li:first-child
+            {
+                border-top: none;
+            }
+
+            .has-sub > ul > li:last-child
+            {
+                border-bottom-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+
+        .has-sub > ul li a, .has-sub > ul li:hover a
+        {
+            color: #FFF;
+        }
+
+    .has-sub:hover > ul
+    {
+        width: 225px;
+        height: auto;
+    }
+
+        .has-sub:hover > ul > li
+        {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+    .has-sub > ul > li:hover
+    {
+        background-color: rgba(0, 87, 6, 0.5);
+    }
+
+/*CSS For navigation - End*/
+
+.header-web-title
+{
+    float: left;
+    width: 100%;
+}
+
+.header-web-title-wrapper
+{
+    float: left;
+    margin-left: 24.222%;
+    padding-top: 4px;
+    width: 75.777%;
+}
+
+
+.header-logo
+{
+    float: left;
+    width: 162px;
+    height: 162px;
+    position: absolute;
+    top: 0;
+    left: 11.0367%;
+}
+
+
+.body
+{
+    float: left;
+    width: 81.481%;
+    height: 60.265%;
+    position: fixed;
+    bottom: 36px;
+    left: 9.259%;
+}
+
+.body-left
+{
+    float: left;
+    width: 19.09%;
+    height: 100%;
+    margin-right: 2.09%;
+}
+
+.body-left-above
+{
+    float: left;
+    width: 100%;
+    height: 17.504%;
+    background-image: url("/Design/left-top-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.body-left-under
+{
+    float: left;
+    width: 100%;
+    height: 82.396%;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+}
+
+.body-left-under-title
+{
+    float: left;
+    width: 95.238%;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 2.381%;
+    background-color: #003e05;
+}
+
+    .body-left-under-title h1
+    {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+        font-family: 'HongHaHep';
+        font-size: 18px;
+        color: #FFF;
+        text-align: center;
+    }
+
+.body-right
+{
+    float: left;
+    width: 78.82%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.body-right-wrapper
+{
+    float: left;
+    width: 93.071%;
+    height: 82.396%;
+    margin-left: 3.464%;
+    margin-top: 4%;
+}
+
+.intro-box
+{
+    float: right;
+    width: 37.363%;
+    border-radius: 10px;
+    font-family: Arial;
+    position: absolute;
+    bottom: 25px;
+    right: 0px;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.intro-box-wrapper
+{
+    float: left;
+    width: 85.4%;
+    margin: 7.299%;
+}
+
+.intro-header
+{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #00471b;
+}
+
+    .intro-header h1
+    {
+        float: left;
+        width: 100%;
+        font-family: 'HongHaHep';
+        font-size: 20px;
+        margin-bottom: 1.424%;
+        color: #00471b;
+        text-transform: uppercase;
+    }
+
+.intro-content
+{
+    float: left;
+    width: 100%;
+    margin-top: 5%;
+    line-height: 110%;
+    font-size: 13px;
+    color: #003113;
+    text-align: justify;
+}
+
+    .intro-content p
+    {
+        font-size: 13px;
+        color: #003113;
+        text-align: justify;
+    }
+
+.intro-readmore
+{
+    float: left;
+    width: 100%;
+    margin-top: 4.843%;
+}
+
+.read-more
+{
+    float: right;
+    width: 22.791%;
+    padding: 3% 2%;
+    border-radius: 5px;
+    background-color: #003e05;
+}
+
+    .read-more span
+    {
+        float: left;
+        width: 100%;
+        color: #FFF;
+        font-size: 12px;
+        font-style: italic;
+        text-align: center;
+    }
+
+.footer
+{
+    float: left;
+    width: 100%;
+    height: 35px;
+    border-top: 1px solid #001c02;
+    background-color: rgba(0, 62, 5, 0.8);
+    position: fixed;
+    bottom: 0;
+}
+
+l-footer, .r-footer
+{
+    float: left;
+    width: 50%;
+}
+
+.footer-wrapper
+{
+    float: left;
+    width: 81.481%;
+    margin-left: 9.259%;
+    font-family: Arial;
+    font-size: 12px;
+    color: #FFF;
+}
+
+    .footer-wrapper p:first-child
+    {
+        float: left;
+        width: 50%;
+        margin-top: 13px;
+    }
+
+    .footer-wrapper p:last-child
+    {
+        float: left;
+        width: 50%;
+        text-align: right;
+        margin-top: 13px;
+    }
+
+        .footer-wrapper p:last-child a
+        {
+            color: #FFF;
+        }
+
+.left-small-wrapper
+{
+    float: left;
+    width: 100%;
+    height: 78%;
+    overflow: scroll;
+    display: none;
+}
+
+#item1
+{
+    display: block;
+}
+
+.article-box
+{
+    float: left;
+    width: 80.952%;
+    height: 121px;
+    margin-left: 9.523%;
+    margin-bottom: 2.941%;
+    outline: 1px solid #fefefe;
+    position: relative;
+}
+
+.article-box-title
+{
+    float: left;
+    width: 100%;
+    height: 26.446%;
+    background-color: rgba(255,255,255,0.8);
+    position: absolute;
+    bottom: 1px;
+}
+
+    .article-box-title h1
+    {
+        float: left;
+        width: 100%;
+        margin-top: 9px;
+        font-family: 'HongHaHep';
+        font-size: 15px;
+        color: #005706;
+        text-align: center;
+    }
+
+.paging
+{
+    float: left;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.paging-wrapper
+{
+    float: left;
+    width: 25.714%;
+    margin-left: 37.142%;
+    height: 22px;
+}
+
+.paging-item
+{
+    float: left;
+    width: 40.74%;
+    height: 100%;
+    margin-left: 9%;
+}
+
+    .paging-item span
+    {
+        float: left;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        transition: all .3s ease-in-out;
+    }
+
+.next
+{
+    background-image: url("/Design/next.png");
+}
+
+    .next:hover
+    {
+        background-image: url("/Design/bluenext.png");
+    }
+
+.pre
+{
+    background-image: url("/Design/pre.png");
+}
+
+    .pre:hover
+    {
+        background-image: url("/Design/bluepre.png");
+    }
+
+.figure
+{
+    float: left;
+    width: 57.478%;
+    height: 100%;
+    /*border-radius: 8px;*/
+}
+
+    .figure .flexslider, .figure .flexslider img
+    {
+        /*border-radius: 8px;*/
+    }
+
+        .figure .flexslider .flex-direction-nav
+        {
+            display: block !important;
+        }
+
+.articleslide .slides li > img.img
+{
+    border-radius: 6px;
+    width: 100.08%;
+    margin-left: -1px;
+}
+
+.content
+{
+    float: left;
+    width: 39.555%;
+    height: 100%;
+    margin-left: 2.843%;
+    text-align: justify;
+    color: #00471b;
+}
+
+.content-header
+{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #00471b;
+}
+
+    .content-header h1
+    {
+        float: left;
+        width: 100%;
+        margin-bottom: 5px;
+        font-family: 'HongHaHep';
+        font-size: 20px;
+    }
+
+.content-body
+{
+    float: left;
+    width: 100%;
+    height: 79.113%;
+    overflow: scroll;
+    margin-top: 20px;
+    font-family: Arial;
+    font-size: 13px;
+    text-align: justify;
+    line-height: 140%;
+}
+
+.text-center
+{
+    text-align: center;
+}
+
+.left-full-wrapper
+{
+    float: left;
+    width: 100%;
+    margin-top: 5%;
+    height: 73%;
+    overflow: scroll;
+    display: none;
+}
+
+.left-nav-item
+{
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 71, 27, 0.3);
+    background-size: 0px 0px;
+    /*transition: all .1s ease-in-out;*/
+}
+
+    .left-nav-item h1
+    {
+        float: left;
+        width: 84.761%;
+        margin-left: 7.619%;
+        font-family: 'Tahoma';
+        font-size: 12px;
+        color: #003e05;
+        margin-top: 4.5%;
+        margin-bottom: 4.5%;
+        line-height: 130%;
+    }
+
+    .left-nav-item:last-child
+    {
+        border: none;
+    }
+
+    .left-nav-item:hover
+    {
+        background-size: 100% 100%;
+        background-color: rgba(0, 87, 6, 0.7);
+    }
+
+        .left-nav-item:hover h1
+        {
+            color: #FFF;
+        }
+
+.item-active, .item-active:hover
+{
+    background-color: rgba(255,255,255,0.8);
+}
+
+    .item-active h1
+    {
+        font-weight: bold;
+    }
+
+    .item-active:hover h1
+    {
+        color: #003e05;
+    }
+
+
+.gallery-wrapper
+{
+    float: left;
+    margin-left: -0.5%;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.picture-item
+{
+    float: left;
+    width: 23.774%;
+    height: 48.407%;
+    margin-left: 1.225%;
+    margin-bottom: 1.225%;
+}
+
+@media screen and (max-width : 1280px)
+{
+    .ss
+    {
+        /*visibility: hidden;*/
+        display: none;
+    }
+
+    .bs
+    {
+        /*visibility: visible;*/
+        display: block;
+    }
+}
+
+@media screen and (min-width : 1300px)
+{
+    .ss
+    {
+        /*visibility: visible;*/
+        display: block;
+    }
+
+    .bs
+    {
+        /*visibility: hidden;*/
+        display: none;
+    }
+}
