@@ -54,13 +54,17 @@ public partial class Admin_MgerSupport : System.Web.UI.Page
             HoTro dataimg = new HoTro();
             TextBox txtfrmTenVn = (TextBox)e.Item.FindControl("txtfrmTenVn");
             dataimg.Ten_Vn = txtfrmTenVn.Text.Trim().ToString();
-           
-            TextBox txtfrmTenCn = (TextBox)e.Item.FindControl("txtfrmTenCn");
-            dataimg.Ten_Cn = txtfrmTenCn.Text.Trim().ToString();
+            TextBox txtfrmTenEn = (TextBox)e.Item.FindControl("txtfrmTenEn");
+            dataimg.Ten_En = txtfrmTenEn.Text.Trim().ToString();
+
+            //TextBox txtfrmEmail = (TextBox)e.Item.FindControl("txtfrmEmail");
+            //dataimg.Khac = txtfrmEmail.Text.Trim().ToString();
 
             TextBox txtfrmSDT = (TextBox)e.Item.FindControl("txtfrmSDT");
             dataimg.SDT = txtfrmSDT.Text.Trim().ToString();
             dataimg.ID = ConvertType.ToInt32(e.CommandArgument.ToString().Trim());
+
+
             HoTro.Sua(dataimg);
             CapNhatHanhDong("Sửa Hổ trợ (id: " + e.CommandArgument.ToString().Trim() + ")");
         }
@@ -86,7 +90,7 @@ public partial class Admin_MgerSupport : System.Web.UI.Page
         }
         else
         {
-            if (txtNhapTenVn.Text.Length <= 100 || txtNhapTenCn.Text.Length <= 100)
+            if (txtNhapTenVn.Text.Length <= 100)
             {
                 if (txtSDT.Text.Length <= 15)
                 {
@@ -112,11 +116,10 @@ public partial class Admin_MgerSupport : System.Web.UI.Page
     protected void refesh()
     {
         txtNhapTenVn.Text = "";
-
-        txtNhapTenCn.Text = "";
+        txtHinhAnh.Text = "";
 
         txtSDT.Text = "";
-        txtNhapMoTa.Text = "";
+        //txtNhapMoTa.Text = "";
     }
     void btnLuu_Click(object sender, EventArgs e)
     {
@@ -127,11 +130,10 @@ public partial class Admin_MgerSupport : System.Web.UI.Page
             bool rs = false;
             HoTro data = new HoTro();
             data.Ten_Vn = txtNhapTenVn.Text;
-
-            data.Ten_Cn = txtNhapTenCn.Text;
+            data.Ten_En = txtHinhAnh.Text;
 
             data.SDT = txtSDT.Text;
-            data.Khac = txtNhapMoTa.Text;
+            //data.Khac = txtNhapMoTa.Text;
             rs = HoTro.Them(data);
             if (rs)
             {
@@ -145,6 +147,12 @@ public partial class Admin_MgerSupport : System.Web.UI.Page
         }
         else
             lbtitle.Text = " *Không thêm được hỗ trợ";
+    }
+
+    public string ShowItem()
+    {
+        TextBox txtAvartar = (TextBox)FindControl("txtfrmTenEn");
+        return txtAvartar != null ? txtAvartar.ClientID : "";
     }
     #endregion
 

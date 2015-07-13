@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -138,9 +139,30 @@ public partial class Admin_EditMenu : System.Web.UI.Page
     {
         ddlParent.DataValueField = "ID";
         ddlParent.DataTextField = "TieuDe_Vn";
-        ddlParent.DataSource = TheLoai.LayTheoLoaiMenuVaParentIsNull(idParent);
+        List<TheLoai> listTL = TheLoai.LayTheoLoaiMenuVaParentIsNull(idParent);
+        if (listTL != null && listTL.Count > 0)
+        {
+            foreach (TheLoai tl in listTL)
+            {
+                tl.TieuDe_Vn = ShowTitle(tl.TieuDe_Vn);
+            }
+        }
+        ddlParent.DataSource = listTL;
         ddlParent.DataBind();
     }
+
+    public string ShowTitle(string title)
+    {
+        return DecodeHTML(HttpUtility.HtmlDecode(title));
+    }
+
+    public string DecodeHTML(string chuoi)
+    {
+        Regex regex = new Regex("\\<[^\\>]*\\>");
+        chuoi = regex.Replace(chuoi, String.Empty);
+        return chuoi;
+    }
+
     private void LoadModule()
     {
         ddlModule.DataValueField = "ID";
@@ -150,22 +172,19 @@ public partial class Admin_EditMenu : System.Web.UI.Page
     }
     private void SetData(TheLoai data)
     {
-        //LoadParent(data.IDLoaiMenu.ToString());
+        LoadParent(data.IDLoaiMenu.ToString());
         //LoadTheLoai();
-        LoadParent();
+        //LoadParent();
         lblId.Text = data.ID.ToString();
         txtTieuDeVn.Text = data.TieuDe_Vn;
-     
-        txtTieuDeCn.Text = data.TieuDe_Cn;
+
 
         txtmoTaVn.Text = data.MoTa_Vn;
-       
-        txtmoTaCn.Text = data.MoTa_Cn;
+
 
         txtHinhAnh.Text = data.HinhAnh;
         txtDuongDanVn.Text = data.DuongDan_Vn;
-     
-        txtDuongDanCn.Text = data.DuongDan_Cn;
+
 
         if (data.ViTri < 0)
             txtViTri.Text = "0";
@@ -173,6 +192,14 @@ public partial class Admin_EditMenu : System.Web.UI.Page
         ddlParent.SelectedValue = data.IDParent.ToString();
         ddlLoadMenu.SelectedValue = data.IDLoaiMenu.ToString();
         ddlModule.SelectedValue = data.IDModule.ToString();
+
+        txtWidth.Text = data.TitleWidth;
+        string border = data.TitleBorder;
+        if (border.Contains("border-bot")) ckbBorderBottom.Checked = true; else ckbBorderBottom.Checked = false;
+        if (border.Contains("border-top")) ckbBorderTop.Checked = true; else ckbBorderTop.Checked = false;
+        if (border.Contains("border-left")) ckbBorderLeft.Checked = true; else ckbBorderLeft.Checked = false;
+        if (border.Contains("border-right")) ckbBorderRight.Checked = true; else ckbBorderRight.Checked = false;
+
     }
     #endregion
 
@@ -180,17 +207,14 @@ public partial class Admin_EditMenu : System.Web.UI.Page
     private void ResetForm()
     {
         txtTieuDeVn.Text = "";
-      
-        txtTieuDeCn.Text = "";
+
 
         txtmoTaVn.Text = "";
-    
-        txtmoTaCn.Text = "";
+
 
         txtHinhAnh.Text = "";
         txtDuongDanVn.Text = "";
-     
-        txtDuongDanCn.Text = "";
+
     }
     private TheLoai GetData()
     {
@@ -200,17 +224,20 @@ public partial class Admin_EditMenu : System.Web.UI.Page
         else
             data = new TheLoai();//them moi
         data.TieuDe_Vn = txtTieuDeVn.Text;
-       
-        data.TieuDe_Cn = txtTieuDeCn.Text;
+        data.TieuDe_En = "";
+        data.TieuDe_Ru = "";
+        data.TieuDe_Cn = "";
 
         data.MoTa_Vn = txtmoTaVn.Text;
-       
-        data.MoTa_Cn = txtmoTaCn.Text;
+        data.MoTa_En = "";
+        data.MoTa_Ru = "";
+        data.MoTa_Cn = "";
 
         data.HinhAnh = txtHinhAnh.Text;
         data.DuongDan_Vn = txtDuongDanVn.Text;
-       
-        data.DuongDan_Cn = txtDuongDanCn.Text;
+        data.DuongDan_En = "";
+        data.DuongDan_Ru = "";
+        data.DuongDan_Cn = "";
 
         data.ViTri = ConvertType.ToInt32(txtViTri.Text.Trim());
         data.IDLoaiMenu = ConvertType.ToInt32(ddlLoadMenu.SelectedValue.Trim());
@@ -219,6 +246,17 @@ public partial class Admin_EditMenu : System.Web.UI.Page
         if (idparent > 0)
             data.IDParent = idparent;
         data.Footer = true;
+
+        if (txtWidth.Text.Trim() == "") data.TitleWidth = "0";
+        else data.TitleWidth = txtWidth.Text.Trim();        
+
+        string border = String.Empty;
+        if (ckbBorderBottom.Checked) border += " border-bot";
+        if (ckbBorderTop.Checked) border += " border-top";
+        if (ckbBorderLeft.Checked) border += " border-left";
+        if (ckbBorderRight.Checked) border += " border-right";
+        data.TitleBorder = border;
+
         return data;
     }
     protected override void OnInit(EventArgs e)
@@ -353,4 +391,5 @@ public partial class Admin_EditMenu : System.Web.UI.Page
         }
     }
     #endregion
+
 }

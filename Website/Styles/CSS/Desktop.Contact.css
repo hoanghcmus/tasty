@@ -1,13 +1,11 @@
-﻿.contact-wrapper
+﻿.contact-wraper
 {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
+    color: #7f5c8e;
     float: left;
-    font-family: Tahoma;
-    font-size: 14px;
+    font-family: "UVN_Tin_Tuc_Nhe";
+    font-size: 18px;
+    width: 100%;
     text-align: justify;
-    color: #00471b;
 }
 
 .contact
@@ -16,6 +14,11 @@
     width: 100%;
     margin-top: 15px;
     position: relative;
+    text-align: justify;
+    font-family: Tahoma;
+    font-size: 14px;
+    color: #414141;
+    line-height: 18px;
 }
 
 .title
@@ -29,13 +32,13 @@
 {
     width: 300px;
     height: 30px;
-    border: 1px solid rgba(0, 62, 5, 0.3);
+    border: 1px solid rgba(1, 62, 107, 0.5);
     margin-top: 5px;
     background-color: transparent;
-    color: #00471b;
     padding-left: 5px;
     font-family: Tahoma;
-    font-size: 14px;
+    font-size: 15px;
+    color: #013e6b;
 }
 
 .capcha
@@ -69,17 +72,17 @@
     right: 200px;
     top: 6px;
     background-color: transparent;
-    background-image: url("/Design/refresh.png");
+    background-image: url("/Design/refresh2.png");
     background-size: 100% 100%;
 }
 
 .btn
 {
-    background-color: rgba(0, 62, 5, 0.8);
+    background-color: #013e6b;
     color: #FFF;
     float: left;
-    font-family: Tahoma;
-    font-size: 15px;
+    font-family: "UVN_Van";
+    font-size: 18px;
     font-weight: bold;
     width: 157px;
     padding: 5px 0;
@@ -89,7 +92,7 @@
 
     .btn:hover
     {
-        background-color: rgba(0, 62, 5, 0.9);
+        /*background-color: rgba(189,199,210,0.8);*/
     }
 
 .titletb
@@ -99,9 +102,6 @@
 
 .succesfull
 {
-    float: left;
-    margin-left: 15px;
-    margin-top: 15px;
     font-weight: bold;
     color: green;
 }
@@ -109,10 +109,10 @@
 .map-direction
 {
     position: absolute;
-    right: 5px;
+    right: 0;
     top: 0;
     font-weight: bold;
-    color: #003e05;
+    color: #013e6b;
 }
 
 
@@ -239,16 +239,4 @@
     font-size: 11px;
     color: red;
     text-decoration: underline;
-}
-
-.contact-info
-{
-    float: left;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 5%;
-    color: #003e05;
-    font-family: Tahoma;
-    font-size: 15px;
-    text-align: center;
 }

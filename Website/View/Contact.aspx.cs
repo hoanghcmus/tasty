@@ -8,36 +8,14 @@ using System.Web.UI.WebControls;
 using DataAccess.Classes;
 using DataAccess.Connect;
 using DataAccess.StringUtil;
-using MultipleLanguage;
 
-public partial class Vn_Contact : BasePage
+public partial class Vn_Contact : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
-            BaiViet baiviet = BaiViet.LayTheoID("31");
-            if (baiviet != null)
-            {
-                if (Session["lang"].ToString().Equals("vn"))
-                {
-
-                    ltBaiVietGioiThieu.Text = baiviet.ChiTiet_Vn;
-                }
-
-                else if (Session["lang"].ToString().Equals("cn"))
-                {
-                    ltBaiVietGioiThieu.Text = baiviet.ChiTiet_Cn;
-                }
-
-            }
-
             captchaImage.ImageUrl = new CaptchaProvider().CreateCaptcha();
-            string IDTheLoai = Request.QueryString["catID"] ?? "0";
-            if (Session["lang"].ToString().Equals("vn"))
-                ltrCatName.Text = TheLoai.LayTheoID(IDTheLoai).TieuDe_Vn;
-            else
-                ltrCatName.Text = TheLoai.LayTheoID(IDTheLoai).TieuDe_Cn;
         }
     }
     protected void refesh()
@@ -73,41 +51,19 @@ public partial class Vn_Contact : BasePage
                 {
                     succesfull.Visible = true;
                     refesh();
-                    if (Session["lang"].ToString().Trim().Equals("vn"))
-                    {
-                        succesfull.Text = "Gửi thư hoàn tất!";
-                    }
-                    else
-                    {
-                        succesfull.Text = "郵 件 成 功!";
-                    }
+                    succesfull.Text = "Sent Successfull!";
                 }
                 else
                 {
                     succesfull.Visible = true;
-                    if (Session["lang"].ToString().Trim().Equals("vn"))
-                    {
-                        succesfull.Text = "Gửi thư thất bại!";
-                    }
-                    else
-                    {
-                        succesfull.Text = "郵 寄 失 敗!";
-                    }
+                    succesfull.Text = "Failed send!";
                 }
             }
             else
             {
                 lbcapcha.Visible = true;
                 succesfull.Visible = false;
-                if (Session["lang"].ToString().Trim().Equals("vn"))
-                {
-                    lbcapcha.Text = "Mã xác nhận sai!";
-                }
-                else
-                {
-                    lbcapcha.Text = "驗 證 錯 誤!";
-                }
-
+                lbcapcha.Text = "Incorrect code!";
             }
         }
     }
@@ -117,4 +73,23 @@ public partial class Vn_Contact : BasePage
         captchaImage.ImageUrl = new CaptchaProvider().CreateCaptcha();
     }
 
+    public string Showinfo(object input, string colunmName)
+    {
+        LienHe data = input as LienHe;
+        switch (colunmName)
+        {
+            case "ngaygui":
+                return data.NgayGui.ToString().Split(' ').First().ToString();
+            case "hienthilink":
+                return "/hoi-dap/chi-tiet-hoi-dap-" + data.ID.ToString() + ".html";
+            case "laytomtat":
+                if (data.NoiDung.Length < 300) { return Regex.Replace(data.NoiDung, "<img.*?>", ""); }
+                else
+                {
+                    return StringUltility.GetStringByLenght(Regex.Replace(data.NoiDung, "<img.*?>", ""), 300) + "...";
+                }
+            default:
+                return "";
+        }
+    }
 }

@@ -39,7 +39,7 @@ public partial class Admin_MgerPhoto : System.Web.UI.Page
         string trang = Request.QueryString["Page"] ?? "1";
         string firstPageUrl = "";
         string pagerFormat = "";
-        dlListImg.DataSource = ImageAndClips.LayTheoTheLoai("19", trang, out howManyPages);
+        dlListImg.DataSource = ImageAndClips.LayTheoTheLoai("6", trang, out howManyPages);
         dlListImg.DataBind();
         firstPageUrl = Link.MgerPhoto();
         pagerFormat = Link.MgerPhoto("{0}");

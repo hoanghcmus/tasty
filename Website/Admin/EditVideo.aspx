@@ -79,7 +79,7 @@
                                     <asp:TextBox ID="txtTenEn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
                             </tr>
-                            <tr>
+                            <%--<tr>
                                 <td class="text" valign="top">
                                     <br />
                                     Tên Video-Clips (Russia):
@@ -91,7 +91,7 @@
                                         runat="server" OnServerValidate="valTenRu_ServerValidate" /><br />
                                     <asp:TextBox ID="txtTenRu" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr>
                                 <td class="text" valign="top">
                                     Mô tả (Tiếng việt):
@@ -116,7 +116,7 @@
                                     <asp:TextBox ID="txtmoTaEn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
                             </tr>
-                            <tr>
+                            <%--<tr>
                                 <td class="text" valign="top">
                                     Mô tả (Russia):
                                 </td>
@@ -127,7 +127,7 @@
                                         runat="server" OnServerValidate="valmotaRu_ServerValidate" /><br />
                                     <asp:TextBox ID="txtmoTaRu" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr class="text">
                                 <td valign="top">
                                     Ảnh đại diện:

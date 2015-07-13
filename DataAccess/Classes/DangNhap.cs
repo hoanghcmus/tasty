@@ -22,7 +22,6 @@ namespace DataAccess.Classes
         #endregion
 
         #region Cac phuong thuc Update du lieu
-
         public static int Them(DangNhap dangNhap)
         {
             try
@@ -114,17 +113,6 @@ namespace DataAccess.Classes
                     reader.Close();
                 howManyPages = 0;
                 return new List<DangNhap>();
-            }
-        }
-        public static void CapNhatHanhDong(string hanhDong)
-        {
-            var user = GlobalVariables.CurrUser;
-            if (user != null)
-            {
-                string hanhDongDangNhap = user.HanhDongDangNhap;
-                hanhDongDangNhap += "<br /> - " + hanhDong + " (giờ: " + DateTime.Now.ToShortTimeString() + ")";
-                user.HanhDongDangNhap = hanhDongDangNhap;
-                SuaHanhDong(user.IDDangNhap.ToString(), user.IDNguoiDung.ToString(), hanhDongDangNhap);
             }
         }
         #endregion

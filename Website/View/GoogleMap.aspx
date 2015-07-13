@@ -25,18 +25,18 @@
         function init_map() {
             var myOptions = {
                 zoom: 14,
-                center: new google.maps.LatLng(10.991265, 108.153791),
+                center: new google.maps.LatLng(10.706929, 107.84324),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
             marker = new google.maps.Marker({
                 map: map,
-                position: new google.maps.LatLng(10.991265, 108.153791)
+                position: new google.maps.LatLng(10.706929, 107.84324)
             });
             infowindow = new google.maps.InfoWindow({
-                content: "<b><%=Resources.Resource.restaurant_name%></b><br/>"
-            + "<img src='/Design/cht.jpg' width='300px' height='100px'/>	<br/>"
-            + "<%=Resources.Resource.map_info%>"
+                content: "<b>Sao Nam - Giải pháp an ninh toàn diện</b><br/>"
+            + "<img src='/Design/saonam.jpg' width='300px' height='100px'/>	<br/>"
+            + "309A TP Phan Thiết - Bình Thuận - Fax: 0623 82 56 68 <br>Điện thoại: 0623 82 56 68  Email: info@saonaco.com.vn"
             });
             google.maps.event.addListener(marker, "click", function () {
                 infowindow.open(map, marker);

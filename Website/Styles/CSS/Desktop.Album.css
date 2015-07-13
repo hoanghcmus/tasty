@@ -21,12 +21,12 @@
 
     .itemalbum:hover
     {
-        background-color: rgba(255,255,255,0.8);
+        background-color: rgba(255,255,255,1);
     }
 
 .titlealbum
 {
-    background-color: rgba(72, 144, 234, 0.8);
+    background-color: rgba(241,171,3,0.5);
     /*background-color: rgba(132,4,4,0.5);*/
     height: 29px;
     text-align: center;
@@ -40,14 +40,14 @@
     {
         position: relative;
         font-size: 23px;
-        color: #FFF;
+        color: #443d37;
         text-decoration: none;
         font-family: UVN_MAU_TIM_2;
     }
 
         .titlealbum a:hover
         {
-            /*font-weight: bold;*/
+            font-weight: bold;
         }
 
 .image_stack
@@ -160,7 +160,7 @@
     {
         display: inline-block;
         width: 22.35%;
-        height: 110px;
+        height: 135px;
         margin: 1%;
         opacity: 1;
         position: relative;
@@ -179,14 +179,14 @@
 
         .gallery a img
         {
-            border: 2px solid #FFF;
+            border: 5px solid #FFF;
             cursor: pointer;
             display: block;
             height: 100%;
             left: 0px;
             position: absolute;
             top: 0px;
-            width: 99.8%;
+            width: 100%;
             z-index: 1;
             /* CSS3 Box sizing property */
             -moz-box-sizing: border-box;
@@ -199,10 +199,10 @@
             -o-transition: all 0.5s ease;
             transition: all 0.5s ease;
             /* CSS3 Box Shadow */
-            -moz-box-shadow: 0px 0px 2px rgba(68,68,68,0.5);
-            -webkit-box-shadow: 0px 0px 2px rgba(68,68,68,0.5);
-            -o-box-shadow: 0px 0px 2px rgba(68,68,68,0.5);
-            box-shadow: 0px 0px 2px rgba(68,68,68,0.5);
+            -moz-box-shadow: 0px 0px 2px #444;
+            -webkit-box-shadow: 0px 0px 2px #444;
+            -o-box-shadow: 0px 0px 2px #444;
+            box-shadow: 0px 0px 2px #444;
         }
 
         /* Custom CSS3 rotate transformation */
@@ -216,11 +216,7 @@
         .gallery a:hover img
         {
             z-index: 5;
-            /*border: 3px solid #fff;*/
-            -moz-box-shadow: 0px 0px 2px rgba(68,68,68,1);
-            -webkit-box-shadow: 0px 0px 2px rgba(68,68,68,1);
-            -o-box-shadow: 0px 0px 2px rgba(68,68,68,1);
-            box-shadow: 0px 0px 2px rgba(68,68,68,1);
+            border: 5px solid #fff;
             /* CSS3 transition rules */
             -webkit-transition: all 0.5s ease;
             -moz-transition: all 0.5s ease;

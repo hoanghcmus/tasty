@@ -1,0 +1,15 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/View/MasterPage.master" AutoEventWireup="true" CodeFile="SubMaserPage.master.cs" Inherits="View_SubMaserPage" %>
+
+<asp:Content ID="Head" ContentPlaceHolderID="HeadExtender" runat="Server">
+    <asp:ContentPlaceHolder ID="HeadExtender" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="Server">
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Foot" ContentPlaceHolderID="FootExtender" runat="Server">
+    <asp:ContentPlaceHolder ID="FootExtender" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

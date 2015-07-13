@@ -30,37 +30,31 @@
                             <asp:ListItem>-- Chọn loại menu -- </asp:ListItem>
                         </asp:DropDownList>
                         <asp:Button Text="Xóa thể loại đã chọn" runat="server" ID="btnDelete" CssClass="multidelete" />
-                        <input type="button" value="Làm mới" class="btnedit" onclick="location.href='MgerMenu.aspx'" />
+                        <input type="button" value="Làm mới" class="btnedit" onclick="location.href = 'MgerMenu.aspx'" />
                     </div>
                     <div class="block">
                         <p class="block-heading">
-                            Danh sách thể loại của website</p>
+                            Danh sách thể loại của website
+                        </p>
                         <table class="list">
                             <thead>
                                 <tr>
                                     <th class="cid">
                                         <input type="checkbox" id="chkAll" />
                                     </th>
-                                    <th class="id">
-                                        ID
+                                    <th class="id">ID
                                     </th>
-                                    <th class="titlemin">
-                                        Tiêu đề
+                                    <th class="titlemin">Tiêu đề
                                     </th>
-                                    <th class="titlemin">
-                                        Loại menu
+                                    <th class="titlemin">Loại menu
                                     </th>
-                                    <th class="titlemin">
-                                        Loại Module
+                                    <th class="titlemin">Loại Module
                                     </th>
-                                    <th class="titlemin">
-                                        Hiển thị Footer
+                                    <th class="titlemin">Hiển thị Footer
                                     </th>
-                                    <th class="title3">
-                                        Vị trí
+                                    <th class="title3">Vị trí
                                     </th>
-                                    <th class="small">
-                                        Sửa
+                                    <th class="small">Sửa
                                     </th>
                                 </tr>
                             </thead>
@@ -74,7 +68,7 @@
                                             <%#Eval("ID")%>
                                         </td>
                                         <td class="titlemin">
-                                            <asp:TextBox runat="server" Enabled="false" ID="txtfrmTieuDe" Text='<%#Eval("TieuDe_Vn")%>'
+                                            <asp:TextBox runat="server" Enabled="false" ID="txtfrmTieuDe" Text='<%#ShowTitle(Container.DataItem, "tieude")%>'
                                                 CssClass="txtsmall" />
                                             <asp:HiddenField ID="hdnTieuDe" runat="server" Value='<%# Eval("ID")%>' />
                                         </td>
@@ -93,8 +87,7 @@
                                                 CssClass="txtnumbermin" />
                                         </td>
                                         <td class="small">
-                                            <a href='EditMenu.aspx?ID=<%#Eval("ID").ToString()%>' class='lnk'><i class="icon-pencil">
-                                            </i></a>
+                                            <a href='EditMenu.aspx?ID=<%#Eval("ID").ToString()%>' class='lnk'><i class="icon-pencil"></i></a>
                                         </td>
                                     </tr>
                                 </AlternatingItemTemplate>
@@ -107,7 +100,7 @@
                                             <%#Eval("ID")%>
                                         </td>
                                         <td class="titlemin">
-                                            <asp:TextBox runat="server" Enabled="false" ID="txtfrmTieuDe" Text='<%#Eval("TieuDe_Vn")%>'
+                                            <asp:TextBox runat="server" Enabled="false" ID="txtfrmTieuDe" Text='<%#ShowTitle(Container.DataItem, "tieude")%>'
                                                 CssClass="txtsmall" />
                                             <asp:HiddenField ID="hdnTieuDe" runat="server" Value='<%# Eval("ID")%>' />
                                         </td>
@@ -126,8 +119,7 @@
                                                 CssClass="txtnumbermin" />
                                         </td>
                                         <td class="small">
-                                            <a href='EditMenu.aspx?ID=<%#Eval("ID").ToString()%>' class='lnk'><i class="icon-pencil">
-                                            </i></a>
+                                            <a href='EditMenu.aspx?ID=<%#Eval("ID").ToString()%>' class='lnk'><i class="icon-pencil"></i></a>
                                         </td>
                                     </tr>
                                 </ItemTemplate>

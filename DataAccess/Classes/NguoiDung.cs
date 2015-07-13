@@ -24,30 +24,6 @@ namespace DataAccess.Classes
         #endregion
 
         #region Cac phuong thuc Update du lieu
-        public static bool ResetPass(string idNguoiDung, string tendangnhap)
-        {
-            try
-            {
-                object rs = DataProvider.Instance.ExecuteNonQuery("NguoiDung_ResetPass", Convert.ToInt32(idNguoiDung), tendangnhap);
-                return Convert.ToInt32(rs) > 0;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        public static NguoiDung LayThongTin(string tenDangNhap, string matKhau)
-        {
-            try
-            {
-                return CBO.FillObject<NguoiDung>(DataProvider.Instance.ExecuteReader("NguoiDung_LayThongTin", tenDangNhap, matKhau));
-            }
-            catch
-            {
-                return null;
-            }
-        }
         public static int Them(NguoiDung nd)
         {
             try

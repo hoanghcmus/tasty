@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,7 +28,8 @@ public partial class Admin_MgerArticle : System.Web.UI.Page
         {
             if (!IsPostBack)
             {
-                LoadTheLoai();
+                //LoadTheLoai();
+                LoadLoaiMenu();
                 PopulateControls();
             }
         }
@@ -69,26 +71,50 @@ public partial class Admin_MgerArticle : System.Web.UI.Page
         }
         PagerBottom.Show(int.Parse(Trang), howManyPages, firstPageUrl, pagerUrl, true);
     }
-    public string ShowFigure(object sender, string column)
-    {
-        BaiViet data = sender as BaiViet;
-        switch (column)
-        {
-            case "imgsrc":
-                string listimg = data.HinhAnh;
-                string[] str = listimg.Split('\'');
-                return str.First().ToString();
-            default: return "";
-        }
-
-    }
-
     private void LoadTheLoai()
     {
         ddlTheLoai.DataValueField = "ID";
         ddlTheLoai.DataTextField = "TieuDe_Vn";
         ddlTheLoai.DataSource = TheLoai.LayTheoModule("1");
         ddlTheLoai.DataBind();
+    }
+    private void LoadLoaiMenu()
+    {
+        ddlTheLoai.DataValueField = "ID";
+        ddlTheLoai.DataTextField = "TieuDe_Vn";
+
+        List<TheLoai> listTL = TheLoai.LayTheoModule("1");
+        if (listTL != null && listTL.Count > 0)
+        {
+            foreach (TheLoai tl in listTL)
+            {
+                tl.TieuDe_Vn = UCFirst(ShowTitle(tl.TieuDe_Vn).Trim().ToLower());
+            }
+        }
+
+        ddlTheLoai.DataSource = listTL;
+        ddlTheLoai.DataBind();
+    }
+
+    public string ShowTitle(string title)
+    {
+        return DecodeHTML(HttpUtility.HtmlDecode(title));
+    }
+
+    public string DecodeHTML(string chuoi)
+    {
+        Regex regex = new Regex("\\<[^\\>]*\\>");
+        chuoi = regex.Replace(chuoi, String.Empty);
+        return chuoi;
+    }
+
+    protected string UCFirst(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            return string.Empty;
+        }
+        return char.ToUpper(s[0]) + s.Substring(1);
     }
     #endregion
 

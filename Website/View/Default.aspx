@@ -1,25 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MasterNoneSlide.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Vn_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="View_Default" %>
 
-<asp:Content ID="HeadContent" ContentPlaceHolderID="HeadExtender" runat="Server">
+<%@ Register Src="~/UserControls/UC_ProductListOne.ascx" TagPrefix="uc1" TagName="UC_ProductListOne" %>
+<%@ Register Src="~/UserControls/UC_Quang_Cao.ascx" TagPrefix="uc1" TagName="UC_Quang_Cao" %>
+
+
+
+<asp:Content ID="Header" ContentPlaceHolderID="HeadExtender" runat="Server">
 </asp:Content>
-<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="Server">
-    <div class="intro-box">
-        <div class="intro-box-wrapper">
-            <div class="intro-header">
-                <h1>
-                    <asp:Literal ID="ltrTieuDe" runat="server"></asp:Literal></h1>
-            </div>
-            <div class="intro-content">
-                <asp:Literal ID="ltBaiVietGioiThieu" runat="server"></asp:Literal>
-            </div>
-            <div class="intro-readmore">
-                <div class="read-more">
-                    <asp:HyperLink ID="hlReadMore" runat="server" CssClass="link"><span><%=Resources.Resource.more %></span></asp:HyperLink>
-                </div>
-            </div>
-        </div>
-    </div>
+<asp:Content ID="Body" ContentPlaceHolderID="MainContent" runat="Server">
+
+   
 </asp:Content>
-<asp:Content ID="FootContent" ContentPlaceHolderID="FootExtender" runat="Server">
+<asp:Content ID="Footer" ContentPlaceHolderID="FootExtender" runat="Server">
 </asp:Content>
 

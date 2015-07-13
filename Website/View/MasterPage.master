@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="View_MasterPage" %>
+
+<%@ Register Src="~/UserControls/UC_SlideShow.ascx" TagPrefix="uc1" TagName="UC_SlideShow" %>
+<%@ Register Src="~/UserControls/UC_MenuNgang.ascx" TagPrefix="uc1" TagName="UC_MenuNgang" %>
+<%@ Register Src="~/UserControls/UC_Hotline.ascx" TagPrefix="uc1" TagName="UC_Hotline" %>
+<%@ Register Src="~/UserControls/UC_Menu.ascx" TagPrefix="uc1" TagName="UC_Menu" %>
+<%@ Register Src="~/UserControls/UC_MenuBottom.ascx" TagPrefix="uc1" TagName="UC_MenuBottom" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <%-- Header Content PlaceHoder Extender --%>
+    <title><%= System.Configuration.ConfigurationManager.AppSettings["title"]%></title>
+
+    <meta name="Keywords" content="<%= System.Configuration.ConfigurationManager.AppSettings["keywords"]%>" />
+    <meta name="description" content="<%= System.Configuration.ConfigurationManager.AppSettings["description"]%>" />
+    <meta name="generator" content="<%= System.Configuration.ConfigurationManager.AppSettings["generator"]%>" />
+    <meta name="og:type" content="Nước khoáng Tasty" />
+    <meta name="og:url" content="nuockhoangtasty.com" />
+    <meta name="og:title" content="Nước khoáng Tasty" />
+    <meta name="og:description" content="Nước khoáng Tasty" />
+
+    <link rel="Shurtcut Icon" href="/Design/favico.png" type="image/x-icon" />
+    <link href="/Styles/CSS/Reset.css" rel="stylesheet" />
+    <link href="/Styles/CSS/Desktop.Global.css" rel="stylesheet" />
+    <link href="/Styles/CSS/Desktop.Content.css" rel="stylesheet" />
+    <link href="/Styles/CSS/Desktop.Album.css" rel="stylesheet" />
+    <link href="/Styles/CSS/Desktop.Contact.css" rel="stylesheet" />
+
+    <%-- Fancybox --%>
+    <link href="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-buttons.css" rel="stylesheet" />
+    <link href="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css" rel="stylesheet" />
+    <link href="/Styles/FancyBox-2.1.5/source/jquery.fancybox.css" rel="stylesheet" />
+
+    <link type="text/css" href="/Styles/flexslider/css/flexslider.css" rel="stylesheet" />
+    <link type="text/css" href="/Styles/highslide/highslide.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/Styles/JS/jquery-10.2.min.js"></script>
+    <script>
+        function button_click(objTextBox, objBtnID) {
+            if (window.event.keyCode == 13) {
+                document.getElementById(objBtnID).focus();
+                document.getElementById(objBtnID).click();
+            }
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="HeadExtender" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="MainForm" runat="server">
+        <asp:ScriptManager ID="MainScriptManager" runat="server"></asp:ScriptManager>
+
+        <div class="contaner">
+            <div class="bg"></div>
+            <div class="bg-sub"></div>
+            <div class="logo-bg"></div>
+            <div class="contaner-wrap">
+                <div class="logo">
+                    <a href="/home.html" class="link">
+                        <img src="/Design/logo.png" alt="Logo here" class="img" />
+                    </a>
+                </div>
+                <div class="vnav nav">
+                    <div class="vnav-wrap">
+                        <uc1:UC_MenuNgang runat="server" ID="UC_MenuNgang" />
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="left">
+                        <div class="left-wrap">
+                            <div class="hnav">
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void();" class="link">
+                                            <i class="dot"></i><span>Giới thiệu chung</span>
+                                        </a>
+                                        <i class="sep"></i>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void();" class="link">
+                                            <i class="dot"></i><span>Lịch sử hình thành</span>
+                                        </a>
+                                        <i class="sep"></i>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void();" class="link">
+                                            <i class="dot"></i><span>Trang thiết bị sản xuất</span>
+                                        </a>
+                                        <i class="sep"></i>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void();" class="link">
+                                            <i class="dot"></i><span>Chính sách chất lượng</span>
+                                        </a>
+                                        <i class="sep"></i>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void();" class="link">
+                                            <i class="dot"></i><span>Danh hiệu và giải thưởng</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right-wrap">
+                            <div class="block">
+                                <div class="block-head">
+                                    <h1>GIỚI THIỆU</h1>
+                                </div>
+                                <div class="block-body">
+
+                                    <img src="/Design/pic.jpg" alt="pic" />
+                                    <p>
+                                        Được sản xuất trên nền nước khoáng thiên nhiên Tasty (đã được giảm nhẹ lượng khoáng), sản phẩm nước khoáng ngọt của Tasty là loại nước giải khát có vị ngon rất đặc trưng và khác biệt vì chứa các khoáng chất từ thiên nhiên. Thưởng thức nước khoáng ngọt của Tasty vừa đem lại cho bạn cảm giác đã khát và một hương vị không lẫn vào đâu được so với các sản phẩm cùng loại trên thị trường, vừa đáp ứng nhu cầu bổ sung khoáng chất của cơ thể, đem đến cho bạn làn da tươi sáng, cơ thể khỏe mạnh và tràn đầy sức sống mỗi ngày.
+                                    </p>
+                                    <p>
+                                        Đây chính là lý do sản phẩm nước khoáng ngọt của Tasty ngày càng được người tiêu dùng yêu mến và ưa chuộng.
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="/Design/bg-wave.png" alt="Footer Background" class="img" />
+            <div class="footer-wrap">
+                <p>Copyright © 2015, <b>Công ty TNHH Nước khoáng TASTY</b>. All right Reserved</p>
+                <p>Thiết kế bởi <a href="http://www.tinhthanh.com/" target="_blank"><b>Tính Thành</b></a></p>
+            </div>
+        </div>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+    </form>
+
+    <%-- Script cho slideshow hinh anh --%>
+    <script type="text/javascript" src="/Styles/flexslider/js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/Styles/flexslider/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('.flexslider').flexslider({
+                animation: "slide",
+                slideshowSpeed: 5000
+            });
+        });
+    </script>
+
+    <%-- Script cho html scrollbar --%>
+    <script src="/Styles/nicescroll/jquery.nicescroll.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("html").niceScroll();
+        });
+
+    </script>
+
+    <%-- FancyBox library --%>
+    <script src="/Styles/FancyBox-2.1.5/lib/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
+    <script src="/Styles/FancyBox-2.1.5/source/jquery.fancybox.pack.js" type="text/javascript"></script>
+    <script src="/Styles/FancyBox-2.1.5/source/jquery.fancybox.js" type="text/javascript"></script>
+    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-buttons.js" type="text/javascript"></script>
+    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
+    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.js" type="text/javascript"></script>
+
+    <%-- Show anh dùng fancybox --%>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".imgshow").fancybox({
+                openEffect: 'none',
+                closeEffect: 'none',
+                helpers: {
+                    title: {
+                        type: 'outside'
+                    },
+                    thumbs: {
+                        width: 50,
+                        height: 50
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#shopping-cart").fancybox({
+                maxWidth: 1349,
+                maxHeight: 630,
+                fitToView: false,
+                width: '818px',
+                height: '519px',
+                autoSize: false,
+                closeClick: false,
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+        });
+
+    </script>
+
+    <%-- Fancy for video popup --%>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.fancybox-media').fancybox({
+                openEffect: 'none',
+                closeEffect: 'none',
+                helpers: {
+                    media: {}
+                }
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="FootExtender" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

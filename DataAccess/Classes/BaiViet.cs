@@ -50,7 +50,7 @@ namespace DataAccess.Classes
         {
             try
             {
-                object rs = DataProvider.Instance.ExecuteNonQueryWithOutput("@ID", "BaiViet_Them", noiDung.ID, noiDung.TieuDe_Vn, noiDung.TieuDe_En, noiDung.TieuDe_Ru, noiDung.HinhAnh, noiDung.TomTat_Vn, noiDung.TomTat_En, noiDung.TomTat_Ru, noiDung.ChiTiet_Vn, noiDung.ChiTiet_En, noiDung.ChiTiet_Ru, noiDung.NgayTao, noiDung.NguoiTao, noiDung.LuotXem, noiDung.TrangThai, noiDung.IDTheLoai, noiDung.TieuDe_Cn, noiDung.TomTat_Cn, noiDung.ChiTiet_Cn);
+                object rs = DataProvider.Instance.ExecuteNonQueryWithOutput("@ID", "BaiViet_Them", noiDung.ID, noiDung.TieuDe_Vn, noiDung.TieuDe_En, noiDung.TieuDe_Ru, noiDung.HinhAnh, noiDung.TomTat_Vn, noiDung.TomTat_En, noiDung.TomTat_Ru, noiDung.ChiTiet_Vn, noiDung.ChiTiet_En, noiDung.ChiTiet_Ru, noiDung.NgayTao, noiDung.NguoiTao, noiDung.LuotXem, noiDung.TrangThai, noiDung.IDTheLoai);
                 return Convert.ToInt32(rs);
             }
             catch
@@ -62,7 +62,7 @@ namespace DataAccess.Classes
         {
             try
             {
-                object rs = DataProvider.Instance.ExecuteNonQuery("BaiViet_Sua", noiDung.ID, noiDung.TieuDe_Vn, noiDung.TieuDe_En, noiDung.TieuDe_Ru, noiDung.HinhAnh, noiDung.TomTat_Vn, noiDung.TomTat_En, noiDung.TomTat_Ru, noiDung.ChiTiet_Vn, noiDung.ChiTiet_En, noiDung.ChiTiet_Ru, noiDung.NgayCapNhat, noiDung.NguoiCapNhat, noiDung.LuotXem, noiDung.TrangThai, noiDung.IDTheLoai, noiDung.TieuDe_Cn, noiDung.TomTat_Cn, noiDung.ChiTiet_Cn);
+                object rs = DataProvider.Instance.ExecuteNonQuery("BaiViet_Sua", noiDung.ID, noiDung.TieuDe_Vn, noiDung.TieuDe_En, noiDung.TieuDe_Ru, noiDung.HinhAnh, noiDung.TomTat_Vn, noiDung.TomTat_En, noiDung.TomTat_Ru, noiDung.ChiTiet_Vn, noiDung.ChiTiet_En, noiDung.ChiTiet_Ru, noiDung.NgayCapNhat, noiDung.NguoiCapNhat, noiDung.LuotXem, noiDung.TrangThai, noiDung.IDTheLoai);
                 return Convert.ToInt32(rs) > 0;
             }
             catch

@@ -106,7 +106,7 @@
                                 </td>
                                 <td>
                                     <p>
-                                        Ảnh hiển thị đẹp nhất ở kích thước: (1366 * 768)
+                                        Ảnh hiển thị đẹp nhất ở kích thước: (913x386)
                                     </p>
                                     <asp:TextBox ID="txtHinhAnh" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox>
                                     <input id="btnDuyet" onclick="BrowseServer( 'Mger_Design:/','<%=txtHinhAnh.ClientID%>');"

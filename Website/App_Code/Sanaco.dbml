@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Sanaco" Class="SanacoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLSERVER;Initial Catalog=Sanaco;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SanacoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SessionCart" Member="SessionCarts">
+    <Type Name="SessionCart">
+      <Column Name="SessionId" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_SessionCart" Member="Product" ThisKey="ProductId" OtherKey="ID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Products">
+    <Type Name="Product">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductCategoryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="Detail" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OldPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NewPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Thumbnail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Origin" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Guarantee" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Product_SessionCart" Member="SessionCarts" ThisKey="ID" OtherKey="ProductId" Type="SessionCart" />
+      <Association Name="Product_OrdersDetail" Member="OrdersDetails" ThisKey="ID" OtherKey="ProductID" Type="OrdersDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrdersDetail" Member="OrdersDetails">
+    <Type Name="OrdersDetail">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Product_OrdersDetail" Member="Product" ThisKey="ProductID" OtherKey="ID" Type="Product" IsForeignKey="true" />
+      <Association Name="Order_OrdersDetail" Member="Order" ThisKey="OrderID" OtherKey="ID" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YeuCauThem" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="NgayOrder" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="TongHoaDon" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SessionID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Order_OrdersDetail" Member="OrdersDetails" ThisKey="ID" OtherKey="OrderID" Type="OrdersDetail" />
+    </Type>
+  </Table>
+</Database>
