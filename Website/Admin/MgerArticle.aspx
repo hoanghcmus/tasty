@@ -45,7 +45,9 @@
                                         </th>
                                         <th class="img">Hình Ảnh
                                         </th>
-                                        <th class="titlemax">Tiêu đề(Tiếng việt)
+                                        <th class="titlemax">Tiêu đề
+                                        </th>
+                                        <th class="smallmax">Lượt xem
                                         </th>
                                         <th class="smallmax">Ngày tạo
                                         </th>
@@ -64,11 +66,14 @@
                                                 <input type="checkbox" name='cid' value='<%#Eval("ID") %>' />
                                             </td>
                                             <td align="center">
-                                                <asp:Image runat="server" ID="img" ImageUrl='<%# DataAccess.Connect.Link.Toimages(ShowFigure(Container.DataItem, "imgsrc")) %>'
+                                                <asp:Image runat="server" ID="img" ImageUrl='<%# DataAccess.Connect.Link.Toimages(Eval("HinhAnh").ToString()) %>'
                                                     Height="80" Width="90" />
                                             </td>
                                             <td class="titlemax" valign="top">
                                                 <%#Eval("TieuDe_Vn")%>
+                                            </td>
+                                            <td class="smallmax">
+                                                <%#Eval("LuotXem") %>
                                             </td>
                                             <td class="smallmax">
                                                 <%#Eval("NgayTao") %>
@@ -91,11 +96,14 @@
                                                 <input type="checkbox" name='cid' value='<%#Eval("ID") %>' />
                                             </td>
                                             <td align="center">
-                                                <asp:Image runat="server" ID="img" ImageUrl='<%# DataAccess.Connect.Link.Toimages(ShowFigure(Container.DataItem, "imgsrc")) %>'
+                                                <asp:Image runat="server" ID="img" ImageUrl='<%# DataAccess.Connect.Link.Toimages(Eval("HinhAnh").ToString()) %>'
                                                     Height="80" Width="90" />
                                             </td>
                                             <td class="titlemax" valign="top">
                                                 <%#Eval("TieuDe_Vn")%>
+                                            </td>
+                                            <td class="smallmax">
+                                                <%#Eval("LuotXem") %>
                                             </td>
                                             <td class="smallmax">
                                                 <%#Eval("NgayTao") %>

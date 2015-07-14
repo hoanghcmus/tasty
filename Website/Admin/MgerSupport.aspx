@@ -4,6 +4,17 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnDuyet").click(function () {
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (fileUrl) {
+                    $('#<%=txtHinhAnh.ClientID %>').val(fileUrl);
+                };
+                finder.popup();
+            });
+        });           
+    </script>
     <div class="content">
         <div class="header">
             <h1 class="page-title">
@@ -33,20 +44,34 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top">Tên liên hệ (Tiếng việt):
+                                        <td valign="top">Tên liên hệ:
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtNhapTenVn" runat="server" CssClass="txt" />
                                         </td>
                                     </tr>
-                                   
+                                    <tr>
+                                        <td valign="top">Ảnh đại diện:
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtHinhAnh" runat="server" CssClass="txt" />
+                                            <input id="btnDuyet" onclick="BrowseServer('Mger_Design:/','<%=txtHinhAnh.ClientID%>    ');" type="button" value="Duyệt file" class="btnedit" />
+                                        </td>
+                                    </tr>
+                                    <%-- <tr>
+                                        <td valign="top">Tên liên hệ (Russia):
+                                        </td>
+                                        <td>
+                                            <asp:TextBox ID="txtNhapTenRu" runat="server" CssClass="txt" />
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td valign="top">Tên liên hệ (China):
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtNhapTenCn" runat="server" CssClass="txt" />
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td valign="top">SĐT:
                                         </td>
@@ -56,13 +81,13 @@
                                                 CssClass="titletb" Operator="DataTypeCheck" ControlToValidate="txtSDT" Type="Integer">&nbsp;(Chỉ nhập số)</asp:CompareValidator>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td valign="top">Thông tin khác:
+                                    <%-- <tr>
+                                        <td valign="top">Email:
                                         </td>
                                         <td>
                                             <asp:TextBox ID="txtNhapMoTa" runat="server" CssClass="txt" />
                                         </td>
-                                    </tr>
+                                    </tr>--%>
                                     <tr>
                                         <td class="td"></td>
                                         <td colspan="2">
@@ -86,12 +111,17 @@
                                     </th>
                                     <th class="title1">ID
                                     </th>
-                                    <th class="title150">Tên hỗ trợ (Tiếng Việt)
-                                    </th>                                   
-                                    <th class="title150">Tên hỗ trợ (China)
+                                    <th class="title150">Tên hỗ trợ 
                                     </th>
+                                    <th class="title150">Ảnh đại diện
+                                    </th>
+                                    <%-- <th class="title150">Tên hỗ trợ (Russia)
+                                    </th>
+                                    <th class="title150">Tên hỗ trợ (China)
+                                    </th>--%>
                                     <th class="title100">Số điện thoại
                                     </th>
+
                                     <th class="title">Cập nhật
                                     </th>
                                 </tr>
@@ -109,13 +139,28 @@
                                             <asp:TextBox runat="server" ID="txtfrmTenVn" Text='<%#Eval("Ten_Vn")%>' CssClass="txt100" />
                                             <asp:HiddenField ID="hdnID" runat="server" Value='<%# Eval("ID")%>' />
                                         </td>
-                                       
-                                        <td class="title150">
-                                            <asp:TextBox runat="server" ID="txtfrmTenCn" Text='<%#Eval("Ten_Cn")%>' CssClass="txt100" />
+                                        <td class="title150" style="width: 350px;">
+                                            <asp:TextBox ID="txtfrmTenEn" Text='<%#Eval("Ten_En")%>' CssClass="txt100" runat="server" />
+                                            <img src="<%#Eval("Ten_En").ToString().Trim()%>" alt="<%#Eval("Ten_Vn")%>" style="float: left; width: 40px; height: 40px; border-radius: 50%; margin: 0 5px;" />
+                                            <input onclick="BrowseServer('Mger_Design:/','ctl00_ContentPlaceHolder1_repProd_ctl0<%#Container.ItemIndex%>    _txtfrmTenEn');" type="button" value="Duyệt file" class="btnedit btnDuyetU" id="id<%#Container.ItemIndex%>" />
+
+                                            <script type="text/javascript">                                                
+                                                $(document).ready(function () {
+                                                    $("#id<%#Container.ItemIndex%>").click(function () {
+                                                        var finder = new CKFinder();
+                                                        finder.selectActionFunction = function (fileUrl) {
+                                                            $('#ctl00_ContentPlaceHolder1_repProd_ctl0<%#Container.ItemIndex%>_txtfrmTenEn').val(fileUrl);
+                                                        };
+                                                        finder.popup();
+                                                    });
+                                                });
+                                            </script>
                                         </td>
+
                                         <td class="title100">
                                             <asp:TextBox runat="server" ID="txtfrmSDT" Text='<%#Eval("SDT")%>' CssClass="txt100" />
                                         </td>
+
                                         <td class="title">
                                             <asp:Button Text="Cập nhật" runat="server" ID="btnUpdata" CommandArgument='<%#Eval("ID")%>'
                                                 CommandName="Updata" CssClass="linkEditmin" />
@@ -136,13 +181,29 @@
                                             <asp:TextBox runat="server" ID="txtfrmTenVn" Text='<%#Eval("Ten_Vn")%>' CssClass="txt100" />
                                             <asp:HiddenField ID="hdnID" runat="server" Value='<%# Eval("ID")%>' />
                                         </td>
-                                      
-                                         <td class="title150">
-                                            <asp:TextBox runat="server" ID="txtfrmTenCn" Text='<%#Eval("Ten_Cn")%>' CssClass="txt100" />
+                                        <td class="title150" style="width: 350px;">
+                                            <asp:TextBox runat="server" ID="txtfrmTenEn" Text='<%#Eval("Ten_En")%>' CssClass="txt100" />
+                                             <img src="<%#Eval("Ten_En").ToString().Trim()%>" alt="<%#Eval("Ten_Vn")%>" style="float: left; width: 40px; height: 40px; border-radius: 50%; margin: 0 5px;" />
+                                            <input onclick="BrowseServer('Mger_Design:/','ctl00_ContentPlaceHolder1_repProd_ctl0<%#Container.ItemIndex%>    _txtfrmTenEn');" type="button" value="Duyệt file" class="btnedit btnDuyetU" id="id<%#Container.ItemIndex%>" />
+
+                                            <script type="text/javascript">                                                
+                                                $(document).ready(function () {
+                                                    $("#id<%#Container.ItemIndex%>").click(function () {
+                                                        var finder = new CKFinder();
+                                                        finder.selectActionFunction = function (fileUrl) {
+                                                            $('#ctl00_ContentPlaceHolder1_repProd_ctl0<%#Container.ItemIndex%>_txtfrmTenEn').val(fileUrl);
+                                                        };
+                                                        finder.popup();
+                                                    });
+                                                });
+                                            </script>
+
                                         </td>
+
                                         <td class="title100">
                                             <asp:TextBox runat="server" ID="txtfrmSDT" Text='<%#Eval("SDT")%>' CssClass="txt100" />
                                         </td>
+
                                         <td class="title">
                                             <asp:Button Text="Cập nhật" runat="server" ID="btnUpdata" CommandArgument='<%#Eval("ID")%>'
                                                 CommandName="Updata" CssClass="linkEditmin" />

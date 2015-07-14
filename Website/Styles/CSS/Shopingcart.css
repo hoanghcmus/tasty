@@ -1,0 +1,401 @@
+﻿/*---------------------------- Hien Thi Gio Hang Mua San Pham ----------------------------------*/
+.title
+{
+    color: #003d60;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.2em;
+}
+
+.red
+{
+    color: Red;
+}
+
+.title_noti
+{
+    padding: 20px 10px 30px 10px;
+    background: url( '/Design/bg_menufish.png' ) repeat;
+    text-align: center;
+}
+
+    .title_noti p.noti
+    {
+        color: #003d60;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
+.des
+{
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.cart .items
+{
+    width: 100%;
+    background-color: #deecfa;
+    border-bottom: solid 4px #47ace7;
+}
+
+.items th
+{
+    background-color: #47ace7;
+    color: White;
+    padding: 5px 2px;
+}
+
+    .items th a
+    {
+        color: #1382c3;
+    }
+
+.items td
+{
+    vertical-align: middle;
+    text-align: center;
+    padding: 5px 2px;
+}
+
+    .items td.small, .items th.small
+    {
+        width: 60px;
+        text-align: left;
+    }
+
+    .items td.smalls, .items th.smalls
+    {
+        width: 90px;
+    }
+
+    .items td.smallmax, .items th.smallmax
+    {
+        width: 120px;
+    }
+
+    .items td.name
+    {
+        text-align: left;
+    }
+
+.items input.quantity
+{
+    width: 30px;
+    text-align: center;
+    background-color: White;
+    border: solid 1px #c5c5c5;
+}
+
+.items .itemsalt
+{
+    background-color: #eee;
+}
+
+.cart .total
+{
+    text-align: right;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.cart .status
+{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: Red;
+}
+
+.cart .toolbar
+{
+    text-align: right;
+}
+
+.cartTotal
+{
+    color: Red;
+}
+
+/*---------------------------- Hien Thi Checkout San Pham ----------------------------------*/
+.button
+{
+    padding: 7px 5px 7px 35px;
+    margin-right: 10px;
+    color: White;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0px;
+    background: url( '/Design/shoppingcart02.png' )#47ace7 no-repeat;
+    text-decoration: none;
+    -khtml-border-radius: 5px; /* Konqueror */
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari & Google Chrome */
+    -border-radius: 5px; /* Opera */
+}
+
+.button02
+{
+    padding: 7px 5px 7px 35px;
+    margin-right: 10px;
+    color: White;
+    font-weight: bold;
+    cursor: pointer;
+    border: 0px;
+    background: url( '/Design/checkout.png' )#47ace7 no-repeat;
+    text-decoration: none;
+    -khtml-border-radius: 5px; /* Konqueror */
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari & Google Chrome */
+    -border-radius: 5px; /* Opera */
+}
+
+.linkbutton
+{
+    padding: 6px 10px 6px 35px;
+    color: White;
+    font-weight: bold;
+    cursor: pointer;
+    background: url( '/Design/checkout.png' )#47ace7 no-repeat;
+    text-decoration: none;
+    -khtml-border-radius: 5px; /* Konqueror */
+    -moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari & Google Chrome */
+    -border-radius: 5px; /* Opera */
+}
+
+    .button:hover, .linkbutton:hover, .button02:hover
+    {
+        clear: both;
+        color: #fff;
+        background-color: #1382c3;
+    }
+
+a.button
+{
+    padding: 7px;
+}
+
+.cartsummary
+{
+    width: 190px;
+}
+
+.cartsum a
+{
+    text-decoration: none;
+}
+
+    .cartsum a:hover
+    {
+        color: Red;
+    }
+
+.cartsummary hr
+{
+    height: 2px;
+    background-color: #47ace7;
+    border: 0;
+    margin: 0;
+    width: 190px;
+}
+
+.cs-total
+{
+    margin-top: 0.8em;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.cs-title
+{
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.cartsummary a.viewdetail
+{
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.cartsummary table td
+{
+    font-size: 0.85em;
+}
+
+.cartsummary td
+{
+    padding: 2px 0;
+}
+
+    .cartsummary td a
+    {
+        text-decoration: none;
+    }
+
+
+.userinfo
+{
+    text-align: center;
+}
+
+    .userinfo h3
+    {
+        color: #47ace7;
+    }
+
+.info
+{
+    margin: 1em 0 0 4em;
+}
+
+    .info legend
+    {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .info label
+    {
+        display: block;
+    }
+
+    .info p
+    {
+        margin-bottom: 0.4em;
+    }
+
+    .info .textEntry, .info .passwordEntry
+    {
+        background-color: #fff;
+        padding: 2px;
+        border: solid 1px #bbb;
+        width: 180px;
+    }
+
+    .info label.inline
+    {
+        display: inline;
+    }
+
+    .info .submitButton
+    {
+        margin-top: 0.5em;
+    }
+
+.address
+{
+    border: 1px solid #1382c3;
+}
+
+    .address .textEntry
+    {
+        width: 500px;
+        height: 30px;
+        border: 1px solid #1382c3;
+    }
+
+    .address textarea.textEntry
+    {
+        font-family: Verdana, Helvetica, Arial, sans-serif;
+    }
+
+.checkout
+{
+    margin-left: 0;
+}
+/*---------------------------- Hien Thi Checkout San Pham ----------------------------------*/
+.prod.list
+{
+    width: 335px;
+    padding-right: 10px;
+    margin-bottom: 2em;
+}
+
+.prod a
+{
+    text-decoration: none;
+}
+
+.prod .text
+{
+    font-family: Arial;
+    font-size: 10pt;
+    margin-top: 10px;
+    margin-left: 5px;
+    text-align: left;
+}
+
+.prod .image
+{
+    width: 300px;
+    height: 350px;
+    float: left;
+}
+
+.prod .txt
+{
+    width: 200px;
+    margin-left: 10px;
+    float: left;
+}
+
+.prod .image img
+{
+    width: 300px;
+    height: 350px;
+    border: 2px solid #c6e1ec;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.prod.list img
+{
+    width: 100px;
+}
+
+.prod.list .detail
+{
+    margin-left: 115px;
+}
+
+.prod h3
+{
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 1px 0 0;
+}
+
+.prod p
+{
+    margin-bottom: 0.3em;
+}
+
+.prod .price
+{
+    font-weight: bold;
+}
+
+    .prod .price span
+    {
+        color: Red;
+    }
+
+.prod .addToCart a
+{
+    font-weight: bold;
+}
+
+.inforlabel
+{
+    float: left;
+    margin-left: 5px;
+    font-family: Tahoma,Arial,sans-serif;
+    font-weight: bold;
+}

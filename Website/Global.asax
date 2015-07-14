@@ -30,13 +30,10 @@
         Session["IDDangNhap"] = "";
         Session["HanhDongDangNhap"] = "";
 
-        Session["CheckInDate"] = "";
-        Session["CheckOutDate"] = "";
-        Session["AdultAmount"] = "";
-        Session["ChildAmount"] = "";
-
-
-        Session["lang"] = "vn";
+        //Get unique id of session
+        Session["SID"] = Session.SessionID;
+        Session["Customer"] = new DataAccess.Classes.Customer();
+        Session["Total"] = 0;
 
         // Code that runs when a new session is started
         Session.Timeout = 120;

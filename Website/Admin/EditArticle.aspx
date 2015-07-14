@@ -34,8 +34,6 @@
                         Thông tin bài viết
                     </p>
                     <div class="toolbar">
-                        <asp:ScriptManager ID="ScriptManager1" runat="server">
-                        </asp:ScriptManager>
                         <table class="Edit">
                             <tr>
                                 <td colspan="2">
@@ -56,7 +54,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="text" valign="top">Tiêu đề(Tiếng Việt):
+                                <td class="text" valign="top">Tiêu đề:
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtTieuDeVn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNew"></asp:TextBox>
@@ -68,116 +66,39 @@
                             </tr>
 
                             <tr>
-                                <td class="text" valign="top">Tiêu đề(China):
+                                <td class="text" valign="top">Tóm tắt:
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtTieuDe_Cn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNew"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTieuDe_Cn"
-                                        ErrorMessage="->Nhập tiêu đề" CssClass="red">( * )</asp:RequiredFieldValidator><br />
-                                    <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtTieuDe_Cn" Text="(Tiêu đề 'English' < 100 ký tự)"
-                                        runat="server" OnServerValidate="valTieuDeEn_ServerValidate" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text" valign="top">Tóm tắt(Tiếng việt):
-                                </td>
-                                <td>
-                                    <%-- <asp:CustomValidator ID="valTomTatVn" ControlToValidate="txtTomTatVn" Text="(Tóm tắc 'Tiếng việt' < 400 ký tự)"
-                                        runat="server" OnServerValidate="valTomTatVn_ServerValidate" /><br />--%>
+
                                     <asp:TextBox ID="txtTomTatVn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewContent"></asp:TextBox>
-                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTomTatVn"
-                                        CssClass="red">( * )</asp:RequiredFieldValidator>--%>
+
                                 </td>
                             </tr>
 
-                            <tr>
-                                <td class="text" valign="top">Tóm tắt(China):
-                                </td>
-                                <td>
-                                    <%--<asp:CustomValidator ID="valTomTatRu" ControlToValidate="txtTomTat_Ru" Text="(Tóm tắc 'Russia' < 400 ký tự)"
-                                        runat="server" OnServerValidate="valTomTatRu_ServerValidate" /><br />--%>
-                                    <asp:TextBox ID="txtTomTat_Cn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewContent"></asp:TextBox>
-                                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtTomTat_Ru"
-                                        ErrorMessage="->Nhập tóm tắt" CssClass="red">( * )</asp:RequiredFieldValidator>--%>
-                                </td>
-                            </tr>
-
-
-
-
-
-
-
-                            <tr class="text" valign="top">
+                            <tr class="text">
                                 <td>Hình ảnh:
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtHinhAnh" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox>
-                                    <input id="btnDuyet" onclick="BrowseServer( 'images:/','<%=txtHinhAnh.ClientID%>    ');"
-                                        type="button" value="Duy&#7879;t file" class="btnedit" /><br />
-                                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                        <ContentTemplate>
-                                            <asp:Button ID="btnaddimg" runat="server" Text="Thêm vào danh sách" CssClass="linkAddimg" /><asp:Label
-                                                ID="lbhinhanh" runat="server" Text="Vui lòng duyệt để chọn ảnh" Visible="false"
-                                                CssClass="red" />
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <h4>Danh sách ảnh cho bài viết</h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                                        <ContentTemplate>
-                                            <asp:DataList ID="dlListImg" runat="server" RepeatColumns="4">
-                                                <ItemTemplate>
-                                                    <div class="itemimg">
-                                                        <img src='<%# DataAccess.Connect.Link.Toimages(Eval("HinhAnh").ToString()) %>'>
-                                                        <asp:Button Text=" " runat="server" ID="btnDelete" CommandArgument='<%#Eval("ID")%>'
-                                                            CommandName="Deleteimg" CssClass="linkRemoveimg" />
-                                                    </div>
-                                                </ItemTemplate>
-                                            </asp:DataList>
-                                        </ContentTemplate>
-                                    </asp:UpdatePanel>
+                                    <input id="btnDuyet" onclick="BrowseServer( 'Mger_Design:/','<%=txtHinhAnh.ClientID%>    ');" type="button" value="Duy&#7879;t file" class="btnedit" />
+                                    <asp:RequiredFieldValidator
+                                        ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtHinhAnh" CssClass="red">( * )</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
 
-
-
-
-                            <%--<tr class="text">
-                                <td>
-                                    Hiển thị trang chủ:
-                                </td>
-                                <td>
-                                    <asp:CheckBox ID="ckbTrangChu" runat="server" Text="Có" />
-                                </td>
-                            </tr>--%>
                             <tr class="text">
                                 <td colspan="2">
                                     <hr />
                                 </td>
                             </tr>
                             <tr class="text">
-                                <td colspan="2">Chi tiết(Tiếng việt)<br />
+                                <td colspan="2">Chi tiết<br />
                                     <CKEditor:CKEditorControl ID="txtckeditorVn" runat="server" Height="400" CssClass="txteditor">
                                     </CKEditor:CKEditorControl>
                                     <br />
                                 </td>
                             </tr>
 
-                            <tr class="text">
-                                <td colspan="2">Chi tiết(China)<br />
-                                    <CKEditor:CKEditorControl ID="txtckeditorCn" runat="server" Height="400" CssClass="txteditor">
-                                    </CKEditor:CKEditorControl>
-                                    <br />
-                                </td>
-                            </tr>
                             <tr>
                                 <td colspan="2">
                                     <asp:Button ID="btnLuu" runat="server" Text="Lưu" CssClass="btnedit" />

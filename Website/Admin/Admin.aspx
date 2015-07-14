@@ -24,15 +24,15 @@
                     <span class="number">
                         <asp:Label ID="lbbaiViet" runat="server" Text="0" /></span>Bài viết -
                 </p>
-              <%--  <p class="stat">
-                    <span class="number">
-                        <asp:Label ID="lbdt" runat="server" Text="0" /></span>Đặt bàn -
-                </p>--%>
-                <%--
                 <p class="stat">
                     <span class="number">
-                        <asp:Label ID="lbTour" runat="server" Text="0" /></span>Đặt tour -
-                </p>--%>
+                        <asp:Label ID="lbdh" runat="server" Text="0" /></span>Đơn hàng-
+                </p>
+
+                <p class="stat">
+                    <span class="number">
+                        <asp:Label ID="lbsp" runat="server" Text="0" /></span>Sản phẩm -
+                </p>
             </div>
             <h1 class="page-title">Thông tin trang chủ</h1>
         </div>

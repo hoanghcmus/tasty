@@ -8,39 +8,19 @@
     outline: none;
 }
 
+@font-face
+{
+    font-family: UTM_Helve;
+    src: url("/Styles/CSS/Font/UTM_Helve/UTM HELVE.TTF");
+}
 
 @font-face
 {
-    font-family: HelveCond;
-    src: url("/Styles/CSS/Font/HelveCond/VHELVCN_0.TTF");
+    font-family: SanNeoIntel;
+    src: url("/Styles/CSS/Font/SanNeoIntel/UTM NEO SANS INTEL.TTF");
 }
 
-@font-face
-{
-    font-family: HongHaHep;
-    src: url("/Styles/CSS/Font/HongHaHep/UVNHONGHAHEP.TTF");
-}
-
-.img
-{
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-
-.link
-{
-    float: left;
-    width: 100%;
-    height: 100%;
-}
-
-h1
-{
-    font-weight: normal;
-}
-
-body, .line-fix-parent-width, .container, .header
+body, .line-fix-parent-width, #MainForm, .img, .link
 {
     float: left;
     width: 100%;
@@ -48,159 +28,127 @@ body, .line-fix-parent-width, .container, .header
 
 body
 {
-    float: left;
-    width: 100%;
     height: 100%;
 }
 
-.slideshow
+.img
+{
+    height: 100%;
+}
+
+.link
+{
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-weight: normal;
+}
+
+html, #aspnetForm, .contaner
+{
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.bg, .bg-sub
 {
     float: left;
     width: 100%;
     height: 100%;
     position: fixed;
+    top: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-    .slideshow .flexslider .flex-direction-nav
+.bg
+{
+    background-image: url("/Design/bg.jpg");
+}
+
+.bg-sub
+{
+    background-image: url("/Design/bg-main.jpg");
+}
+
+.logo-bg
+{
+    float: left;
+    width: 43%;
+    height: 369px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-image: url("/Design/logo-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@media screen and (min-height : 810px)
+{
+    .bg
     {
-        display: none !important;
+        background-image: url("/Design/bg-b.jpg");
     }
 
-.articleslide
-{
-    position: relative;
+    .bg-sub
+    {
+        background-image: url("/Design/bg-main-b.jpg");
+    }
 }
 
-.articleslide, .slides, .slides li
+.contaner-wrap
 {
+    float: left;
+    width: 74.074%;
+    margin-left: 12.693%;
     height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-    .slides > li
-    {
-    }
-
-
-.header
-{
-    height: 162px;
-    position: relative;
-}
-
-.header-bar
+.logo
 {
     float: left;
-    width: 100%;
-    height: 29px;
-    background-color: #003e05;
+    width: 16.9%;
+    height: 16.323%;
+    position: absolute;
+    top: 0px;
+    left: 2%;
 }
 
-/*CSS For icon bar - Start*/
-.header-bar-wrapper
+/*CSS for menu ngang*/
+.vnav
 {
     float: right;
-    width: 81.481%;
+    width: 83.5%;
+    height: 49px;
+    position: absolute;
+    right: 0px;
+    top: 5.735%;
+    background-image: url("/Design/nav-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.vnav-wrap
+{
+    /*float: left;
+    width: 80%;
     height: 100%;
-    margin-right: 9.259%;
-}
-
-.icon-bar
-{
-    float: right;
-    width: 22%;
-}
-
-.social-bar
-{
+    margin-left: 20%;*/
     float: left;
-    width: 30.578%;
-    margin-top: 1.5%;
-    margin-right: 7.024%;
-    height: 90%;
-}
-
-.social-item
-{
-    float: left;
-    width: 28.378%;
-    margin-right: 5%;
-}
-
-    .social-item:last-child
-    {
-        margin-right: 0;
-    }
-
-.lang-bar
-{
-    float: left;
-    width: 62.396%;
-    margin-top: 2%;
-}
-
-.lang-name
-{
-    float: left;
-    font-family: Arial;
-    font-size: 11px;
-    color: #95daaf;
-}
-
-.lang-item:first-child
-{
-    float: left;
-    width: 51.655%;
-    margin-right: 12.582%;
-}
-
-    .lang-item:first-child .lang-icon
-    {
-        float: left;
-        width: 35.897%;
-    }
-
-    .lang-item:first-child .lang-name
-    {
-        width: 62%;
-        margin-left: 2%;
-        margin-top: 5%;
-    }
-
-
-.lang-item:last-child
-{
-    float: right;
-    width: 35.762%;
-}
-
-    .lang-item:last-child .lang-icon
-    {
-        float: left;
-        width: 51.851%;
-    }
-
-    .lang-item:last-child .lang-name
-    {
-        width: 45%;
-        margin-left: 3%;
-        margin-top: 9%;
-    }
-
-.header-nav
-{
-    float: left;
-    width: 100%;
-    height: 55px;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    background-color: #005706;
-}
-
-
-/*CSS For navigation - Start*/
-.header-nav-wrapper
-{
-    float: right;
-    margin-right: 9.259%;
+    width: 50%;
+    margin-left: 11%;
+    position: fixed;
+    z-index: 1;
 }
 
 .nav
@@ -216,75 +164,101 @@ body
         .nav ul li
         {
             float: left;
-            font-family: 'HongHaHep';
+            height: 49px;
+            font-family: "SanNeoIntel";
         }
 
-            .nav ul li a
-            {
-                padding: 13px;
-                color: #FFF;
-                font-size: 13px;
-                float: left;
-            }
+.vnav-wrap > ul > li
+{
+    border-left: 1px solid #5bb7f0;
+    border-right: 1px solid #4da3ee;
+}
 
-    .nav > ul > li
+    .vnav-wrap > ul > li:first-child
     {
-        border-left: 1px solid #004104;
-        border-right: 1px solid #036f0a;
+        border-left: none;
     }
 
-        .nav > ul > li > a
-        {
-            padding: 20px 22px;
-            font-size: 0.9em;
-        }
-
-        .nav > ul > li:first-child
-        {
-            border-left: none;
-        }
-
-        .nav > ul > li:last-child a
-        {
-            border-right: 1px solid #004104;
-        }
-
-
-    .nav li.active
+    .vnav-wrap > ul > li:last-child
     {
-        background-color: rgba(255, 255, 255, 0.1);
+        border-right: none;
     }
 
-        .nav li.active > a
-        {
-            color: #FFF;
-        }
+.nav ul li a
+{
+    padding: 13px;
+    margin-top: 5px;
+    color: #FFF;
+    font-size: 14px;
+    float: left;
+}
 
-    .nav > ul li:hover
-    {
-    }
 
-        .nav > ul li:hover a
-        {
-            color: #FFF;
-        }
 
-    .nav > ul > li:hover
+.nav > ul > li > a
+{
+    padding: 6px 5%;
+    font-size: 1vw;
+    width: 89%;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 18px;
+}
+
+.nav ul li a span
+{
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.nav > ul > li:first-child
+{
+    /*border-left: none;*/
+}
+
+.nav > ul > li:last-child a
+{
+    /*border-right: 1px solid #004104;*/
+}
+
+
+.nav li.active
+{
+    background-color: rgba(1, 81, 133, 0.1);
+}
+
+    .nav li.active > a
     {
         color: #FFF;
-        background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .nav > ul > li.has-sub > ul
+.nav > ul li:hover
+{
+}
+
+    .nav > ul li:hover a
     {
-        top: 101%;
-        left: 0;
-        z-index: 10;
+        color: #FFF;
     }
 
-    .nav > ul > li.has-sub
-    {
-    }
+.vnav-wrap > ul > li:hover
+{
+    color: #FFF;
+    background-color: rgba(1, 81, 133, 0.1);
+    /*background-color: rgba(74, 155, 237, 0.8);*/
+}
+
+.nav > ul > li.has-sub > ul
+{
+    top: 101%;
+    left: -1px;
+    z-index: 10;
+}
+
+.nav > ul > li.has-sub
+{
+}
 
 .has-sub span.arrow
 {
@@ -304,13 +278,14 @@ body
         width: 100%;
         height: 0px;
         overflow: hidden;
+        top: 49px;
         transition: all .4s linear;
     }
 
         .has-sub > ul > li
         {
-            background-color: rgba(0, 87, 6, 0.7);
-            width: 225px;
+            background-color: rgba(85, 179, 240, 1);
+            width: 200px !important;
             height: 0px;
             overflow: hidden;
             border-top: 1px solid #C0C0C0;
@@ -319,6 +294,13 @@ body
             text-align: left;
         }
 
+            .has-sub > ul > li > a > span
+            {
+                float: left;
+                width: 90%;
+                font-size: 14px;
+                text-align: left;
+            }
 
             .has-sub > ul > li:first-child
             {
@@ -331,14 +313,20 @@ body
                 border-bottom-right-radius: 3px;
             }
 
+            .has-sub > ul > li.active
+            {
+                background-color: rgba(74, 155, 237, 0.8);
+            }
+
         .has-sub > ul li a, .has-sub > ul li:hover a
         {
+            width: 100%;
             color: #FFF;
         }
 
     .has-sub:hover > ul
     {
-        width: 225px;
+        width: 200px;
         height: auto;
     }
 
@@ -351,521 +339,199 @@ body
 
     .has-sub > ul > li:hover
     {
-        background-color: rgba(0, 87, 6, 0.5);
+        background-color: rgba(74, 155, 237, 0.8);
     }
 
-/*CSS For navigation - End*/
-
-.header-web-title
-{
-    float: left;
-    width: 100%;
-}
-
-.header-web-title-wrapper
-{
-    float: left;
-    margin-left: 24.222%;
-    padding-top: 4px;
-    width: 75.777%;
-}
-
-
-.header-logo
-{
-    float: left;
-    width: 162px;
-    height: 162px;
-    position: absolute;
-    top: 0;
-    left: 11.0367%;
-}
-
-
-.body
-{
-    float: left;
-    width: 81.481%;
-    height: 60.265%;
-    position: fixed;
-    bottom: 36px;
-    left: 9.259%;
-}
-
-.body-left
-{
-    float: left;
-    width: 19.09%;
-    height: 100%;
-    margin-right: 2.09%;
-}
-
-.body-left-above
-{
-    float: left;
-    width: 100%;
-    height: 17.504%;
-    background-image: url("/Design/left-top-bg.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.body-left-under
-{
-    float: left;
-    width: 100%;
-    height: 82.396%;
-    background-color: rgba(255,255,255,0.8);
-    position: relative;
-}
-
-.body-left-under-title
-{
-    float: left;
-    width: 95.238%;
-    height: 40px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 2.381%;
-    background-color: #003e05;
-}
-
-    .body-left-under-title h1
-    {
-        float: left;
-        width: 100%;
-        margin-top: 10px;
-        font-family: 'HongHaHep';
-        font-size: 18px;
-        color: #FFF;
-        text-align: center;
-    }
-
-.body-right
-{
-    float: left;
-    width: 78.82%;
-    height: 100%;
-    background-color: rgba(255,255,255,0.8);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-}
-
-.body-right-wrapper
-{
-    float: left;
-    width: 93.071%;
-    height: 82.396%;
-    margin-left: 3.464%;
-    margin-top: 4%;
-}
-
-.intro-box
-{
-    float: right;
-    width: 37.363%;
-    border-radius: 10px;
-    font-family: Arial;
-    position: absolute;
-    bottom: 25px;
-    right: 0px;
-    background-color: rgba(255,255,255,0.7);
-}
-
-.intro-box-wrapper
-{
-    float: left;
-    width: 85.4%;
-    margin: 7.299%;
-}
-
-.intro-header
-{
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid #00471b;
-}
-
-    .intro-header h1
-    {
-        float: left;
-        width: 100%;
-        font-family: 'HongHaHep';
-        font-size: 20px;
-        margin-bottom: 1.424%;
-        color: #00471b;
-        text-transform: uppercase;
-    }
-
-.intro-content
-{
-    float: left;
-    width: 100%;
-    margin-top: 5%;
-    line-height: 110%;
-    font-size: 13px;
-    color: #003113;
-    text-align: justify;
-}
-
-    .intro-content p
-    {
-        font-size: 13px;
-        color: #003113;
-        text-align: justify;
-    }
-
-.intro-readmore
-{
-    float: left;
-    width: 100%;
-    margin-top: 4.843%;
-}
-
-.read-more
-{
-    float: right;
-    width: 22.791%;
-    padding: 3% 2%;
-    border-radius: 5px;
-    background-color: #003e05;
-}
-
-    .read-more span
-    {
-        float: left;
-        width: 100%;
-        color: #FFF;
-        font-size: 12px;
-        font-style: italic;
-        text-align: center;
-    }
-
+/*CSS For footer*/
 .footer
 {
     float: left;
     width: 100%;
-    height: 35px;
-    border-top: 1px solid #001c02;
-    background-color: rgba(0, 62, 5, 0.8);
+    height: 147px;
     position: fixed;
-    bottom: 0;
+    bottom: 0px;
 }
 
-l-footer, .r-footer
+.footer-wrap
 {
     float: left;
-    width: 50%;
-}
-
-.footer-wrapper
-{
-    float: left;
-    width: 81.481%;
-    margin-left: 9.259%;
+    width: 74.074%;
+    height: 8.163%;
+    margin-left: 12.693%;
+    margin-bottom: 7px;
+    position: absolute;
+    bottom: 0px;
     font-family: Arial;
     font-size: 12px;
-    color: #FFF;
+    color: #00488f;
 }
 
-    .footer-wrapper p:first-child
+    .footer-wrap p:first-child
     {
         float: left;
-        width: 50%;
-        margin-top: 13px;
+        height: 100%;
     }
 
-    .footer-wrapper p:last-child
+    .footer-wrap p:last-child
     {
-        float: left;
-        width: 50%;
-        text-align: right;
-        margin-top: 13px;
+        float: right;
+        height: 100%;
     }
 
-        .footer-wrapper p:last-child a
+        .footer-wrap p:last-child > a
         {
-            color: #FFF;
+            color: #00488f;
         }
 
-.left-small-wrapper
+.body
 {
     float: left;
     width: 100%;
-    height: 78%;
-    overflow: scroll;
-    display: none;
+    height: 100%;
 }
 
-#item1
-{
-    display: block;
-}
-
-.article-box
+.left, .right
 {
     float: left;
-    width: 80.952%;
-    height: 121px;
-    margin-left: 9.523%;
-    margin-bottom: 2.941%;
-    outline: 1px solid #fefefe;
-    position: relative;
-}
-
-.article-box-title
-{
-    float: left;
-    width: 100%;
-    height: 26.446%;
+    height: 70.588%;
     background-color: rgba(255,255,255,0.8);
     position: absolute;
-    bottom: 1px;
+    bottom: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-    .article-box-title h1
-    {
-        float: left;
-        width: 100%;
-        margin-top: 9px;
-        font-family: 'HongHaHep';
-        font-size: 15px;
-        color: #005706;
-        text-align: center;
-    }
+.left
+{
+    width: 25.9%;
+    margin-right: 2.9%;
+    left: 0px;
+}
 
-.paging
+.left-wrap
+{
+    float: left;
+    width: 80%;
+    height: 59%;
+    margin-left: 10%;
+    margin-top: 20%;
+    overflow: scroll;
+}
+
+.hnav, .hnav > ul
 {
     float: left;
     width: 100%;
-    margin-top: 5px;
-}
-
-.paging-wrapper
-{
-    float: left;
-    width: 25.714%;
-    margin-left: 37.142%;
-    height: 22px;
-}
-
-.paging-item
-{
-    float: left;
-    width: 40.74%;
     height: 100%;
-    margin-left: 9%;
 }
 
-    .paging-item span
+    .hnav > ul
     {
-        float: left;
-        width: 100%;
-        height: 100%;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        transition: all .3s ease-in-out;
     }
 
-.next
-{
-    background-image: url("/Design/next.png");
-}
-
-    .next:hover
-    {
-        background-image: url("/Design/bluenext.png");
-    }
-
-.pre
-{
-    background-image: url("/Design/pre.png");
-}
-
-    .pre:hover
-    {
-        background-image: url("/Design/bluepre.png");
-    }
-
-.figure
-{
-    float: left;
-    width: 57.478%;
-    height: 100%;
-    /*border-radius: 8px;*/
-}
-
-    .figure .flexslider, .figure .flexslider img
-    {
-        /*border-radius: 8px;*/
-    }
-
-        .figure .flexslider .flex-direction-nav
+        .hnav > ul > li
         {
-            display: block !important;
+            float: left;
+            width: 100%;
+            padding-bottom: 11px;
         }
 
-.articleslide .slides li > img.img
-{
-    border-radius: 6px;
-    width: 100.08%;
-    margin-left: -1px;
-}
+            .hnav > ul > li > a
+            {
+                font-family: Arial;
+                font-size: 15px;
+                color: #0359ad;
+            }
 
-.content
+.dot
 {
     float: left;
-    width: 39.555%;
-    height: 100%;
-    margin-left: 2.843%;
-    text-align: justify;
-    color: #00471b;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #085caf;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
-.content-header
+.sep
 {
     float: left;
     width: 100%;
-    border-bottom: 1px solid #00471b;
+    height: 1px;
+    margin-top: 11px;
+    background-image: url("/Design/sep.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-    .content-header h1
+.right
+{
+    width: 71%;
+    right: 0px;
+}
+
+.right-wrap
+{
+    float: left;
+    width: 91.5%;
+    height: 59.5%;
+    margin-left: 4.25%;
+    margin-top: 5%;
+    /*overflow: scroll;*/
+    overflow: hidden;
+}
+
+.block, .block-head, .block-body
+{
+    float: left;
+    width: 100%;
+}
+
+.block
+{
+    height: 100%;
+}
+
+.block-head
+{
+    padding-bottom: 22px;
+}
+
+    .block-head h1
     {
         float: left;
         width: 100%;
-        margin-bottom: 5px;
-        font-family: 'HongHaHep';
-        font-size: 20px;
+        font-family: "SanNeoIntel";
+        font-size: 25px;
+        color: #0359ad;
     }
 
-.content-body
+
+.block-body
 {
-    float: left;
-    width: 100%;
-    height: 79.113%;
-    overflow: scroll;
-    margin-top: 20px;
+    height: 83.7%;
     font-family: Arial;
     font-size: 13px;
+    color: #343434;
     text-align: justify;
-    line-height: 140%;
-}
-
-.text-center
-{
-    text-align: center;
-}
-
-.left-full-wrapper
-{
-    float: left;
-    width: 100%;
-    margin-top: 5%;
-    height: 73%;
+    line-height: 16px;
     overflow: scroll;
-    display: none;
 }
 
-.left-nav-item
-{
-    float: left;
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 71, 27, 0.3);
-    background-size: 0px 0px;
-    /*transition: all .1s ease-in-out;*/
-}
-
-    .left-nav-item h1
+    .block-body img
     {
         float: left;
-        width: 84.761%;
-        margin-left: 7.619%;
-        font-family: 'Tahoma';
-        font-size: 12px;
-        color: #003e05;
-        margin-top: 4.5%;
-        margin-bottom: 4.5%;
-        line-height: 130%;
+        margin-right: 9px;
+        margin-bottom: 5px;
     }
 
-    .left-nav-item:last-child
-    {
-        border: none;
-    }
-
-    .left-nav-item:hover
-    {
-        background-size: 100% 100%;
-        background-color: rgba(0, 87, 6, 0.7);
-    }
-
-        .left-nav-item:hover h1
-        {
-            color: #FFF;
-        }
-
-.item-active, .item-active:hover
-{
-    background-color: rgba(255,255,255,0.8);
-}
-
-    .item-active h1
-    {
-        font-weight: bold;
-    }
-
-    .item-active:hover h1
-    {
-        color: #003e05;
-    }
-
-
-.gallery-wrapper
+.contact-wrapper
 {
     float: left;
-    margin-left: -0.5%;
-    width: 100%;
-    height: 100%;
+    width: 91.5%;
+    height: 59.5%;
+    margin-left: 4.25%;
+    margin-top: 5%;
     overflow: scroll;
-}
-
-.picture-item
-{
-    float: left;
-    width: 23.774%;
-    height: 48.407%;
-    margin-left: 1.225%;
-    margin-bottom: 1.225%;
-}
-
-@media screen and (max-width : 1280px)
-{
-    .ss
-    {
-        /*visibility: hidden;*/
-        display: none;
-    }
-
-    .bs
-    {
-        /*visibility: visible;*/
-        display: block;
-    }
-}
-
-@media screen and (min-width : 1300px)
-{
-    .ss
-    {
-        /*visibility: visible;*/
-        display: block;
-    }
-
-    .bs
-    {
-        /*visibility: hidden;*/
-        display: none;
-    }
 }

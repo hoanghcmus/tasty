@@ -39,7 +39,7 @@ public partial class Admin_MgerVideo : System.Web.UI.Page
         string trang = Request.QueryString["Page"] ?? "1";
         string firstPageUrl = "";
         string pagerFormat = "";
-        dlListVideo.DataSource = ImageAndClips.LayTheoTheLoai("18", trang, out howManyPages);
+        dlListVideo.DataSource = ImageAndClips.LayTheoTheLoai("5", trang, out howManyPages);
         dlListVideo.DataBind();
         firstPageUrl = Link.MgerVideo();
         pagerFormat = Link.MgerVideo("{0}");

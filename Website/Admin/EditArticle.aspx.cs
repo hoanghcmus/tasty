@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,7 +11,6 @@ using DataAccess.Help;
 public partial class Admin_EditArticle : System.Web.UI.Page
 {
     #region Load du lieu len web
-    public static List<Img> album;
     private int KiemTraSession()
     {
         int kq = 0;
@@ -28,13 +28,12 @@ public partial class Admin_EditArticle : System.Web.UI.Page
         //Load CKFinder vao CKEditor
         txtckeditorVn.Language = "vi";
 
-        txtckeditorCn.Language = "vi";
+
 
         CKFinder.FileBrowser _FileBrowser = new CKFinder.FileBrowser();
         _FileBrowser.BasePath = "ckfinder";
         _FileBrowser.SetupCKEditor(txtckeditorVn);
 
-        _FileBrowser.SetupCKEditor(txtckeditorCn);
     }
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -44,20 +43,12 @@ public partial class Admin_EditArticle : System.Web.UI.Page
             if (!IsPostBack)
             {
                 //Load du lieu form
-                album = new List<Img>();
                 LoadLoaiMenu();
                 PopulateControls();
             }
         }
         else
             Response.Redirect("~/Admin/Admin.aspx");
-    }
-    private void LoadLoaiMenu()
-    {
-        ddlLoaiMenu.DataValueField = "ID";
-        ddlLoaiMenu.DataTextField = "TieuDe_Vn";
-        ddlLoaiMenu.DataSource = TheLoai.LayTheoModule("1");
-        ddlLoaiMenu.DataBind();
     }
 
     private void LoadTheLoai()
@@ -102,6 +93,44 @@ public partial class Admin_EditArticle : System.Web.UI.Page
         {
         }
     }
+    private void LoadLoaiMenu()
+    {
+        ddlLoaiMenu.DataValueField = "ID";
+        ddlLoaiMenu.DataTextField = "TieuDe_Vn";
+
+        List<TheLoai> listTL = TheLoai.LayTheoModule("1");
+        if (listTL != null && listTL.Count > 0)
+        {
+            foreach (TheLoai tl in listTL)
+            {
+                tl.TieuDe_Vn = UCFirst(ShowTitle(tl.TieuDe_Vn).Trim().ToLower());
+            }
+        }
+
+        ddlLoaiMenu.DataSource = listTL;
+        ddlLoaiMenu.DataBind();
+    }
+
+    public string ShowTitle(string title)
+    {
+        return DecodeHTML(HttpUtility.HtmlDecode(title));
+    }
+
+    public string DecodeHTML(string chuoi)
+    {
+        Regex regex = new Regex("\\<[^\\>]*\\>");
+        chuoi = regex.Replace(chuoi, String.Empty);
+        return chuoi;
+    }
+
+    protected string UCFirst(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            return string.Empty;
+        }
+        return char.ToUpper(s[0]) + s.Substring(1);
+    }
     #endregion
 
     #region Luu Bai Viet
@@ -109,52 +138,7 @@ public partial class Admin_EditArticle : System.Web.UI.Page
     {
         base.OnInit(e);
         btnLuu.Click += new EventHandler(btnLuu_Click);
-        btnaddimg.Click += new EventHandler(btnaddimg_Click);
-        dlListImg.ItemCommand += new DataListCommandEventHandler(dlListImg_ItemCommand);
     }
-    void btnaddimg_Click(object sender, EventArgs e)
-    {
-        Label1.Text = "";
-        if (txtHinhAnh.Text != "")
-        {
-            int stt;
-            if (album == null)
-            {
-                stt = 0;
-                album = new List<Img>();
-            }
-            else
-                stt = album.Count;
-            Img dataimg = new Img();
-            dataimg.ID = stt;
-            dataimg.HinhAnh = txtHinhAnh.Text.Trim();
-            album.Add(dataimg);
-            dlListImg.DataSource = album;
-            dlListImg.DataBind();
-            txtHinhAnh.Text = "";
-        }
-        else
-            lbhinhanh.Visible = true;
-    }
-
-    void dlListImg_ItemCommand(object source, DataListCommandEventArgs e)
-    {
-        if (e.CommandName == "Deleteimg")
-        {
-            string s = e.CommandArgument.ToString();
-            foreach (var item in album)
-            {
-                if (item.ID.ToString().CompareTo(s) == 0)
-                {
-                    album.Remove(item);
-                    break;
-                }
-            }
-            dlListImg.DataSource = album;
-            dlListImg.DataBind();
-        }
-    }
-
     public int KiemTraDieuKien()
     {
         int kq;
@@ -166,11 +150,6 @@ public partial class Admin_EditArticle : System.Web.UI.Page
                 kq = 0;
             }
 
-            else if (txtckeditorCn.Text == "")
-            {
-                Label1.Text = "Chưa nhập nội dung bài viết 'China'!";
-                kq = 0;
-            }
             else
                 kq = 1;
             return kq;
@@ -181,52 +160,19 @@ public partial class Admin_EditArticle : System.Web.UI.Page
     private void ResetForm()
     {
         txtTieuDeVn.Text = "";
-        txtTieuDe_Cn.Text = "";
-
-
         txtTomTatVn.Text = "";
-
-        txtTomTat_Cn.Text = "";
-
         txtHinhAnh.Text = "";
         txtckeditorVn.Text = "";
 
-        txtckeditorCn.Text = "";
+
     }
     private void SetData(BaiViet data)
     {
         lblId.Text = data.ID.ToString();
         txtTieuDeVn.Text = data.TieuDe_Vn;
-        txtTieuDe_Cn.Text = data.TieuDe_Cn;
-
-
         txtTomTatVn.Text = data.TomTat_Vn;
-
-        txtTomTat_Cn.Text = data.TomTat_Cn;
-
-        album = new List<Img>();
-        int idimg = 0;
-        string listimg = data.HinhAnh;
-        string[] str = listimg.Split('\'');
-        foreach (var item in str)
-        {
-            if (item.ToString() != "")
-            {
-                Img dataimg = new Img();
-                dataimg.ID = idimg;
-                dataimg.HinhAnh = item.ToString();
-                album.Add(dataimg);
-                idimg++;
-            }
-        }
-        dlListImg.DataSource = album;
-        dlListImg.DataBind();
-
-
+        txtHinhAnh.Text = data.HinhAnh;
         txtckeditorVn.Text = data.ChiTiet_Vn;
-
-        txtckeditorCn.Text = data.ChiTiet_Cn;
-
         ddlLoaiMenu.SelectedValue = data.IDTheLoai.ToString();
     }
     private BaiViet GetData()
@@ -247,25 +193,16 @@ public partial class Admin_EditArticle : System.Web.UI.Page
             data.NgayTao = DateTime.Now.ToShortDateString();
             data.NguoiTao = Session["TenDangNhap"].ToString();
         }
-        data.TieuDe_Vn = txtTieuDeVn.Text;
-        data.TieuDe_Cn = txtTieuDe_Cn.Text;
-
-
         data.TomTat_Vn = txtTomTatVn.Text;
-
-        data.TomTat_Cn = txtTomTat_Cn.Text;
-
-        //Xử lý hình ảnh
-        string datalistimg = "";
-        foreach (var item in album)
-            datalistimg += item.HinhAnh + "'";
-
-        data.HinhAnh = datalistimg;
-        //Xử lý hình ảnh
-
+        data.TieuDe_Vn = txtTieuDeVn.Text;
+        data.TieuDe_Cn = "";
+        data.TieuDe_Ru = "";
+        data.TomTat_Ru = "";
+        data.TomTat_Cn = "";
+        data.HinhAnh = txtHinhAnh.Text; ;
         data.ChiTiet_Vn = txtckeditorVn.Text;
-
-        data.ChiTiet_Cn = txtckeditorCn.Text;
+        data.ChiTiet_Ru = "";
+        data.ChiTiet_Cn = "";
 
         data.TrangThai = 1;
         data.IDTheLoai = ConvertType.ToInt32(ddlLoaiMenu.SelectedValue.Trim());

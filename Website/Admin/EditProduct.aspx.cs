@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess.Help;
 using DataAccess.Classes;
+using System.Text.RegularExpressions;
+using DataAccess.StringUtil;
 
 public partial class Admin_EditProduct : System.Web.UI.Page
 {
@@ -27,13 +29,11 @@ public partial class Admin_EditProduct : System.Web.UI.Page
     {
         //Load CKFinder vao CKEditor
         txtChiTietVn.Language = "vi";
-        txtChiTietEn.Language = "vi";
-        txtChiTietRu.Language = "vi";
+
         CKFinder.FileBrowser _FileBrowser = new CKFinder.FileBrowser();
         _FileBrowser.BasePath = "ckfinder";
         _FileBrowser.SetupCKEditor(txtChiTietVn);
-        _FileBrowser.SetupCKEditor(txtChiTietEn);
-        _FileBrowser.SetupCKEditor(txtChiTietRu);
+
     }
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -55,9 +55,41 @@ public partial class Admin_EditProduct : System.Web.UI.Page
     {
         ddlLoaiMenu.DataValueField = "ID";
         ddlLoaiMenu.DataTextField = "TieuDe_Vn";
-        ddlLoaiMenu.DataSource = TheLoai.LayTheoModule("3");
+
+        List<TheLoai> listTL = TheLoai.LayTheoModule("3");
+        if (listTL != null && listTL.Count > 0)
+        {
+            foreach (TheLoai tl in listTL)
+            {
+                tl.TieuDe_Vn = UCFirst(ShowTitle(tl.TieuDe_Vn).Trim().ToLower());
+            }
+        }
+
+        ddlLoaiMenu.DataSource = listTL;
         ddlLoaiMenu.DataBind();
     }
+
+    public string ShowTitle(string title)
+    {
+        return DecodeHTML(HttpUtility.HtmlDecode(title));
+    }
+
+    public string DecodeHTML(string chuoi)
+    {
+        Regex regex = new Regex("\\<[^\\>]*\\>");
+        chuoi = regex.Replace(chuoi, String.Empty);
+        return chuoi;
+    }
+
+    protected string UCFirst(string s)
+    {
+        if (string.IsNullOrEmpty(s))
+        {
+            return string.Empty;
+        }
+        return char.ToUpper(s[0]) + s.Substring(1);
+    }
+
     private void PopulateControls()
     {
         try
@@ -67,18 +99,18 @@ public partial class Admin_EditProduct : System.Web.UI.Page
             if (id != "")
             {
                 //lay Khao sat theo gia tri id
-                Phong data = Phong.Single(id);
+                DataAccess.Classes.Product data = DataAccess.Classes.Product.Single(id);
                 if (data == null)
                     Response.Redirect("~/Admin/MgerProduct.aspx");
                 //Dat ten trang web
-                lbTitle01.Text = "Cập nhật phòng ";
-                lbTitle02.Text = "Cập nhật phòng '" + id + "'";
+                lbTitle01.Text = "Cập nhật sản phẩm ";
+                lbTitle02.Text = "Cập nhật sản phẩm '" + id + "'";
                 SetData(data);
             }
             else
             {
-                lbTitle01.Text = "Thêm mới phòng";
-                lbTitle02.Text = "Thêm mới phòng";
+                lbTitle01.Text = "Thêm mới sản phẩm";
+                lbTitle02.Text = "Thêm mới sản phẩm";
             }
         }
         catch (Exception)
@@ -148,47 +180,42 @@ public partial class Admin_EditProduct : System.Web.UI.Page
     }
     private void ResetForm()
     {
-        txtSoluongPhong.Text = "";
+        txtMaSanPham.Text = "";
         txtTieuDe_Vi.Text = "";
         txtTomTatVn.Text = "";
         txtChiTietVn.Text = "";
-        txtTieuDe_En.Text = "";
-        txtTieuDe_Ru.Text = "";
-        txtTomTatEn.Text = "";
-        txtTomTatRu.Text = "";
-        txtChiTietEn.Text = "";
-        txtChiTietRu.Text = "";
-        txtNguoiLon.Text = "";
-        txtTreEm.Text = "";
         txtHinhNho.Text = "";
         txtDonGia.Text = "";
-        ckbTrangChu.Checked = false;
+        txtGiamGia.Text = "";
+        txtXuatXu.Text = "";
+        txtBaoHanh.Text = "";
         dlListImg.DataSource = album;
         dlListImg.DataBind();
     }
-    private void SetData(Phong data)
+    protected string showMoney(decimal input)
+    {
+        return StringUltility.createMoneyString(input.ToString("#"));
+    }
+    private void SetData(DataAccess.Classes.Product data)
     {
         lblId.Text = data.ID.ToString();
-        txtSoluongPhong.Text = data.Amount;
-        txtTieuDe_Vi.Text = data.Name_Vn;
-        txtChiTietVn.Text = data.Detail_Vn;
-        txtTomTatVn.Text = data.Description_Vn;
-        txtTieuDe_En.Text = data.Name_En;
-        txtChiTietEn.Text = data.Detail_En;
-        txtTomTatEn.Text = data.Description_En;
-        txtTieuDe_Ru.Text = data.Name_Ru;
-        txtChiTietRu.Text = data.Detail_Ru;
-        txtTomTatRu.Text = data.Description_Ru;
-        txtNguoiLon.Text = data.AdultAmount.ToString();
-        txtTreEm.Text = data.ChildAmount.ToString();
+        ddlLoaiMenu.SelectedValue = data.ProductCategoryID.ToString();
+        txtMaSanPham.Text = data.ProductCode;
+        txtTieuDe_Vi.Text = data.ProductName;
+        txtTomTatVn.Text = data.Description;
+        txtChiTietVn.Text = data.Detail;
         txtHinhNho.Text = data.Thumbnail;
-        if (data.Price <= 0)
-            txtDonGia.Text = "0";
+        txtDonGia.Text = showMoney(data.OldPrice).ToString();
+
+        txtGiamGia.Text = data.Discount.ToString();
+        txtXuatXu.Text = data.Origin;
+        txtBaoHanh.Text = data.Guarantee;
+
+        if (data.IsNew == 1)
+            ckbSanPhamMoi.Checked = true;
         else
-            txtDonGia.Text = String.Format("{0:#.##}", data.Price);
-        ddlLoaiMenu.SelectedValue = data.MenuID.ToString();
-        if (data.PromoFront == true)
-            ckbTrangChu.Checked = true;
+            ckbSanPhamMoi.Checked = false;
+
         int idimg = 0;
         string listimg = data.Image;
         string[] str = listimg.Split('\'');
@@ -206,36 +233,47 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         dlListImg.DataSource = album;
         dlListImg.DataBind();
     }
-    private Phong GetData()
+    private DataAccess.Classes.Product GetData()
     {
-        Phong data = null;
+        DataAccess.Classes.Product data = null;
         if (lblId.Text != "")
-            data = Phong.Single(lblId.Text);
+            data = DataAccess.Classes.Product.Single(lblId.Text);
         else
-            data = new Phong();
-        data.Amount = txtSoluongPhong.Text;
-        data.Name_Vn = txtTieuDe_Vi.Text;
-        data.Description_Vn = txtTomTatVn.Text;
-        data.Detail_Vn = txtChiTietVn.Text;
-        data.Name_En = txtTieuDe_En.Text;
-        data.Description_En = txtTomTatEn.Text;
-        data.Detail_En = txtChiTietEn.Text;
-        data.Name_Ru = txtTieuDe_Ru.Text;
-        data.Description_Ru = txtTomTatRu.Text;
-        data.Detail_Ru = txtChiTietRu.Text;
-        data.AdultAmount = Convert.ToInt32(txtNguoiLon.Text);
-        data.ChildAmount = Convert.ToInt32(txtTreEm.Text);
+            data = new DataAccess.Classes.Product();
+        data.ProductCategoryID = Convert.ToInt32(ddlLoaiMenu.SelectedValue.Trim());
+        data.ProductCode = txtMaSanPham.Text.Trim();
+        data.ProductName = txtTieuDe_Vi.Text.Trim();
+        data.Description = txtTomTatVn.Text.Trim();
+        data.Detail = txtChiTietVn.Text.Trim();
+
+        decimal oldPrice = Convert.ToDecimal(txtDonGia.Text.Trim());
+        data.OldPrice = oldPrice;
+        int discount = Convert.ToInt32(txtGiamGia.Text.Trim());
+        data.Discount = discount;
+        if (data.Discount != null && data.Discount > 0)
+        {
+            decimal disPercent = (decimal)discount / 100;
+            decimal disPrice = oldPrice * disPercent;
+            data.NewPrice = oldPrice - disPrice;
+        }
+        else
+        {
+            data.NewPrice = data.OldPrice;
+        }
+
         data.Thumbnail = txtHinhNho.Text;
-        data.Price = Convert.ToDecimal(txtDonGia.Text);
-        if (ckbTrangChu.Checked)
-            data.PromoFront = true;
-        else
-            data.PromoFront = false;
-        data.MenuID = ConvertType.ToInt32(ddlLoaiMenu.SelectedValue.Trim());
         string datalistimg = "";
         foreach (var item in album)
             datalistimg += item.HinhAnh + "'";
         data.Image = datalistimg;
+
+        data.Origin = txtXuatXu.Text.Trim();
+        data.Guarantee = txtBaoHanh.Text.Trim();
+        if (ckbSanPhamMoi.Checked)
+            data.IsNew = 1;
+        else
+            data.IsNew = 0;
+
         return data;
     }
     void btnLuu_Click(object sender, EventArgs e)
@@ -245,37 +283,37 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         {
             bool rs = false;
             //lay du lieu tu form
-            Phong data = GetData();
+            DataAccess.Classes.Product data = GetData();
             //ID>0 ==> cap nhat va hien thong bao
             if (data.ID > 0)
             {
-                rs = Phong.Update(data);
-                Label1.Text = rs ? "Cập nhật phòng thành công!" : "Cập nhật phòng thất bại!";
+                rs = DataAccess.Classes.Product.Update(data);
+                Label1.Text = rs ? "Cập nhật sản phẩm thành công!" : "Cập nhật sản phẩm thất bại!";
                 if (rs)
                 {
                     album = new List<Img>();
                     //lay du lieu moi nhat Db
-                    data = Phong.Single(lblId.Text);
+                    data = DataAccess.Classes.Product.Single(lblId.Text);
                     SetData(data);
                     //Cap nhat hanh dong dang nhap
-                    CapNhatHanhDong("Cập nhật phòng (id: " + lblId.Text + ")");
+                    CapNhatHanhDong("Cập nhật sản phẩm (id: " + lblId.Text + ")");
                 }
             }
             else
             {
-                bool rst = Phong.Add(data);
+                bool rst = DataAccess.Classes.Product.Add(data);
                 if (rst)
                 {
                     album = new List<Img>();
                     //Cap nhat hanh dong dang nhap
-                    CapNhatHanhDong("Thêm phòng (id: " + rst + ")");
+                    CapNhatHanhDong("Thêm sản phẩm (id: " + rst + ")");
                     //Thong bao them thanh cong
-                    Label1.Text = "Thêm phòng thành công!";
+                    Label1.Text = "Thêm sản phẩm thành công!";
                     ResetForm();
                 }
                 else
                 {
-                    Label1.Text = "Thêm phòng thất bại!";
+                    Label1.Text = "Thêm sản phẩm thất bại!";
                 }
             }
         }

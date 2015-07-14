@@ -1,7 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MasterHasSlide.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MasterPage.master" AutoEventWireup="true"
     CodeFile="Contact.aspx.cs" Inherits="Vn_Contact" %>
-
-<%@ Register Src="~/View/UserControl/UC_Paging.ascx" TagName="UC_Paging" TagPrefix="uc1" %>
 
 <asp:Content ID="ContentHeader" runat="server" ContentPlaceHolderID="HeadExtender">
     <link href="/Styles/CSS/Desktop.Contact.css" rel="stylesheet" />
@@ -10,40 +8,26 @@
     <link href="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css" rel="stylesheet" />
     <link href="/Styles/FancyBox-2.1.5/source/jquery.fancybox.css" rel="stylesheet" />
 </asp:Content>
-
-
-<asp:Content ID="Left" runat="server" ContentPlaceHolderID="LeftContentHolder">
-    <div class="contact-info">
-        <asp:Literal ID="ltBaiVietGioiThieu" runat="server"></asp:Literal>
-    </div>
-    <div class="body-left-under-title">
-        <h1>
-            <asp:Literal ID="ltrCatName" runat="server"></asp:Literal></h1>
-    </div>
-
-</asp:Content>
-
-<asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="Server">
-
+<asp:Content ID="ContentMain" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="contact-wrapper">
-
-        <p style="line-height: 130%;">
-            <%=Resources.Resource.contact_message %>
+        <p style="text-align: justify; font-family: Tahoma; font-size: 14px; color: #414141; line-height: 18px;">
+            Xin quý khách vui lòng để lại thông tin và nội dung liên hệ cho chúng tôi theo form bên dưới.
         </p>
 
         <div class="contact">
             <%-- View maps --%>
-            <a class="map-direction" data-fancybox-type="iframe" href="/<%=Session["lang"].ToString() %>/map.html"><%=Resources.Resource.view_map %></a>
+            <a class="map-direction" data-fancybox-type="iframe" href="/map.html">Xem bản đồ đường đi</a>
             <asp:UpdatePanel ID="UpdatePanelContact" runat="server">
                 <ContentTemplate>
                     <table>
                         <tr>
                             <td colspan="2">
+                                <asp:Label ID="succesfull" runat="server" Text="Label" Visible="false" CssClass="succesfull" />
                                 <asp:Label ID="lbtitle" runat="server" Text="Label" Visible="false" CssClass="titletb" />
                             </td>
                         </tr>
                         <tr>
-                            <td><b><%=Resources.Resource.fullname %> :</b>
+                            <td><b>Họ tên:</b>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtHoTen" runat="server" CssClass="txt"></asp:TextBox>
@@ -52,7 +36,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><b><%=Resources.Resource.email %> :</b>
+                            <td><b>Email :</b>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtEmail" runat="server" CssClass="txt" />
@@ -64,7 +48,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><b><%=Resources.Resource.address %> :</b>
+                            <td><b>Địa chỉ :</b>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtDiaChi" runat="server" CssClass="txt" />
@@ -73,7 +57,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><b><%=Resources.Resource.title %> :</b>
+                            <td><b>Tiêu đề :</b>
                             </td>
                             <td>
                                 <asp:TextBox ID="txtTieuDe" runat="server" CssClass="txt" />
@@ -82,7 +66,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td valign="top"><b><%=Resources.Resource.content %>:</b>
+                            <td valign="top"><b>Nội dung:</b>
                             </td>
                             <td valign="top">
                                 <asp:TextBox ID="txtNoiDung" runat="server" TextMode="MultiLine" CssClass="txtnd"></asp:TextBox>
@@ -97,7 +81,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td valign="bottom"><b><%=Resources.Resource.confirm_code %>:</b>
+                            <td valign="bottom"><b>Mã xác nhận:</b>
                             </td>
                             <td style="position: relative;">
                                 <asp:TextBox ID="txtInputString" runat="server" CssClass="txtmin"></asp:TextBox>
@@ -109,8 +93,7 @@
                         <tr>
                             <td class="td"></td>
                             <td colspan="2">
-                                <asp:Button ID="btnGui" runat="server" Text="<%$Resources:Resource,submit %>" CssClass="btn" OnClick="btnbtnGui_Click" ValidationGroup="contact" />
-                                <asp:Label ID="succesfull" runat="server" Text="Label" Visible="false" CssClass="succesfull" />
+                                <asp:Button ID="btnGui" runat="server" Text="Gửi liên hệ" CssClass="btn" OnClick="btnbtnGui_Click" ValidationGroup="contact" />
                             </td>
                         </tr>
                     </table>
@@ -118,18 +101,10 @@
             </asp:UpdatePanel>
         </div>
 
-
     </div>
-
 </asp:Content>
 
 <asp:Content ID="ContentFooter" runat="server" ContentPlaceHolderID="FootExtender">
-    <script src="/Styles/FancyBox-2.1.5/lib/jquery.mousewheel-3.0.6.pack.js" type="text/javascript"></script>
-    <script src="/Styles/FancyBox-2.1.5/source/jquery.fancybox.pack.js" type="text/javascript"></script>
-    <script src="/Styles/FancyBox-2.1.5/source/jquery.fancybox.js" type="text/javascript"></script>
-    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-buttons.js" type="text/javascript"></script>
-    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-media.js" type="text/javascript"></script>
-    <script src="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -148,11 +123,10 @@
 
     </script>
 
+    <%--Scroll down ...px  --%>
     <script type="text/javascript">
-        $(document).ready(
-        function () {
-            $(".contact-wrapper").niceScroll();
+        $(document).ready(function () {
+            $(window).scrollTop(648);
         });
-
     </script>
 </asp:Content>

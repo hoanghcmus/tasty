@@ -26,7 +26,7 @@ namespace DataAccess.Classes
             try
             {
                 object rs = DataProvider.Instance.ExecuteNonQueryWithOutput("@ID", "HoTro_Them",
-                    hoTro.ID, hoTro.Ten_Vn, hoTro.Ten_En, hoTro.Ten_Ru, hoTro.SDT, hoTro.Khac, hoTro.Ten_Cn);
+                    hoTro.ID, hoTro.Ten_Vn, hoTro.Ten_En, hoTro.Ten_Ru, hoTro.SDT, hoTro.Khac);
                 return Convert.ToInt32(rs) > 0;
             }
             catch
@@ -47,7 +47,7 @@ namespace DataAccess.Classes
             try
             {
                 object rs = DataProvider.Instance.ExecuteNonQuery("HoTro_Sua",
-                    hoTro.ID, hoTro.Ten_Vn, hoTro.Ten_En, hoTro.Ten_Ru, hoTro.SDT, hoTro.Khac, hoTro.Ten_Cn);
+                    hoTro.ID, hoTro.Ten_Vn, hoTro.Ten_En, hoTro.Ten_Ru, hoTro.SDT, hoTro.Khac);
                 return Convert.ToInt32(rs) > 0;
             }
             catch

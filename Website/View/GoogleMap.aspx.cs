@@ -4,9 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using MultipleLanguage;
 
-public partial class View_GoogleMap : BasePage
+public partial class View_GoogleMap : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

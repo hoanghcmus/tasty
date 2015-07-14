@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.master" AutoEventWireup="true"
     CodeFile="EditMenu.aspx.cs" Inherits="Admin_EditMenu" %>
 
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -82,33 +83,56 @@
                             <tr>
                                 <td class="text" valign="top">
                                     <br />
-                                    Tiêu đề (Tiếng việt):
+                                    Tiêu đề :
                                 </td>
                                 <td>
-                                    <asp:CustomValidator ID="valTieuDeVn" ControlToValidate="txtTieuDeVn" Text="(Tiêu đề 'Tiếng việt' < 50 ký tự)"
-                                        runat="server" OnServerValidate="valTieuDeVn_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtTieuDeVn" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox><asp:RequiredFieldValidator
-                                        ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtTieuDeVn" CssClass="red">( * )</asp:RequiredFieldValidator>
+                                    <CKEditor:CKEditorControl ID="txtTieuDeVn" runat="server" Height="70" CssClass="" Toolbar="Basic">
+                                    </CKEditor:CKEditorControl>
+                                    <asp:RequiredFieldValidator
+                                        ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtTieuDeVn" CssClass="red">( ** )</asp:RequiredFieldValidator>
+
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td class="text" valign="top">
                                     <br />
-                                    Tiêu đề (China):
+                                    Thiết lập độ rộng menu:
                                 </td>
                                 <td>
-                                    <asp:CustomValidator ID="valTieuDeCn" ControlToValidate="txtTieuDeCn" Text="(Tiêu đề 'China' < 50 ký tự)"
-                                        runat="server" OnServerValidate="valTieuDeRu_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtTieuDeCn" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtTieuDeCn"
-                                        CssClass="red">( * )</asp:RequiredFieldValidator>
+                                    <asp:TextBox ID="txtWidth" runat="server" CssClass="txtNewMin"></asp:TextBox>
+                                    px
+                                    <asp:CompareValidator ID="validator" runat="server" ControlToValidate="txtWidth" Operator="DataTypeCheck" Type="Double" ErrorMessage="Giá trị nhập vào phải là số" />
                                 </td>
                             </tr>
+
+
                             <tr>
                                 <td class="text" valign="top">
                                     <br />
-                                    Mô tả menu (Tiếng việt):
+                                    Thiết lập viền cho tiêu đề:
+                                </td>
+                                <td>
+                                    <asp:Panel ID="BorderSelect" runat="server" Width="451px" CssClass="border-pannel">
+                                        <asp:CheckBox ID="ckbBorderTop" runat="server" Text="Viền trên" Checked="true" />
+                                        <asp:CheckBox ID="ckbBorderBottom" runat="server" Text="Viền dưới" Checked="true" />
+                                        <asp:CheckBox ID="ckbBorderLeft" runat="server" Text="Viền trái" Checked="true" />
+                                        <asp:CheckBox ID="ckbBorderRight" runat="server" Text="Viền phải" Checked="true" />
+
+                                    </asp:Panel>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <span><i style="color: red;"><b>Lưu ý:</b> Thiết lập viền và độ rộng chỉ áp dụng cho menu ngang (cấp 1) </i></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td class="text" valign="top">
+                                    <br />
+                                    Mô tả menu :
                                 </td>
                                 <td>
                                     <asp:CustomValidator ID="valmotaVn" ControlToValidate="txtmoTaVn" Text="(Mô tả 'Tiếng việt' < 150 ký tự)"
@@ -118,24 +142,11 @@
                                         CssClass="red">( * )</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td class="text" valign="top">
                                     <br />
-                                    Mô tả menu (China):
-                                </td>
-                                <td>
-                                    <asp:CustomValidator ID="valmotaCn" ControlToValidate="txtmoTaCn" Text="(Mô tả 'China' < 150 ký tự)"
-                                        runat="server" OnServerValidate="valmotaRu_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtmoTaCn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtmoTaCn"
-                                        CssClass="red">( * )</asp:RequiredFieldValidator>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text" valign="top">
-                                    <br />
-                                    Đường dẫn (Tiếng việt):
+                                    Đường dẫn :
                                 </td>
                                 <td>
                                     <asp:CustomValidator ID="CustomValidator2" ControlToValidate="txtDuongDanVn" Text="(Đường dẫn 'Tiếng việt' < 200 ký tự)"
@@ -145,20 +156,7 @@
                                         CssClass="red">( * )</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
-                            
-                            <tr>
-                                <td class="text" valign="top">
-                                    <br />
-                                    Đường dẫn (China):
-                                </td>
-                                <td>
-                                    <asp:CustomValidator ID="CustomValidator4" ControlToValidate="txtDuongDanCn" Text="(Đường dẫn 'China' < 200 ký tự)"
-                                        runat="server" OnServerValidate="valDuongDanRu_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtDuongDanCn" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtDuongDanCn"
-                                        CssClass="red">( * )</asp:RequiredFieldValidator>
-                                </td>
-                            </tr>
+
                             <tr>
                                 <td class="text" valign="top">Vị trí:
                                 </td>
@@ -177,14 +175,7 @@
                                         type="button" value="Duy&#7879;t file" class="btnedit" />
                                 </td>
                             </tr>
-                            <%--<tr class="text">
-                                <td>
-                                    Thêm hiển thị menu cuối website:
-                                </td>
-                                <td>
-                                    <asp:CheckBox ID="ckbFooter" runat="server" Text="Có" />
-                                </td>
-                            </tr>--%>
+
                             <tr>
                                 <td colspan="2">
                                     <asp:Button ID="btnLuu" runat="server" Text="Lưu menu" CssClass="btnedit" />

@@ -46,39 +46,6 @@ namespace DataAccess.Help
                 return "";
             return "(" + date.Value.ToString("dd/MM/yyyy") + ")";
         }
-        public static string DateToLong()
-        {
-            string date = "";
-            string time = DateTime.Now.DayOfWeek.ToString();
-            switch (time)
-            {
-                case "Monday":
-                    date = "Thứ hai";
-                    break;
-                case "Tuesday":
-                    date = "Thứ ba";
-                    break;
-                case "Wednesday":
-                    date = "Thứ tư";
-                    break;
-                case "Thursday":
-                    date = "Thứ năm";
-                    break;
-                case "Friday":
-                    date = "Thứ sáu";
-                    break;
-                case "Saturday":
-                    date = "Thứ bảy";
-                    break;
-                case "Sunday":
-                    date = "Chủ nhật";
-                    break;
-                default:
-                    date = time;
-                    break;
-            }
-            return date + ", ngày " + DateTime.Now.ToString("dd/MM/yyyy");
-        }
         //dinh dang kieu Nam, nu
         public static string ToGioiTinh(Boolean? date)
         {
@@ -310,10 +277,11 @@ namespace DataAccess.Help
 
             return sInput;
         }
-
         public static string ToThumb(string source)
         {
             source = source ?? "";
+            //if (string.IsNullOrEmpty(source.Trim()))
+            //    return Config.DefaultImagePath;
             if (source.StartsWith("/Uploads/"))
             {
                 if (!source.StartsWith("/Uploads/_thumbs/"))
@@ -322,11 +290,6 @@ namespace DataAccess.Help
             return source;
         }
 
-        public static string ToLarge(string source)
-        {
-            source = source ?? "";
-            return source.Replace("/slideshow/", "/bslideshow/");
-        }
 
     }
 }

@@ -692,6 +692,8 @@ namespace DataAccess.Connect
         {
             return MgerDatTourState(_TinhTrang, "1");
         }
+
+
         public static string MgerDatTour(string _Trang)
         {
             if (_Trang == "1")
@@ -703,6 +705,34 @@ namespace DataAccess.Connect
         {
             return MgerDatTour("1");
         }
+
+
+
+        public static string MgerShoppingState(string _TinhTrang, string _Trang)
+        {
+            if (_Trang == "1")
+                return String.Format("Admin/MgerShopping.aspx?TinhTrang={0}", _TinhTrang);
+            else
+                return String.Format("Admin/MgerShopping.aspx?TinhTrang={0}&Trang={1}", _TinhTrang, _Trang);
+        }
+
+        public static string MgerShoppingState(string _TinhTrang)
+        {
+            return MgerShoppingState(_TinhTrang, "1");
+        }
+
+        public static string MgerShopping(string _Trang)
+        {
+            if (_Trang == "1")
+                return String.Format("Admin/MgerShopping.aspx");
+            else
+                return String.Format("Admin/MgerShopping.aspx?Trang={0}", _Trang);
+        }
+        public static string MgerShopping()
+        {
+            return MgerShopping("1");
+        }
+
         #endregion
     }
 }

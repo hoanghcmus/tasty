@@ -31,17 +31,10 @@ public partial class Admin_Admin : System.Web.UI.Page
     }
     private void PopulateControls()
     {
-        //if (KiemTraSession() == 1)
-        //{
-        //    UC_ThongKeNguoiDung3.Visible = true;
-        //}
 
         lblienHe.Text = LienHe.Dem().ToString();
         lbbaiViet.Text = BaiViet.DemTheoModule("1").ToString();
-        //lbdt.Text = DatTiec.DemTheoTrangThai("0").ToString();
-
-        //lbshop.Text = DatPhong.DemTheoTrangThai("0").ToString();
-        //lbTour.Text = DatTour.DemTheoTrangThai("0").ToString();
-        //lbalbum.Text = ImageAndClips.DemTheoTheLoai("14").ToString();
+        lbdh.Text = Shopping.DemTheoTrangThai("0").ToString();
+        lbsp.Text = DataAccess.Classes.Product.Count().ToString();
     }
 }

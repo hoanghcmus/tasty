@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,7 @@
     <Compile Include="Classes\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Classes\Customer.cs" />
     <Compile Include="Classes\DangNhap.cs" />
     <Compile Include="Classes\DatPhong.cs" />
     <Compile Include="Classes\DatTiec.cs" />
@@ -60,26 +62,34 @@
     <Compile Include="Classes\Module.cs" />
     <Compile Include="Classes\NguoiDung.cs" />
     <Compile Include="Classes\NhomNguoiDung.cs" />
+    <Compile Include="Classes\Orders.cs" />
+    <Compile Include="Classes\OrdersDetail.cs" />
     <Compile Include="Classes\PhanNhom.cs" />
     <Compile Include="Classes\Phong.cs" />
+    <Compile Include="Classes\Product.cs" />
+    <Compile Include="Classes\SessionCart.cs" />
+    <Compile Include="Classes\Shopping.cs" />
     <Compile Include="Classes\SlideShow.cs" />
     <Compile Include="Classes\TheLoai.cs" />
     <Compile Include="Classes\ThongKeTruyCap.cs" />
     <Compile Include="Classes\ThongTinNguoiDung.cs" />
+    <Compile Include="Classes\TimKiem.cs" />
     <Compile Include="Classes\Tour.cs" />
-    <Compile Include="Classes\User.cs" />
     <Compile Include="Connect\ConnectData.cs" />
     <Compile Include="Connect\GlobalConfiguration.cs" />
-    <Compile Include="Connect\GlobalVariables.cs" />
     <Compile Include="Connect\Link.cs" />
     <Compile Include="Connect\UpdataPageView.cs" />
     <Compile Include="Help\ConvertType.cs" />
+    <Compile Include="Help\GlobalVariable.cs" />
     <Compile Include="Help\Helper.cs" />
     <Compile Include="Help\LangMap.cs" />
     <Compile Include="Help\LangResource.cs" />
     <Compile Include="Help\StringUltility.cs" />
     <Compile Include="Pager\PagerPadding.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

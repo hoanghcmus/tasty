@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -29,7 +30,7 @@ public partial class Admin_MgerMenu : System.Web.UI.Page
             {
                 LoadMenu();
                 LoadModule();
-                PopulateControls("","");
+                PopulateControls("", "");
             }
         }
         else
@@ -86,7 +87,7 @@ public partial class Admin_MgerMenu : System.Web.UI.Page
             string[] s = e.CommandArgument.ToString().Split('_');
             TheLoai.SuaFooter(Convert.ToInt32(s[0]), !Boolean.Parse(s[1]));
             CapNhatHanhDong("Sửa thể loại hiển thị footer (id: " + Convert.ToInt32(s[0]).ToString() + ")");
-            PopulateControls("","");
+            PopulateControls("", "");
         }
     }
     void btnDelete_Click(object sender, EventArgs e)
@@ -98,17 +99,17 @@ public partial class Admin_MgerMenu : System.Web.UI.Page
             foreach (string id in stringid.Split(','))
             {
                 int rs = TheLoai.Xoa(id);
-                if (rs>0)
+                if (rs > 0)
                     danhsachxoa += "IDTheLoai=" + id + ";";
             }
             CapNhatHanhDong("Xóa danh sách thể loại(" + danhsachxoa + ")");
-            PopulateControls("","");
+            PopulateControls("", "");
         }
     }
     protected void ddlLoadLoaiMenu_SelectedIndexChanged(object sender, EventArgs e)
     {
         string idLoaiMenu = ddlLoadLoaiMenu.SelectedValue.ToString().Trim();
-        if(idLoaiMenu!="")
+        if (idLoaiMenu != "")
             PopulateControls(idLoaiMenu, "");
     }
     protected void ddlLoadLoaimodule_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,13 +124,31 @@ public partial class Admin_MgerMenu : System.Web.UI.Page
         switch (colunmName)
         {
             case "ID":
-                if (data.ID == 16 || data.ID == 17 ||data.ID == 18 || data.ID == 1 )//Thuoc xu ly cua he thong
+                if (data.ID == 16 || data.ID == 17 || data.ID == 18 || data.ID == 1)//Thuoc xu ly cua he thong
                     return String.Format("<input type='button' class='lock' title='Thể loại này thuộc quản lý của hệ thống' />");
                 else
                     return String.Format("<input type='checkbox' name='cid' value='{0}'/>", data.ID);
             default:
                 return "";
         }
+    }
+
+    public string ShowTitle(object data, string column)
+    {
+        TheLoai tl = data as TheLoai;
+        switch (column)
+        {
+            case "tieude":
+                return DecodeHTML(HttpUtility.HtmlDecode(tl.TieuDe_Vn));
+            default: return "";
+        }
+    }
+
+    public string DecodeHTML(string chuoi)
+    {
+        Regex regex = new Regex("\\<[^\\>]*\\>");
+        chuoi = regex.Replace(chuoi, String.Empty);
+        return chuoi;
     }
     #endregion
 

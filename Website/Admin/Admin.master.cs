@@ -36,17 +36,14 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
     }
     private void PopulateControls()
     {
-        string shop = "+ " + DatPhong.DemTheoTrangThai("0").ToString();
+        //string shop = "+ " + DatPhong.DemTheoTrangThai("0").ToString();
         lbUser.Text = Session["TenNguoiDung"].ToString();
-        lblh.Text = "+ " + LienHe.DemTheoTrangThaiVaTheLoai(0, 1).ToString();
-        //lbgh.Text = shop;
-        //lbphong.Text = shop;
 
-        string dattiec = DatTiec.DemTheoTrangThai("0").ToString();
-        //lbdt.Text = "+ " + dattiec;
-        //lbdttt.Text = "+ " + dattiec;
+        lblh.Text = LienHe.Dem().ToString();
+        lbbv.Text = BaiViet.DemTheoModule("1").ToString();
+        lbsh.Text = Shopping.DemTheoTrangThai("0").ToString();
+        lbpr.Text = DataAccess.Classes.Product.Count().ToString();
 
-        //lbshopping.Text = shop;
         string tenDangNhap = Session["TenDangNhap"].ToString();
         string quyenHan = Session["QuyenHan"].ToString();
         if (tenDangNhap != "" || quyenHan != "")
@@ -97,11 +94,11 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
         lnkMgerAr.Visible = false;
         lnkEditArticle.Visible = false;
         lnkMgerArticle.Visible = false;
-        lnkMgerPhoto.Visible = false;
+        //lnkMgerPhoto.Visible = false;
         //lnkMgerPro.Visible = false;
         lnkSlideShow.Visible = false;
         //lnkMgerShopping.Visible = false;
-        //lnkMgerSupport.Visible = false;
+        lnkMgerSupport.Visible = false;
         //lnkMgerVideo.Visible = false;
     }
     private void OnLockQuanLyThongTin()
@@ -110,11 +107,11 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
         lnkMgerAr.Visible = true;
         lnkEditArticle.Visible = true;
         lnkMgerArticle.Visible = true;
-        lnkMgerPhoto.Visible = true;
+        //lnkMgerPhoto.Visible = true;
         //lnkMgerPro.Visible = true;
         lnkSlideShow.Visible = true;
         //lnkMgerShopping.Visible = true;
-        //lnkMgerSupport.Visible = true;
+        lnkMgerSupport.Visible = true;
         //lnkMgerVideo.Visible = true;
     }
     private void UnLockQuanLyNguoiDung()

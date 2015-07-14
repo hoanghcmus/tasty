@@ -126,9 +126,7 @@ namespace DataAccess.Classes
             { return null; }
         }
 
-
-
-        public static List<ImageAndClips> ImageAndClips_LayTheoIDTheLoai(string idTheLoai)
+        public static List<ImageAndClips> LayTheoIDTheLoai(string idTheLoai)
         {
             try
             {
@@ -137,7 +135,6 @@ namespace DataAccess.Classes
             catch
             { return null; }
         }
-
 
 
         public static List<ImageAndClips> LayTheoTheLoai(string theLoai, string page, out int howManyPages)

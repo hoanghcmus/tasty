@@ -8,12 +8,12 @@
     <div class="content">
         <div class="header">
             <h1 class="page-title">
-                <asp:Label ID="Label1" runat="server" Text="Không có trạng thái phòng" /></h1>
+                <asp:Label ID="Label1" runat="server" Text="Không có trạng thái sản phẩm" /></h1>
         </div>
         <ul class="breadcrumb">
             <li><a href="Admin.aspx">Trang chủ</a> <span class="divider">>></span></li>
-            <li class="active">Quản lý phòng<span class="divider">>></span></li>
-            <li class="active">Danh sách phòng</li>
+            <li class="active">Quản lý sản phẩm<span class="divider">>></span></li>
+            <li class="active">Danh sách sản phẩm</li>
         </ul>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -27,15 +27,15 @@
                     </div>
                     <hr />
                     <div class="content_mid">
-                        <input type="button" value="Thêm phòng" class="btnedit" onclick="location.href = 'EditProduct.aspx'" />
-                        <asp:Button Text="Xóa phòng" runat="server" ID="btnDelete" CssClass="multidelete" />
+                        <input type="button" value="Thêm sản phẩm" class="btnedit" onclick="location.href = 'EditProduct.aspx'" />
+                        <asp:Button Text="Xóa sản phẩm" runat="server" ID="btnDelete" CssClass="multidelete" />
                         |
                         <asp:TextBox ID="txtTimKiem" runat="server" CssClass="txtsreach" />
                         <asp:Button Text="   Tìm" runat="server" ID="btnTimKiem" CssClass="btnsreach" />
                         <input type="button" value="Làm mới" class="btnedit" onclick="location.href = 'MgerProduct.aspx'" />
                         <div class="block">
                             <p class="block-heading">
-                                Danh sách phòng
+                                Danh sách sản phẩm
                             </p>
                             <table class="list">
                                 <thead>
@@ -45,15 +45,15 @@
                                         </th>
                                         <th class="img">Ảnh
                                         </th>
-                                        <th class="title300">Tên phòng (Tiếng việt)
+                                        <th class="title300">Tên sản phẩm
                                         </th>
-                                        <th class="title300">Tên phòng (EngLish)
+                                         <th class="smallmax">Xuất xứ
                                         </th>
-                                        <th class="smallmax">Số lượng
+                                        <th class="smallmax">Giá gốc
                                         </th>
-                                        <th class="smallmax">Trang chủ
+                                        <th class="smallmax">Giảm giá (%)
                                         </th>
-                                        <th class="smallmax">Price
+                                        <th class="smallmax">Giá sau khi giảm
                                         </th>
                                         <th class="idmax">ID
                                         </th>
@@ -71,20 +71,19 @@
                                                 <asp:Image ID="Image1" runat="server" Height="80px" Width="90px" ImageUrl='<%#Eval("Thumbnail") %>' />
                                             </td>
                                             <td class="title300">
-                                                <%#Eval("Name_Vn")%>
+                                                <%#Eval("ProductName")%>
                                             </td>
-                                            <td class="title300">
-                                                <%#Eval("Name_En")%>
-                                            </td>
-                                            <td class="smallmax">
-                                                <%#Eval("Amount")%>
+                                             <td class="smallmax">
+                                                <%#Eval("Origin")%>
                                             </td>
                                             <td class="smallmax">
-                                                <asp:LinkButton ID="lnkTrangChu" runat="server" CommandArgument='<%#Eval("ID")+"_"+Eval("PromoFront") %>'
-                                                    Text='<%#Eval("PromoFront")%>' CommandName="UpdateTrangChu" class='lnk'></asp:LinkButton>
+                                                <%#Eval("OldPrice", "{0:0,0}")%>
                                             </td>
-                                            <td class="smallmax">
-                                                <%#Eval("Price", "{0:0,0}")%>
+                                             <td class="smallmax">
+                                                <%#Eval("Discount")%>
+                                            </td>
+                                             <td class="smallmax">
+                                                <%#Eval("NewPrice", "{0:0,0}")%>
                                             </td>
                                             <td class="idmax">
                                                 <%#Eval("ID")%>
@@ -104,21 +103,19 @@
                                                 <asp:Image ID="Image1" runat="server" Height="80px" Width="90px" ImageUrl='<%#Eval("Thumbnail") %>' />
                                             </td>
                                             <td class="title300">
-                                                <%#Eval("Name_Vn")%>
+                                                <%#Eval("ProductName")%>
                                             </td>
-                                            <td class="title300">
-                                                <%#Eval("Name_En")%>
-                                            </td>
-                                            </td>
-                                            <td class="smallmax">
-                                                <%#Eval("Amount")%>
+                                             <td class="smallmax">
+                                                <%#Eval("Origin")%>
                                             </td>
                                             <td class="smallmax">
-                                                <asp:LinkButton ID="lnkTrangChu" runat="server" CommandArgument='<%#Eval("ID")+"_"+Eval("PromoFront") %>'
-                                                    Text='<%#Eval("PromoFront")%>' CommandName="UpdateTrangChu" class='lnk'></asp:LinkButton>
+                                                <%#Eval("OldPrice", "{0:0,0}")%>
                                             </td>
-                                            <td class="smallmax">
-                                                <%#Eval("Price", "{0:0,0}")%>
+                                             <td class="smallmax">
+                                                <%#Eval("Discount")%>
+                                            </td>
+                                             <td class="smallmax">
+                                                <%#Eval("NewPrice", "{0:0,0}")%>
                                             </td>
                                             <td class="idmax">
                                                 <%#Eval("ID")%>

@@ -59,12 +59,12 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
     private void SetData(ImageAndClips data)
     {
         txtTenVn.Text = data.Ten_Vn;
-
-        txtTenCn.Text = data.Ten_Cn;
+        txtTenEn.Text = data.Ten_En;
+        
 
         txtmoTaVn.Text = data.MoTa_Vn;
-
-        txtmoTaCn.Text = data.MoTa_Cn;
+        txtmoTaEn.Text = data.MoTa_En;
+        
 
         lblId.Text = data.ID.ToString();
         int idimg = 0;
@@ -92,14 +92,16 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
         else
             data = new ImageAndClips();//Them moi
         data.Ten_Vn = txtTenVn.Text;
-        data.Ten_Cn = txtTenCn.Text;
-
+        data.Ten_En = txtTenEn.Text;
+        data.Ten_Ru = "";
+        data.Ten_Cn = "";
 
         data.MoTa_Vn = txtmoTaVn.Text;
+        data.MoTa_En = txtmoTaEn.Text;
+        data.MoTa_Ru = "";
+        data.MoTa_Cn = "";
 
-        data.MoTa_Cn = txtmoTaCn.Text;
-
-        data.IDTheLoai = 19;
+        data.IDTheLoai = 6;
         data.NgayTao = DateTime.Now.ToShortDateString();
         string datalistimg = "";
         foreach (var item in album)
@@ -113,12 +115,12 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
     private void ResetForm()
     {
         txtTenVn.Text = "";
-
-        txtTenCn.Text = "";
+        txtTenEn.Text = "";
+      
 
         txtmoTaVn.Text = "";
-
-        txtmoTaCn.Text = "";
+        txtmoTaEn.Text = "";
+     
 
         txtHinhAnh.Text = "";
         dlListImg.DataSource = null;
