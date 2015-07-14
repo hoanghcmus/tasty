@@ -86,46 +86,12 @@
                                     Tiêu đề :
                                 </td>
                                 <td>
-                                    <CKEditor:CKEditorControl ID="txtTieuDeVn" runat="server" Height="70" CssClass="" Toolbar="Basic">
-                                    </CKEditor:CKEditorControl>
+                                    <asp:TextBox ID="txtTieuDeVn" runat="server" CssClass="txtNewMin"></asp:TextBox>
+                                    <%--<CKEditor:CKEditorControl ID="txtTieuDeVn" runat="server" Height="70" CssClass="" Toolbar="Basic">
+                                    </CKEditor:CKEditorControl>--%>
                                     <asp:RequiredFieldValidator
                                         ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtTieuDeVn" CssClass="red">( ** )</asp:RequiredFieldValidator>
 
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="text" valign="top">
-                                    <br />
-                                    Thiết lập độ rộng menu:
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="txtWidth" runat="server" CssClass="txtNewMin"></asp:TextBox>
-                                    px
-                                    <asp:CompareValidator ID="validator" runat="server" ControlToValidate="txtWidth" Operator="DataTypeCheck" Type="Double" ErrorMessage="Giá trị nhập vào phải là số" />
-                                </td>
-                            </tr>
-
-
-                            <tr>
-                                <td class="text" valign="top">
-                                    <br />
-                                    Thiết lập viền cho tiêu đề:
-                                </td>
-                                <td>
-                                    <asp:Panel ID="BorderSelect" runat="server" Width="451px" CssClass="border-pannel">
-                                        <asp:CheckBox ID="ckbBorderTop" runat="server" Text="Viền trên" Checked="true" />
-                                        <asp:CheckBox ID="ckbBorderBottom" runat="server" Text="Viền dưới" Checked="true" />
-                                        <asp:CheckBox ID="ckbBorderLeft" runat="server" Text="Viền trái" Checked="true" />
-                                        <asp:CheckBox ID="ckbBorderRight" runat="server" Text="Viền phải" Checked="true" />
-
-                                    </asp:Panel>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td colspan="2">
-                                    <span><i style="color: red;"><b>Lưu ý:</b> Thiết lập viền và độ rộng chỉ áp dụng cho menu ngang (cấp 1) </i></span>
                                 </td>
                             </tr>
 

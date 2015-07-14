@@ -24,9 +24,8 @@ public partial class View_ArticleDetail : System.Web.UI.Page
         {
             int luotxem = data.LuotXem + 1;
             BaiViet.SuaLuotXem(id, luotxem.ToString());
-            lblTitle.Text = data.TieuDe_Vn;
-            lblFullText.Text = HttpUtility.HtmlDecode(data.ChiTiet_Vn);
-            lbLuotXem.Text = " " + luotxem.ToString();
+            ltrTieuDe.Text = data.TieuDe_Vn;
+            ltrContent.Text = data.ChiTiet_Vn;
         }
     }
 }

@@ -98,7 +98,7 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
         //lnkMgerPro.Visible = false;
         lnkSlideShow.Visible = false;
         //lnkMgerShopping.Visible = false;
-        lnkMgerSupport.Visible = false;
+        //lnkMgerSupport.Visible = false;
         //lnkMgerVideo.Visible = false;
     }
     private void OnLockQuanLyThongTin()
@@ -111,7 +111,7 @@ public partial class Admin_Admin : System.Web.UI.MasterPage
         //lnkMgerPro.Visible = true;
         lnkSlideShow.Visible = true;
         //lnkMgerShopping.Visible = true;
-        lnkMgerSupport.Visible = true;
+        //lnkMgerSupport.Visible = true;
         //lnkMgerVideo.Visible = true;
     }
     private void UnLockQuanLyNguoiDung()

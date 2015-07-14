@@ -54,9 +54,10 @@
     <form id="MainForm" runat="server">
         <asp:ScriptManager ID="MainScriptManager" runat="server"></asp:ScriptManager>
 
-        <div class="contaner">
-            <div class="bg"></div>
-            <div class="bg-sub"></div>
+        <div class="contaner">           
+            <asp:ContentPlaceHolder ID="BackGroundPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
             <div class="logo-bg"></div>
             <div class="contaner-wrap">
                 <div class="logo">
@@ -70,18 +71,15 @@
                     </div>
                 </div>
                 <div class="body">
-                    <div class="left">
-                        <asp:ContentPlaceHolder ID="LeftContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-                    <div class="right">                       
 
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+                    </asp:ContentPlaceHolder>
 
-                    </div>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
                 </div>
-
             </div>
         </div>
         <div class="footer">

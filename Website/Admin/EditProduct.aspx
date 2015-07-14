@@ -104,7 +104,7 @@
                                 <td>
                                     <asp:TextBox ID="txtHinhNho" runat="server" Text="" CssClass="txtNewMin"></asp:TextBox>
                                     <input id="btnDuyetAnhNho" onclick="BrowseServer( 'Mger_Design:/','<%=txtHinhNho.ClientID%>    ');"
-                                        type="button" value="Duy&#7879;t file" class="btnedit" /><asp:RequiredFieldValidator
+                                        type="button" value="Duyệt file" class="btnedit" /><asp:RequiredFieldValidator
                                             ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtHinhNho" CssClass="red">*</asp:RequiredFieldValidator><br />
                                 </td>
                             </tr>
@@ -118,7 +118,7 @@
                                 </td>
                             </tr>
 
-                            <tr class="text">
+                            <%--<tr class="text">
                                 <td>Giảm giá:
                                 </td>
                                 <td>
@@ -149,7 +149,7 @@
                                 <td>
                                     <asp:CheckBox ID="ckbSanPhamMoi" runat="server" Text="Đây là sản phẩm mới" />
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr class="text" valign="top">
                                 <td>Thêm ảnh cho sản phẩm:
                                 </td>

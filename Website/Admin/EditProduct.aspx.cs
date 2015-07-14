@@ -186,9 +186,9 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         txtChiTietVn.Text = "";
         txtHinhNho.Text = "";
         txtDonGia.Text = "";
-        txtGiamGia.Text = "";
-        txtXuatXu.Text = "";
-        txtBaoHanh.Text = "";
+        //txtGiamGia.Text = "";
+        //txtXuatXu.Text = "";
+        //txtBaoHanh.Text = "";
         dlListImg.DataSource = album;
         dlListImg.DataBind();
     }
@@ -207,14 +207,14 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         txtHinhNho.Text = data.Thumbnail;
         txtDonGia.Text = showMoney(data.OldPrice).ToString();
 
-        txtGiamGia.Text = data.Discount.ToString();
-        txtXuatXu.Text = data.Origin;
-        txtBaoHanh.Text = data.Guarantee;
+        //txtGiamGia.Text = data.Discount.ToString();
+        //txtXuatXu.Text = data.Origin;
+        //txtBaoHanh.Text = data.Guarantee;
 
-        if (data.IsNew == 1)
-            ckbSanPhamMoi.Checked = true;
-        else
-            ckbSanPhamMoi.Checked = false;
+        //if (data.IsNew == 1)
+        //    ckbSanPhamMoi.Checked = true;
+        //else
+        //    ckbSanPhamMoi.Checked = false;
 
         int idimg = 0;
         string listimg = data.Image;
@@ -247,19 +247,19 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         data.Detail = txtChiTietVn.Text.Trim();
 
         decimal oldPrice = Convert.ToDecimal(txtDonGia.Text.Trim());
-        data.OldPrice = oldPrice;
-        int discount = Convert.ToInt32(txtGiamGia.Text.Trim());
-        data.Discount = discount;
-        if (data.Discount != null && data.Discount > 0)
-        {
-            decimal disPercent = (decimal)discount / 100;
-            decimal disPrice = oldPrice * disPercent;
-            data.NewPrice = oldPrice - disPrice;
-        }
-        else
-        {
-            data.NewPrice = data.OldPrice;
-        }
+        //data.OldPrice = oldPrice;
+        //int discount = Convert.ToInt32(txtGiamGia.Text.Trim());
+        //data.Discount = discount;
+        //if (data.Discount != null && data.Discount > 0)
+        //{
+        //    decimal disPercent = (decimal)discount / 100;
+        //    decimal disPrice = oldPrice * disPercent;
+        //    data.NewPrice = oldPrice - disPrice;
+        //}
+        //else
+        //{
+        //    data.NewPrice = data.OldPrice;
+        //}
 
         data.Thumbnail = txtHinhNho.Text;
         string datalistimg = "";
@@ -267,13 +267,17 @@ public partial class Admin_EditProduct : System.Web.UI.Page
             datalistimg += item.HinhAnh + "'";
         data.Image = datalistimg;
 
-        data.Origin = txtXuatXu.Text.Trim();
-        data.Guarantee = txtBaoHanh.Text.Trim();
-        if (ckbSanPhamMoi.Checked)
-            data.IsNew = 1;
-        else
-            data.IsNew = 0;
+        //data.Origin = txtXuatXu.Text.Trim();
+        //data.Guarantee = txtBaoHanh.Text.Trim();
+        //if (ckbSanPhamMoi.Checked)
+        //    data.IsNew = 1;
+        //else
+        //    data.IsNew = 0;
 
+        data.Discount = 0;
+        data.NewPrice = data.OldPrice;
+        data.Origin = "";
+        data.Guarantee = "";
         return data;
     }
     void btnLuu_Click(object sender, EventArgs e)

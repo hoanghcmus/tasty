@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/MasterPage.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/SubMaserPage.master" AutoEventWireup="true"
     CodeFile="Contact.aspx.cs" Inherits="Vn_Contact" %>
 
 <asp:Content ID="ContentHeader" runat="server" ContentPlaceHolderID="HeadExtender">
@@ -7,6 +7,11 @@
     <link href="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-buttons.css" rel="stylesheet" />
     <link href="/Styles/FancyBox-2.1.5/source/helpers/jquery.fancybox-thumbs.css" rel="stylesheet" />
     <link href="/Styles/FancyBox-2.1.5/source/jquery.fancybox.css" rel="stylesheet" />
+</asp:Content>
+<asp:Content runat="server" ID="Left" ContentPlaceHolderID="LeftContent">
+    <div class="left-wrap">
+        <asp:Literal ID="ltBaiVietGioiThieu" runat="server"></asp:Literal>
+    </div>
 </asp:Content>
 <asp:Content ID="ContentMain" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="contact-wrapper">

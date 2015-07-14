@@ -192,14 +192,7 @@ public partial class Admin_EditMenu : System.Web.UI.Page
         ddlParent.SelectedValue = data.IDParent.ToString();
         ddlLoadMenu.SelectedValue = data.IDLoaiMenu.ToString();
         ddlModule.SelectedValue = data.IDModule.ToString();
-
-        txtWidth.Text = data.TitleWidth;
-        string border = data.TitleBorder;
-        if (border.Contains("border-bot")) ckbBorderBottom.Checked = true; else ckbBorderBottom.Checked = false;
-        if (border.Contains("border-top")) ckbBorderTop.Checked = true; else ckbBorderTop.Checked = false;
-        if (border.Contains("border-left")) ckbBorderLeft.Checked = true; else ckbBorderLeft.Checked = false;
-        if (border.Contains("border-right")) ckbBorderRight.Checked = true; else ckbBorderRight.Checked = false;
-
+     
     }
     #endregion
 
@@ -247,14 +240,7 @@ public partial class Admin_EditMenu : System.Web.UI.Page
             data.IDParent = idparent;
         data.Footer = true;
 
-        if (txtWidth.Text.Trim() == "") data.TitleWidth = "0";
-        else data.TitleWidth = txtWidth.Text.Trim();        
-
         string border = String.Empty;
-        if (ckbBorderBottom.Checked) border += " border-bot";
-        if (ckbBorderTop.Checked) border += " border-top";
-        if (ckbBorderLeft.Checked) border += " border-left";
-        if (ckbBorderRight.Checked) border += " border-right";
         data.TitleBorder = border;
 
         return data;

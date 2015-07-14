@@ -15,6 +15,11 @@ public partial class Vn_Contact : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            BaiViet baiviet = BaiViet.LayTheoID("21");
+            if (baiviet != null)
+            {
+                ltBaiVietGioiThieu.Text = baiviet.ChiTiet_Vn;
+            }
             captchaImage.ImageUrl = new CaptchaProvider().CreateCaptcha();
         }
     }
@@ -51,19 +56,19 @@ public partial class Vn_Contact : System.Web.UI.Page
                 {
                     succesfull.Visible = true;
                     refesh();
-                    succesfull.Text = "Sent Successfull!";
+                    succesfull.Text = "Đã gửi liên hệ!";
                 }
                 else
                 {
                     succesfull.Visible = true;
-                    succesfull.Text = "Failed send!";
+                    succesfull.Text = "Gửi liên hệ thất bại!";
                 }
             }
             else
             {
                 lbcapcha.Visible = true;
                 succesfull.Visible = false;
-                lbcapcha.Text = "Incorrect code!";
+                lbcapcha.Text = "Mã xác nhận sai!";
             }
         }
     }
@@ -71,25 +76,5 @@ public partial class Vn_Contact : System.Web.UI.Page
     {
         //Response.Redirect(this.Request.Url.AbsoluteUri);
         captchaImage.ImageUrl = new CaptchaProvider().CreateCaptcha();
-    }
-
-    public string Showinfo(object input, string colunmName)
-    {
-        LienHe data = input as LienHe;
-        switch (colunmName)
-        {
-            case "ngaygui":
-                return data.NgayGui.ToString().Split(' ').First().ToString();
-            case "hienthilink":
-                return "/hoi-dap/chi-tiet-hoi-dap-" + data.ID.ToString() + ".html";
-            case "laytomtat":
-                if (data.NoiDung.Length < 300) { return Regex.Replace(data.NoiDung, "<img.*?>", ""); }
-                else
-                {
-                    return StringUltility.GetStringByLenght(Regex.Replace(data.NoiDung, "<img.*?>", ""), 300) + "...";
-                }
-            default:
-                return "";
-        }
     }
 }
