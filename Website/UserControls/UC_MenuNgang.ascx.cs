@@ -21,7 +21,7 @@ public partial class UserControls_UC_MenuNgang : System.Web.UI.UserControl
     protected StringBuilder BuildMenu(int id)
     {
         List<TheLoai> listTheLoai = TheLoai.TheLoai_GetByCategoryAndParentID("1", id);
-        string activeMenuID = Request.QueryString["catID"] ?? "";
+        string activeMenuID = Request.QueryString["catID"] ?? "1";
 
         StringBuilder sb = new StringBuilder();
 

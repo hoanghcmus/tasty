@@ -1,4 +1,5 @@
-﻿* {
+﻿*
+{
     margin: 0;
     padding: 0;
     text-decoration: none;
@@ -7,45 +8,54 @@
     outline: none;
 }
 
-@font-face {
+@font-face
+{
     font-family: UTM_Helve;
     src: url("/Styles/CSS/Font/UTM_Helve/UTM HELVE.TTF");
 }
 
-@font-face {
+@font-face
+{
     font-family: SanNeoIntel;
     src: url("/Styles/CSS/Font/SanNeoIntel/UTM NEO SANS INTEL.TTF");
 }
 
-body, .line-fix-parent-width, #MainForm, .img, .link {
+body, .line-fix-parent-width, #MainForm, .img, .link
+{
     float: left;
     width: 100%;
 }
 
-body {
+body
+{
     height: 100%;
 }
 
-.img {
+.img
+{
     height: 100%;
 }
 
-.link {
+.link
+{
     height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6
+{
     font-weight: normal;
 }
 
-html, #aspnetForm, .contaner {
+html, #aspnetForm, .contaner
+{
     float: left;
     width: 100%;
     overflow: hidden;
     height: 100%;
 }
 
-.bg, .bg-sub {
+.bg, .bg-sub
+{
     float: left;
     width: 100%;
     height: 100%;
@@ -56,18 +66,20 @@ html, #aspnetForm, .contaner {
     background-size: 100% 100%;
 }
 
-.bg {
+.bg
+{
     background-image: url("/Design/bg.jpg");
 }
 
-.bg-sub {
+.bg-sub
+{
     background-image: url("/Design/bg-main.jpg");
 }
 
-.logo-bg {
+.logo-bg
+{
     float: left;
-    width: 39.851%;
-    /*height: 54.264%;*/
+    width: 43%;
     height: 369px;
     position: fixed;
     top: 0px;
@@ -77,17 +89,21 @@ html, #aspnetForm, .contaner {
     background-size: 100% 100%;
 }
 
-@media screen and (min-height : 810px) {
-    .bg {
+@media screen and (min-height : 810px)
+{
+    .bg
+    {
         background-image: url("/Design/bg-b.jpg");
     }
 
-    .bg-sub {
+    .bg-sub
+    {
         background-image: url("/Design/bg-main-b.jpg");
     }
 }
 
-.contaner-wrap {
+.contaner-wrap
+{
     float: left;
     width: 74.074%;
     margin-left: 12.693%;
@@ -97,19 +113,21 @@ html, #aspnetForm, .contaner {
     left: 0;
 }
 
-.logo {
+.logo
+{
     float: left;
     width: 16.9%;
     height: 16.323%;
     position: absolute;
     top: 0px;
-    left: 0;
+    left: 2%;
 }
 
 /*CSS for menu ngang*/
-.vnav {
+.vnav
+{
     float: right;
-    width: 82.5%;
+    width: 83.5%;
     height: 49px;
     position: absolute;
     right: 0px;
@@ -120,7 +138,8 @@ html, #aspnetForm, .contaner {
     overflow: hidden;
 }
 
-.vnav-wrap {
+.vnav-wrap
+{
     /*float: left;
     width: 80%;
     height: 100%;
@@ -132,34 +151,41 @@ html, #aspnetForm, .contaner {
     z-index: 1;
 }
 
-.nav {
+.nav
+{
 }
 
-    .nav ul {
+    .nav ul
+    {
         margin: 0 auto;
     }
 
 
-        .nav ul li {
+        .nav ul li
+        {
             float: left;
             height: 49px;
             font-family: "SanNeoIntel";
         }
 
-.vnav-wrap > ul > li {
+.vnav-wrap > ul > li
+{
     border-left: 1px solid #5bb7f0;
     border-right: 1px solid #4da3ee;
 }
 
-    .vnav-wrap > ul > li:first-child {
+    .vnav-wrap > ul > li:first-child
+    {
         border-left: none;
     }
 
-    .vnav-wrap > ul > li:last-child {
+    .vnav-wrap > ul > li:last-child
+    {
         border-right: none;
     }
 
-.nav ul li a {
+.nav ul li a
+{
     padding: 13px;
     margin-top: 5px;
     color: #FFF;
@@ -169,7 +195,8 @@ html, #aspnetForm, .contaner {
 
 
 
-.nav > ul > li > a {
+.nav > ul > li > a
+{
     padding: 6px 5%;
     font-size: 1vw;
     width: 89%;
@@ -178,61 +205,75 @@ html, #aspnetForm, .contaner {
     line-height: 18px;
 }
 
-.nav ul li a span {
+.nav ul li a span
+{
     float: left;
     width: 100%;
     text-align: center;
 }
 
-.nav > ul > li:first-child {
+.nav > ul > li:first-child
+{
     /*border-left: none;*/
 }
 
-.nav > ul > li:last-child a {
+.nav > ul > li:last-child a
+{
     /*border-right: 1px solid #004104;*/
 }
 
 
-.nav li.active {
-    background-color: rgba(1, 81, 133, 1);
+.nav li.active
+{
+    background-color: rgba(1, 81, 133, 0.1);
 }
 
-    .nav li.active > a {
+    .nav li.active > a
+    {
         color: #FFF;
     }
 
-.nav > ul li:hover {
+.nav > ul li:hover
+{
 }
 
-    .nav > ul li:hover a {
+    .nav > ul li:hover a
+    {
         color: #FFF;
     }
 
-.nav > ul > li:hover {
+.vnav-wrap > ul > li:hover
+{
     color: #FFF;
-    background-color: rgba(1, 81, 133, 1);
+    background-color: rgba(1, 81, 133, 0.1);
+    /*background-color: rgba(74, 155, 237, 0.8);*/
 }
 
-.nav > ul > li.has-sub > ul {
+.nav > ul > li.has-sub > ul
+{
     top: 101%;
     left: -1px;
     z-index: 10;
 }
 
-.nav > ul > li.has-sub {
+.nav > ul > li.has-sub
+{
 }
 
-.has-sub span.arrow {
+.has-sub span.arrow
+{
     text-align: center;
     margin-left: 3px;
 }
 
 
-.has-sub {
+.has-sub
+{
     position: relative;
 }
 
-    .has-sub > ul {
+    .has-sub > ul
+    {
         position: absolute;
         width: 100%;
         height: 0px;
@@ -241,7 +282,8 @@ html, #aspnetForm, .contaner {
         transition: all .4s linear;
     }
 
-        .has-sub > ul > li {
+        .has-sub > ul > li
+        {
             background-color: rgba(85, 179, 240, 1);
             width: 200px !important;
             height: 0px;
@@ -252,44 +294,57 @@ html, #aspnetForm, .contaner {
             text-align: left;
         }
 
-            .has-sub > ul > li > a > span {
+            .has-sub > ul > li > a > span
+            {
                 float: left;
                 width: 90%;
                 font-size: 14px;
                 text-align: left;
             }
 
-            .has-sub > ul > li:first-child {
+            .has-sub > ul > li:first-child
+            {
                 border-top: none;
             }
 
-            .has-sub > ul > li:last-child {
+            .has-sub > ul > li:last-child
+            {
                 border-bottom-left-radius: 3px;
                 border-bottom-right-radius: 3px;
             }
 
-        .has-sub > ul li a, .has-sub > ul li:hover a {
+            .has-sub > ul > li.active
+            {
+                background-color: rgba(74, 155, 237, 0.8);
+            }
+
+        .has-sub > ul li a, .has-sub > ul li:hover a
+        {
             width: 100%;
             color: #FFF;
         }
 
-    .has-sub:hover > ul {
+    .has-sub:hover > ul
+    {
         width: 200px;
         height: auto;
     }
 
-        .has-sub:hover > ul > li {
+        .has-sub:hover > ul > li
+        {
             float: left;
             width: 100%;
             height: auto;
         }
 
-    .has-sub > ul > li:hover {
+    .has-sub > ul > li:hover
+    {
         background-color: rgba(74, 155, 237, 0.8);
     }
 
 /*CSS For footer*/
-.footer {
+.footer
+{
     float: left;
     width: 100%;
     height: 147px;
@@ -297,7 +352,8 @@ html, #aspnetForm, .contaner {
     bottom: 0px;
 }
 
-.footer-wrap {
+.footer-wrap
+{
     float: left;
     width: 74.074%;
     height: 8.163%;
@@ -310,27 +366,32 @@ html, #aspnetForm, .contaner {
     color: #00488f;
 }
 
-    .footer-wrap p:first-child {
+    .footer-wrap p:first-child
+    {
         float: left;
         height: 100%;
     }
 
-    .footer-wrap p:last-child {
+    .footer-wrap p:last-child
+    {
         float: right;
         height: 100%;
     }
 
-        .footer-wrap p:last-child > a {
+        .footer-wrap p:last-child > a
+        {
             color: #00488f;
         }
 
-.body {
+.body
+{
     float: left;
     width: 100%;
     height: 100%;
 }
 
-.left, .right {
+.left, .right
+{
     float: left;
     height: 70.588%;
     background-color: rgba(255,255,255,0.8);
@@ -340,42 +401,50 @@ html, #aspnetForm, .contaner {
     border-top-right-radius: 20px;
 }
 
-.left {
+.left
+{
     width: 25.9%;
     margin-right: 2.9%;
     left: 0px;
 }
 
-.left-wrap {
+.left-wrap
+{
     float: left;
     width: 80%;
-    height: 60%;
+    height: 59%;
     margin-left: 10%;
     margin-top: 20%;
+    overflow: scroll;
 }
 
-.hnav, .hnav > ul {
+.hnav, .hnav > ul
+{
     float: left;
     width: 100%;
     height: 100%;
 }
 
-    .hnav > ul {
+    .hnav > ul
+    {
     }
 
-        .hnav > ul > li {
+        .hnav > ul > li
+        {
             float: left;
             width: 100%;
             padding-bottom: 11px;
         }
 
-            .hnav > ul > li > a {
+            .hnav > ul > li > a
+            {
                 font-family: Arial;
                 font-size: 15px;
                 color: #0359ad;
             }
 
-.dot {
+.dot
+{
     float: left;
     width: 6px;
     height: 6px;
@@ -385,7 +454,8 @@ html, #aspnetForm, .contaner {
     margin-right: 5px;
 }
 
-.sep {
+.sep
+{
     float: left;
     width: 100%;
     height: 1px;
@@ -395,32 +465,41 @@ html, #aspnetForm, .contaner {
     background-size: 100% 100%;
 }
 
-.right {
+.right
+{
     width: 71%;
     right: 0px;
 }
 
-.right-wrap {
+.right-wrap
+{
     float: left;
     width: 91.5%;
-    height: 65%;
+    height: 59.5%;
     margin-left: 4.25%;
     margin-top: 5%;
+    /*overflow: scroll;*/
+    overflow: hidden;
 }
 
-.block, .block-head, .block-body {
+.block, .block-head, .block-body
+{
     float: left;
     width: 100%;
 }
 
-.block {
+.block
+{
+    height: 100%;
 }
 
-.block-head {
+.block-head
+{
     padding-bottom: 22px;
 }
 
-    .block-head h1 {
+    .block-head h1
+    {
         float: left;
         width: 100%;
         font-family: "SanNeoIntel";
@@ -429,16 +508,30 @@ html, #aspnetForm, .contaner {
     }
 
 
-.block-body {
+.block-body
+{
+    height: 83.7%;
     font-family: Arial;
     font-size: 13px;
     color: #343434;
     text-align: justify;
     line-height: 16px;
+    overflow: scroll;
 }
 
-    .block-body img {
+    .block-body img
+    {
         float: left;
         margin-right: 9px;
         margin-bottom: 5px;
     }
+
+.contact-wrapper
+{
+    float: left;
+    width: 91.5%;
+    height: 59.5%;
+    margin-left: 4.25%;
+    margin-top: 5%;
+    overflow: scroll;
+}
