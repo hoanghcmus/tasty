@@ -53,8 +53,22 @@
 <body>
     <form id="MainForm" runat="server">
         <asp:ScriptManager ID="MainScriptManager" runat="server"></asp:ScriptManager>
+        <div class="shopping-cart">
+            <div class="shright">
+                <a href="/View/AddCart.aspx" data-fancybox-type="iframe" class="link" title="Giỏ hàng của bạn" id="shopping-cart"><span>GIỎ HÀNG</span>
+                </a>
+            </div>
+            <div class="shleft">
+                <div class="shcart">
+                    <img src="/Design/shcart.png" class="img" />
+                </div>
+                <div class="cart-title">
+                    <p>Giỏ hàng: <span style="color: #d80000;"><%=Session["Amount"].ToString() %></span></p>
+                </div>
+            </div>
+        </div>
 
-        <div class="contaner">           
+        <div class="contaner">
             <asp:ContentPlaceHolder ID="BackGroundPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
 

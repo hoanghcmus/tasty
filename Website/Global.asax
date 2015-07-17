@@ -33,7 +33,8 @@
         //Get unique id of session
         Session["SID"] = Session.SessionID;
         Session["Customer"] = new DataAccess.Classes.Customer();
-        Session["Total"] = 0;
+        Session["Total"] = 0; 
+        Session["Amount"] = 0;
 
         // Code that runs when a new session is started
         Session.Timeout = 120;

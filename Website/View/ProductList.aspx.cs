@@ -12,7 +12,12 @@ public partial class View_ProductList : System.Web.UI.Page
         if (!IsPostBack)
         {
             string catID = Request["catID"] ?? "1";
-            ProductList.IDTheLoai = catID;
+            List<DataAccess.Classes.Product> listPR = DataAccess.Classes.Product.LayTheoIDTheLoai(catID);
+            if (listPR != null && listPR.Count > 0)
+            {
+                rptProductList.DataSource = listPR;
+                rptProductList.DataBind();
+            }
         }
     }
 }

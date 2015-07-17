@@ -18,9 +18,7 @@ public partial class View_ProductDetail : System.Web.UI.Page
             var pr = DataAccess.Classes.Product.Single(productId);
             if (pr != null)
             {
-                PopulateControls(pr);
-                ProductListThree.ID = pr.ID.ToString();
-                ProductListThree.IDTheLoai = pr.ProductCategoryID.ToString();
+                PopulateControls(pr);            
             }
         }
     }
@@ -31,15 +29,10 @@ public partial class View_ProductDetail : System.Web.UI.Page
     }
     protected void PopulateControls(DataAccess.Classes.Product pr)
     {
-        ltrTenSanPham.Text = pr.ProductName;
-        ltrMaSanPham.Text = pr.ProductCode;
-        ltrOldPrice.Text = showMoney(pr.OldPrice).ToString();
-        ltrNewPrice.Text = showMoney(pr.NewPrice).ToString();
-        ltrDiscount.Text = pr.Discount.ToString();
+        ltrTenSanPham.Text = pr.ProductName;      
+        ltrOldPrice.Text = showMoney(pr.OldPrice).ToString();       
         ltrMoTa.Text = pr.Description;
-        ltrChiTietSanPham.Text = pr.Detail;
-        ltrXuatXu.Text = pr.Origin;
-        ltrBaoHanh.Text = pr.Guarantee;
+        ltrChiTietSanPham.Text = pr.Detail;      
 
         List<Img> album = new List<Img>();
         int idimg = 0;

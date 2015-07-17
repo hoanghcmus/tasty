@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess.StringUtil;
+using DataAccess.Help;
 
 public partial class View_AddCart : System.Web.UI.Page
 {
@@ -47,6 +48,14 @@ public partial class View_AddCart : System.Web.UI.Page
 
                 // Cập nhật database
                 ctx.SubmitChanges();
+
+                var DSCart = (from s in ctx.SessionCarts
+                              where s.SessionId == sSessionId
+                              select s);
+                if (DSCart != null && DSCart.Count() > 0)
+                {
+                    Session["Amount"] = DSCart.Count();
+                }
             }
             LoadDataToCartRepeater(ctx, sSessionId);
         }
@@ -179,6 +188,14 @@ public partial class View_AddCart : System.Web.UI.Page
         }
 
         ctx.SubmitChanges();
+
+        var DSCart = (from s in ctx.SessionCarts
+                      where s.SessionId == sSessionId
+                      select s);
+        if (DSCart != null && DSCart.Count() > 0)
+        {
+            Session["Amount"] = DSCart.Count();
+        }
 
         LoadDataToCartRepeater(ctx, Session["SID"].ToString());
     }

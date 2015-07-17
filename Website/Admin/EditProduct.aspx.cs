@@ -247,7 +247,7 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         data.Detail = txtChiTietVn.Text.Trim();
 
         decimal oldPrice = Convert.ToDecimal(txtDonGia.Text.Trim());
-        //data.OldPrice = oldPrice;
+        data.OldPrice = oldPrice;
         //int discount = Convert.ToInt32(txtGiamGia.Text.Trim());
         //data.Discount = discount;
         //if (data.Discount != null && data.Discount > 0)
