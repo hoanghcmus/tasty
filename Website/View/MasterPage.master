@@ -63,7 +63,7 @@
                     <img src="/Design/shcart.png" class="img" />
                 </div>
                 <div class="cart-title">
-                    <p>Giỏ hàng: <span style="color: #d80000;"><%=Session["Amount"].ToString() %></span></p>
+                    <p>Giỏ hàng: <span style="color: #d80000;" id="soluong"><%=Session["Amount"].ToString() %></span></p>
                 </div>
             </div>
         </div>
@@ -185,7 +185,12 @@
                 }
             });
         });
+
+
+        setInterval(function () { $("#soluong").val(<%=Session["Amount"].ToString() %>) }, 2000);
+
     </script>
+
 
     <asp:ContentPlaceHolder ID="FootExtender" runat="server">
     </asp:ContentPlaceHolder>

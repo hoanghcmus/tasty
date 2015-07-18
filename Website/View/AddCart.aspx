@@ -94,6 +94,9 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            setInterval(function () { $("#soluong").val(<%=Session["Amount"].ToString() %>) }, 2000);
+        </script>
     </form>
 </body>
 </html>
