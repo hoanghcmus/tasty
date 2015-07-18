@@ -4,9 +4,23 @@
     <asp:ContentPlaceHolder ID="HeadExtender" runat="server">
     </asp:ContentPlaceHolder>
 </asp:Content>
+
+<asp:Content ID="Background" ContentPlaceHolderID="BackGroundPlaceHolder" runat="Server">
+    <div class="bg-sub"></div>
+</asp:Content>
+
+
+<asp:Content ID="Left" ContentPlaceHolderID="LeftContent" runat="Server">
+    <div class="left">
+        <asp:ContentPlaceHolder ID="LeftContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="Server">
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
+    <div class="right">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 </asp:Content>
 <asp:Content ID="Foot" ContentPlaceHolderID="FootExtender" runat="Server">
     <asp:ContentPlaceHolder ID="FootExtender" runat="server">

@@ -5,9 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess.Classes;
-using MultipleLanguage;
 
-public partial class View_DetailPhoto : BasePage
+public partial class View_DetailPhoto : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {

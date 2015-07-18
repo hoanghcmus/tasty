@@ -6,8 +6,7 @@
 <head>
     <title></title>
     <style type="text/css">
-        #gmap_canvas img
-        {
+        #gmap_canvas img {
             max-width: none !important;
             background: none !important;
         }
@@ -25,18 +24,18 @@
         function init_map() {
             var myOptions = {
                 zoom: 14,
-                center: new google.maps.LatLng(10.706929, 107.84324),
+                center: new google.maps.LatLng(10.9226885, 108.1119883),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);
             marker = new google.maps.Marker({
                 map: map,
-                position: new google.maps.LatLng(10.706929, 107.84324)
+                position: new google.maps.LatLng(10.9226885, 108.1119883)
             });
             infowindow = new google.maps.InfoWindow({
-                content: "<b>Sao Nam - Giải pháp an ninh toàn diện</b><br/>"
-            + "<img src='/Design/saonam.jpg' width='300px' height='100px'/>	<br/>"
-            + "309A TP Phan Thiết - Bình Thuận - Fax: 0623 82 56 68 <br>Điện thoại: 0623 82 56 68  Email: info@saonaco.com.vn"
+                content: "<b>CTY TNHH SX-TM ĐĂNG TÂM</b><br/>"
+            + "<img src='/Design/tasty.jpg' width='310px' height='135px'/>	<br/>"
+            + "131 Lê Lợi, P.Hưng Long, Phan Thiết - Fax: 0623 823 700 <br>ĐT: 0623 822 715  Email: tastyngotngao168@gmail.com"
             });
             google.maps.event.addListener(marker, "click", function () {
                 infowindow.open(map, marker);

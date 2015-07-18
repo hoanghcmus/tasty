@@ -5,26 +5,23 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DataAccess.Classes;
-using MultipleLanguage;
 
-public partial class View_Gallery : BasePage
+public partial class View_Gallery : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
             string IDTheLoai = Request.QueryString["catID"] ?? "0";
-            if (Session["lang"].ToString().Equals("vn"))
-                ltrCatName.Text = TheLoai.LayTheoID(IDTheLoai).TieuDe_Vn;
-            else
-                ltrCatName.Text = TheLoai.LayTheoID(IDTheLoai).TieuDe_Cn;
-            LoadListItem(IDTheLoai);
+            rptArticleList.DataSource = ImageAndClips.LayTheoIDTheLoai(IDTheLoai);
+            rptArticleList.DataBind();
         }
     }
 
     public void LoadListItem(String IDTheLoai)
     {
-        List<ImageAndClips> listImgAndCip = ImageAndClips.ImageAndClips_LayTheoIDTheLoai(IDTheLoai);
+        Literal ltrItemList = new Literal();
+        List<ImageAndClips> listImgAndCip = ImageAndClips.LayTheoIDTheLoai(IDTheLoai);
         if (listImgAndCip != null && listImgAndCip.Count != 0)
         {
             int itemCount = 7;
@@ -73,10 +70,8 @@ public partial class View_Gallery : BasePage
         switch (column)
         {
             case "TieuDe":
-                if (Session["lang"].ToString().Equals("vn"))
-                    return imgAndClip.Ten_Vn;
-                else
-                    return imgAndClip.Ten_Cn;
+                return imgAndClip.Ten_Vn;
+
             case "LienKet":
                 return "/View/DetailPhoto.aspx?ID=" + imgAndClip.ID;
             default: return "";
@@ -90,10 +85,9 @@ public partial class View_Gallery : BasePage
         switch (column)
         {
             case "TieuDe":
-                if (Session["lang"].ToString().Equals("vn"))
-                    return imgAndClip.Ten_Vn;
-                else
-                    return imgAndClip.Ten_Cn;
+
+                return imgAndClip.Ten_Vn;
+
             case "LienKet":
                 return "/View/DetailPhoto.aspx?ID=" + imgAndClip.ID;
             default: return "";

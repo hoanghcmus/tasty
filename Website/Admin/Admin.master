@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-    <title>Quản Trị Website Sao Nam</title>
+    <title>Quản Trị Website Nước khoáng Tasty</title>
     <link rel="Shurtcut Icon" href="images/icon_admin.png" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.css" />
@@ -73,7 +73,7 @@
                     </li>
                 </ul>
                 <div class="brand">
-                    <span class="first">Quản Trị&nbsp;&nbsp;</span> <span class="second">Website Sao Nam - Giải pháp an ninh toàn diện</span>
+                    <span class="first">Quản Trị&nbsp;&nbsp;</span> <span class="second">Website Nước khoáng Tasty</span>
                 </div>
             </div>
         </div>
@@ -154,7 +154,7 @@
 
 
 
-            <%-- <asp:HyperLink ID="lnkMgerPhoto" NavigateUrl="#photos" class="nav-header collapsed"
+            <asp:HyperLink ID="lnkMgerPhoto" NavigateUrl="#photos" class="nav-header collapsed"
                 data-toggle="collapse" runat="server">
             <i class="icon-picture"></i>Quản lý Hình Ảnh <i class="icon-chevron-up"></i>
             </asp:HyperLink>
@@ -168,7 +168,7 @@
             <i class="icon-credit-card"></i>Danh sách Album ảnh</asp:HyperLink>
                 </li>
             </ul>
-            <asp:HyperLink ID="lnkMgerVideo" class="nav-header collapsed" data-toggle="collapse"
+            <%--  <asp:HyperLink ID="lnkMgerVideo" class="nav-header collapsed" data-toggle="collapse"
                 NavigateUrl="#videos" runat="server">
             <i class="icon-camera"></i>Quản lý Video-Clips <i class="icon-chevron-up"></i>
             </asp:HyperLink>
@@ -226,10 +226,10 @@
                 runat="server">
             <i class="icon-star"></i>Hình ảnh chuyển động
             </asp:HyperLink>
-            <asp:HyperLink ID="lnkMgerSupport" class="nav-header" NavigateUrl="MgerSupport.aspx"
+            <%--<asp:HyperLink ID="lnkMgerSupport" class="nav-header" NavigateUrl="MgerSupport.aspx"
                 runat="server">
             <i class="icon-phone"></i>Hổ trợ khách hàng 
-            </asp:HyperLink>
+            </asp:HyperLink>--%>
             <asp:HyperLink ID="lnkMgerMenu" NavigateUrl="MgerMenu.aspx" class="nav-header" runat="server">
             <i class="icon-asterisk">
                 </i>Quản lý thể loại menu</asp:HyperLink>

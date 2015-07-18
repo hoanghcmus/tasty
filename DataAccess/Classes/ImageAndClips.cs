@@ -35,7 +35,7 @@ namespace DataAccess.Classes
             try
             {
                 object rs = DataProvider.Instance.ExecuteNonQueryWithOutput("@ID", "ImageAndClips_Them",
-                    imgorclip.ID, imgorclip.Ten_Vn, imgorclip.Ten_En, imgorclip.Ten_Ru, imgorclip.NgayTao, imgorclip.MoTa_Vn, imgorclip.MoTa_En, imgorclip.MoTa_Ru, imgorclip.LuotXem, imgorclip.HinhAnh, imgorclip.ImgOrClip, imgorclip.IDTheLoai, imgorclip.Ten_Cn, imgorclip.MoTa_Cn);
+                    imgorclip.ID, imgorclip.Ten_Vn, imgorclip.Ten_En, imgorclip.Ten_Ru, imgorclip.NgayTao, imgorclip.MoTa_Vn, imgorclip.MoTa_En, imgorclip.MoTa_Ru, imgorclip.LuotXem, imgorclip.HinhAnh, imgorclip.ImgOrClip, imgorclip.IDTheLoai);
                 return Convert.ToInt32(rs);
             }
             catch
@@ -48,7 +48,7 @@ namespace DataAccess.Classes
             try
             {
                 object rs = DataProvider.Instance.ExecuteNonQuery("ImageAndClips_Sua",
-                    imgorclip.ID, imgorclip.Ten_Vn, imgorclip.Ten_En, imgorclip.Ten_Ru, imgorclip.NgayTao, imgorclip.MoTa_Vn, imgorclip.MoTa_En, imgorclip.MoTa_Ru, imgorclip.LuotXem, imgorclip.HinhAnh, imgorclip.ImgOrClip, imgorclip.IDTheLoai, imgorclip.Ten_Cn, imgorclip.MoTa_Cn);
+                    imgorclip.ID, imgorclip.Ten_Vn, imgorclip.Ten_En, imgorclip.Ten_Ru, imgorclip.NgayTao, imgorclip.MoTa_Vn, imgorclip.MoTa_En, imgorclip.MoTa_Ru, imgorclip.LuotXem, imgorclip.HinhAnh, imgorclip.ImgOrClip, imgorclip.IDTheLoai);
                 return Convert.ToInt32(rs) > 0;
             }
             catch
@@ -135,7 +135,15 @@ namespace DataAccess.Classes
             catch
             { return null; }
         }
-
+        public static List<ImageAndClips> ImageAndClips_LayTheoIDTheLoai(string idTheLoai)
+        {
+            try
+            {
+                return CBO.FillCollection<ImageAndClips>(DataProvider.Instance.ExecuteReader("ImageAndClips_LayTheoIDTheLoai", ConvertType.ToInt32(idTheLoai)));
+            }
+            catch
+            { return null; }
+        }
 
         public static List<ImageAndClips> LayTheoTheLoai(string theLoai, string page, out int howManyPages)
         {

@@ -1,5 +1,4 @@
-﻿.contact-wraper
-{
+﻿.contact-wraper {
     color: #7f5c8e;
     float: left;
     font-family: "UVN_Tin_Tuc_Nhe";
@@ -8,8 +7,7 @@
     text-align: justify;
 }
 
-.contact
-{
+.contact {
     float: left;
     width: 100%;
     margin-top: 15px;
@@ -21,18 +19,16 @@
     line-height: 18px;
 }
 
-.title
-{
+.title {
     float: left;
     width: 100%;
     text-align: center;
 }
 
-.txt, .txtnd, .txtmin
-{
+.txt, .txtnd, .txtmin {
     width: 300px;
     height: 30px;
-    border: 1px solid rgba(1, 62, 107, 0.5);
+    border: 1px solid #4ca0ed;
     margin-top: 5px;
     background-color: transparent;
     padding-left: 5px;
@@ -41,8 +37,7 @@
     color: #013e6b;
 }
 
-.capcha
-{
+.capcha {
     border: 1px solid #fff !important;
     border-radius: 3px;
     height: 30px;
@@ -53,32 +48,28 @@
     width: 100px;
 }
 
-.txtnd
-{
+.txtnd {
     width: 500px;
     height: 81px;
 }
 
-.txtmin
-{
+.txtmin {
     width: 150px;
 }
 
-.btnrefresh
-{
+.btnrefresh {
     width: 30px;
     height: 30px;
     position: absolute;
     right: 200px;
     top: 6px;
     background-color: transparent;
-    background-image: url("/Design/refresh2.png");
+    background-image: url("/Design/reload.png");
     background-size: 100% 100%;
 }
 
-.btn
-{
-    background-color: #013e6b;
+.btn {
+    background-color: #4ca0ed;
     color: #FFF;
     float: left;
     font-family: "UVN_Van";
@@ -90,26 +81,22 @@
     border-radius: 3px;
 }
 
-    .btn:hover
-    {
+    .btn:hover {
         /*background-color: rgba(189,199,210,0.8);*/
     }
 
-.titletb
-{
+.titletb {
     color: red;
 }
 
-.succesfull
-{
+.succesfull {
     font-weight: bold;
     color: green;
 }
 
-.map-direction
-{
+.map-direction {
     position: absolute;
-    right: 0;
+    right: 18px;
     top: 0;
     font-weight: bold;
     color: #013e6b;
@@ -117,8 +104,7 @@
 
 
 /*css for list contact*/
-.qa
-{
+.qa {
     float: left;
     width: 99%;
     padding: 0.1% 0.5% 0.5%;
@@ -128,8 +114,7 @@
     border-right: 1px solid #6793ca;
 }
 
-.qa-title
-{
+.qa-title {
     float: left;
     width: 98%;
     margin-top: 30px;
@@ -142,8 +127,7 @@
     text-transform: uppercase;
 }
 
-.question
-{
+.question {
     float: left;
     width: 100%;
     position: relative;
@@ -154,8 +138,7 @@
     border-top-right-radius: 5px;
 }
 
-    .question a
-    {
+    .question a {
         color: #009bd5;
         font-family: Tahoma;
         font-weight: bold;
@@ -166,35 +149,29 @@
         width: 94%;
     }
 
-    .question:hover
-    {
+    .question:hover {
         color: #148f4b;
     }
 
-    .question a:hover
-    {
+    .question a:hover {
         /*text-decoration: underline;*/
     }
 
 
-.search-retult-line
-{
+.search-retult-line {
     float: left;
     width: 100%;
 }
 
-    .search-retult-line a
-    {
+    .search-retult-line a {
         color: #4eb222;
     }
 
-        .search-retult-line a:hover
-        {
+        .search-retult-line a:hover {
             text-decoration: underline;
         }
 
-.answer
-{
+.answer {
     float: left;
     width: 98%;
     font-size: 13px;
@@ -207,25 +184,21 @@
     color: #4a4a4a;
 }
 
-.qa-detail.answer
-{
+.qa-detail.answer {
     background-color: #FFF;
     border: 1px solid #D0D0D0;
 }
 
-    .qa-detail.answer:hover
-    {
+    .qa-detail.answer:hover {
         background-color: #FFF;
     }
 
-    .qa-detail.answer p
-    {
+    .qa-detail.answer p {
         float: left;
         width: 100%;
     }
 
-.answer img, .question img
-{
+.answer img, .question img {
     float: left;
     width: 2.68%;
     height: 2.68%;
@@ -234,8 +207,7 @@
     margin-top: 0.5%;
 }
 
-.answer a
-{
+.answer a {
     font-size: 11px;
     color: red;
     text-decoration: underline;
