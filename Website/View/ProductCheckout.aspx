@@ -118,33 +118,35 @@
 
                         <fieldset class="address">
                             <legend class="title">Thông tin người đặt hàng </legend>
-                            <p>
+                            <p style="float: left; width: 100%;">
                                 <label for="<%=lbFullName.ClientID %>">Họ Tên:</label>
                                 <asp:Label ID="lbFullName" CssClass="inforlabel" runat="server"> </asp:Label>
 
                             </p>
-                            <p>
+                            <p style="float: left; width: 100%;">
                                 <label for="<%=lbEmail.ClientID %>">Email:</label>
                                 <asp:Label ID="lbEmail" CssClass="inforlabel" runat="server"></asp:Label>
 
                             </p>
-                            <p>
+                            <p style="float: left; width: 100%;">
                                 <label for="<%=lbPhone.ClientID %>">Số điện thoại:</label>
                                 <asp:Label ID="lbPhone" CssClass="inforlabel" runat="server"></asp:Label>
 
                             </p>
-                            <p>
+                            <p style="float: left; width: 100%;">
                                 <label for="<%=lbAddress.ClientID %>">Địa chỉ:</label>
                                 <asp:Label ID="lbAddress" CssClass="inforlabel" runat="server"></asp:Label>
 
                             </p>
-                            <p>
+                            <p style="float: left; width: 100%;">
                                 <label for="<%=lbOtherRequire.ClientID %>">Yêu cầu khác:</label>
                                 <asp:Label ID="lbOtherRequire" CssClass="inforlabel" runat="server"></asp:Label>
                             </p>
-                            <asp:HyperLink ID="btnConfirmCart" CssClass="button02" Text="Xác nhận lại đơn hàng" runat="server" NavigateUrl="/View/AddCart.aspx" />
-                            <asp:Button ID="btnConfirmInfor" CssClass="button02" Text="Xác nhận lại thông tin người mua hàng" runat="server" OnClick="btnConfirmInfor_Click" />
-                            <asp:Button ID="btnMuaHang" CssClass="button02" Text="Mua hàng" runat="server" OnClick="btnMuaHang_Click" />
+                            <p style="float: left; width: 100%;">
+                                <asp:HyperLink ID="btnConfirmCart" CssClass="button02" Text="Xác nhận lại đơn hàng" runat="server" NavigateUrl="/View/AddCart.aspx" />
+                                <asp:Button ID="btnConfirmInfor" CssClass="button02" Text="Xác nhận lại thông tin người mua hàng" runat="server" OnClick="btnConfirmInfor_Click" />
+                                <asp:Button ID="btnMuaHang" CssClass="button02" Text="Mua hàng" runat="server" OnClick="btnMuaHang_Click" />
+                            </p>
                         </fieldset>
                     </div>
 

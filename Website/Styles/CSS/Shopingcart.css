@@ -263,7 +263,8 @@ a.button
 
     .info label
     {
-        display: block;
+        float: left;
+        width: 100px;
     }
 
     .info p

@@ -20,5 +20,11 @@ namespace DataAccess.Help
                 Customer = value;
             }
         }
+
+        public static int Amount
+        {
+            get;
+            set;
+        }
     }
 }

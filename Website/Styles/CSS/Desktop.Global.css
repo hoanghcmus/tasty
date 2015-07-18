@@ -141,8 +141,8 @@ html, #aspnetForm, .contaner {
     height: 100%;
     margin-left: 20%;*/
     float: left;
-    width: 50%;
-    margin-left: 12%;
+    width: 49%;
+    margin-left: 13%;
     position: fixed;
     z-index: 1;
 }
@@ -486,4 +486,347 @@ html, #aspnetForm, .contaner {
     margin-right: 1%;
     margin-bottom: 2%;
     height: 117px;
+}
+
+.scroll-img {
+    float: left;
+    width: 100%;
+    height: inherit;
+    /*border: 1px solid red;*/
+    overflow: hidden;
+    position: relative;
+}
+
+    .scroll-img ul {
+        float: left;
+        width: 1500px;
+        height: auto;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+        .scroll-img ul li {
+            display: inline-block;
+            /*margin: 5px;*/
+            margin-right: -27px;
+        }
+
+#sanpham-btn {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.pro-title {
+    height: 30px;
+    margin-top: 5px;
+    background-image: url("/Design/title-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 144px;
+    margin: 0 auto;
+}
+
+    .pro-title h1 {
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 15px;
+        color: #0359ad;
+        text-align: center;
+        padding-top: 8px;
+    }
+
+.product {
+    float: left;
+    width: 100%;
+    height: 455px;
+    position: absolute;
+    top: 20%;
+}
+
+a.nextpre {
+    width: 30px;
+    height: 30px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.next {
+    margin-left: 15px;
+}
+
+.pre {
+    margin-right: 15px;
+}
+
+/*Product CSS*/
+.content-container {
+    float: left;
+    width: 97.5%;
+    margin: 20px 0;
+    padding: 1%;
+    /*outline: 1px solid #c6cacc;
+    background-color: #FFF;*/
+}
+
+.product-detail {
+    float: left;
+    width: 100%;
+}
+
+
+.product-detail-header {
+    float: left;
+    width: 100%;
+    /*border-bottom: 1px solid #C0C0C0;*/
+    padding-bottom: 10px;
+}
+
+    .product-detail-header h1 {
+        float: left;
+        width: 100%;
+        font-family: Tahoma,Arial,sans-serif;
+        color: #0066a8;
+        font-size: 27px;
+    }
+
+
+.product-detail-wrapper {
+    float: left;
+    /*width: 80%;*/
+    width: 100%;
+    margin-top: 10px;
+}
+
+.thumms {
+    float: left;
+    width: 10%;
+    /*border-right: 1px solid #c6cacc;*/
+}
+
+.thumb {
+    float: left;
+    width: 90%;
+    margin-top: 10px;
+}
+
+    .thumb img {
+        float: left;
+        width: 90%;
+        margin: 5%;
+    }
+
+    .thumb:first-child {
+        margin-top: 0;
+    }
+
+.thumb-active {
+    outline: 1px solid #53b2f0;
+}
+
+.figure {
+    float: left;
+    width: 42%;
+    height: 360px;
+}
+
+.figure-wrapper {
+    float: left;
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+    .figure-wrapper > a {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+        .figure-wrapper > a > img {
+            /*margin: 10% 10% 0 !important;
+            width: 80% !important;*/
+            width: auto !important;
+            max-height: 100%;
+        }
+
+.product-infos {
+    float: left;
+    width: 46%;
+}
+
+.product-label, .product-info {
+    border-bottom: 1px dashed #c6cacc;
+    padding-bottom: 5px;
+    margin-top: 9px;
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-label {
+    float: left;
+    width: 35%;
+    font-weight: bold;
+}
+
+.product-info {
+    float: left;
+    width: 60%;
+}
+
+    .product-info > .product-under {
+        background: none;
+    }
+
+    .product-info .discount {
+        width: 14%;
+    }
+
+.buy {
+    float: left;
+    width: 40%;
+    min-height: 36px;
+    background-color: #f37021;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+    .buy > a > span {
+        float: left;
+        width: 100%;
+        margin-top: 9px;
+        font-family: Tahoma,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #FFF;
+        text-align: center;
+    }
+
+    .buy:hover {
+        background-color: #E8E8E8;
+    }
+
+        .buy:hover > a > span {
+            color: #f37021;
+        }
+
+.shopping-cart {
+    float: left;
+    width: 14.36%;
+    height: 36px;
+    position: fixed;
+    top: 0;
+    right: 12.96%;
+    z-index: 1;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.shleft {
+    float: right;
+    width: 55%;
+    height: 100%;
+    margin-right: 2%;
+    background-color: rgba(255,255,255,0.6);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.shcart {
+    float: left;
+    width: 19px;
+    height: 18px;
+    margin-top: 9px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.cart-title {
+    float: left;
+    margin-top: 12px;
+    color: #0b6cd0;
+}
+
+
+
+.shright {
+    float: right;
+    width: 42%;
+    height: 100%;
+    background-color: #106fd3;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+    .shright a {
+        color: #FFF;
+        float: left;
+    }
+
+        .shright a span {
+            float: left;
+            width: 100%;
+            margin-top: 11px;
+            text-align: center;
+        }
+
+.cart {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /*background-image: url("/Design/cart_orange.png");*/
+    background-image: url("/Design/cart_black.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transition: all .2s ease-in-out;
+}
+
+    .cart:hover {
+        /*background-image: url("/Design/cart_black.png");*/
+        background-image: url("/Design/cart_orange.png");
+    }
+
+.detail-info {
+    float: left;
+    width: 100%;
+}
+
+.detail-title {
+    float: left;
+    width: 100%;
+    /*border-top: 1px dotted #C0C0C0;*/
+    margin-top: 10px;
+}
+
+    .detail-title h1 {
+        float: left;
+        width: 100%;
+        border-bottom: 1px dotted #C0C0C0;
+        padding-bottom: 9px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-family: Tahoma,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        color: #0066a8;
+    }
+
+.detail-info-wraper {
+    float: left;
+    width: 98%;
+    margin: 1%;
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.related-product {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 9px;
 }
