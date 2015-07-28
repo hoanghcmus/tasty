@@ -17,8 +17,8 @@
                 <asp:Repeater ID="rptProductList" runat="server">
                     <ItemTemplate>
                         <li>
-                            <a href="/<%#Eval("ProductCategoryID") %>/<%#Eval("ID") %>/detail-product.html" target="_blank">
-                                <img src="<%#Eval("Thumbnail") %>" alt="img" />
+                            <a href="/<%#Eval("ProductCategoryID") %>/<%#Eval("ID") %>/detail-product.html">
+                                <img src="<%#Eval("Thumbnail") %>" alt="img" style="margin-bottom: -10px;" />
                                 <div class="pro-title">
                                     <h1><%#Eval("ProductName") %></h1>
                                 </div>

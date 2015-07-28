@@ -9,7 +9,7 @@
     <div class="bg-sub"></div>
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="Server">
-    <div class="product">
+    <div class="product product1">
         <div class="content-container">
             <div class="product-detail">
                 <div class="product-detail-header">
@@ -33,8 +33,7 @@
 
                     <div class="figure">
                         <div class="figure-wrapper">
-
-                            <a href="#" class="MagicZoom link" id="figureLarge" rel="zoom-width:400px; zoom-height:400px; zoom-distance:40; disable-zoom: true;" runat="server">
+                            <a href="#" class="MagicZoom link" id="figureLarge" rel="zoom-width:0; zoom-height:0; zoom-distance:40; disable-zoom: true;" runat="server">
                                 <img src="#" id="figureThumb" class="" runat="server" /></a>
                         </div>
                     </div>
@@ -59,21 +58,20 @@
                         </div>
 
                         <div class="line-fix-parent-width">
+                            <div class="product-label">Chi tiết:</div>
+                            <div class="product-info">
+                                <asp:Literal ID="ltrChiTietSanPham" runat="server">
+                                </asp:Literal>
+                            </div>
+                        </div>
+
+                        <div class="line-fix-parent-width">
                             <div class="buy">
                                 <a href="/View/AddCart.aspx?pid=<%=getPid()%>" data-fancybox-type="iframe" class="link" id="btn-shopping-cart"><span>Đặt hàng</span></a>
                             </div>
                         </div>
                     </div>
-                    <div class="detail-info">
-                        <div class="detail-title">
-                            <h1>Chi tiết sản phẩm</h1>
-                        </div>
-                        <div class="detail-info-wraper">
-                            <asp:Literal ID="ltrChiTietSanPham" runat="server">
 
-                            </asp:Literal>
-                        </div>
-                    </div>
 
                 </div>
 

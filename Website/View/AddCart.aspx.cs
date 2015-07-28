@@ -56,6 +56,10 @@ public partial class View_AddCart : System.Web.UI.Page
                 {
                     Session["Amount"] = DSCart.Count();
                 }
+                else
+                {
+                    Session["Amount"] = 0;
+                }
             }
             LoadDataToCartRepeater(ctx, sSessionId);
         }
@@ -195,6 +199,10 @@ public partial class View_AddCart : System.Web.UI.Page
         if (DSCart != null && DSCart.Count() > 0)
         {
             Session["Amount"] = DSCart.Count();
+        }
+        else
+        {
+            Session["Amount"] = 0;
         }
 
         LoadDataToCartRepeater(ctx, Session["SID"].ToString());
