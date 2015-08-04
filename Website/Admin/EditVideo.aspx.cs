@@ -66,8 +66,6 @@ public partial class Admin_EditVideo : System.Web.UI.Page
     {
         txtTenVn.Text = "";
         txtmoTaVn.Text = "";
-        txtTenEn.Text = "";
-        txtmoTaEn.Text = "";
 
         txtAnhDaiDien.Text = "";
         txtHinhAnh.Text = "";
@@ -77,8 +75,6 @@ public partial class Admin_EditVideo : System.Web.UI.Page
         lblId.Text = data.ID.ToString();
         txtTenVn.Text = data.Ten_Vn;
         txtmoTaVn.Text = data.MoTa_Vn;
-        txtTenEn.Text = data.Ten_En;
-        txtmoTaEn.Text = data.MoTa_En;
 
         txtAnhDaiDien.Text = data.HinhAnh;
         txtHinhAnh.Text = data.ImgOrClip;
@@ -100,8 +96,8 @@ public partial class Admin_EditVideo : System.Web.UI.Page
         }
         data.Ten_Vn = txtTenVn.Text;
         data.MoTa_Vn = txtmoTaVn.Text;
-        data.Ten_En = txtTenEn.Text;
-        data.MoTa_En = txtmoTaEn.Text;
+        data.Ten_En = "";
+        data.MoTa_En = "";
         data.Ten_Ru = "";
         data.MoTa_Ru = "";
         data.IDTheLoai = 5;

@@ -9,16 +9,17 @@
     <div class="bg-sub"></div>
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="Server">
+    <span id="a"></span>
     <div class="product product1">
         <div class="content-container">
             <div class="product-detail">
-                <div class="product-detail-header">
+                <%--  <div class="product-detail-header">
                     <h1>
                         <asp:Literal ID="ltrTenSanPham" runat="server" Text="Tiêu đề sản phẩm"></asp:Literal>
                     </h1>
-                </div>
+                </div>--%>
                 <div class="product-detail-wrapper">
-                    <div class="thumms">
+                    <%--<div class="thumms">
 
                         <asp:Repeater ID="rptListImg" runat="server">
                             <ItemTemplate>
@@ -36,9 +37,20 @@
                             <a href="#" class="MagicZoom link" id="figureLarge" rel="zoom-width:0; zoom-height:0; zoom-distance:40; disable-zoom: true;" runat="server">
                                 <img src="#" id="figureThumb" class="" runat="server" /></a>
                         </div>
+                    </div>--%>
+
+                    <div class="product-figure">
+                        <img src="#" alt="Figure" id="figure" runat="server" />
                     </div>
 
                     <div class="product-infos">
+                        <div class="line-fix-parent-width">
+                            <div class="product-label">Tên sản phẩm:</div>
+                            <div class="product-info">
+                                <asp:Literal ID="ltrTenSanPham" runat="server"></asp:Literal>
+                            </div>
+                        </div>
+
                         <div class="line-fix-parent-width">
                             <div class="product-label">Giá bán:</div>
                             <div class="product-info">
@@ -58,8 +70,8 @@
                         </div>
 
                         <div class="line-fix-parent-width">
-                            <div class="product-label">Chi tiết:</div>
-                            <div class="product-info">
+                            <div class="product-label" style="border: none">Chi tiết:</div>
+                            <div class="product-info" style="clear: both; width: 100%; text-align: justify; border: none; margin: 0;">
                                 <asp:Literal ID="ltrChiTietSanPham" runat="server">
                                 </asp:Literal>
                             </div>
@@ -80,16 +92,7 @@
     </div>
 </asp:Content>
 <asp:Content ID="Footer" ContentPlaceHolderID="FootExtender" runat="Server">
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("html").niceScroll();
-            $(".left-wrap").niceScroll();
-            $(".contact-wrapper").niceScroll();
-            $(".block-body").niceScroll();
-            $(".product").niceScroll();
-        });
 
-    </script>
     <%-- Load page content when click item on the right --%>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -118,7 +121,7 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".product").niceScroll();
+            $(".product-infos").niceScroll();
         });
 
     </script>

@@ -18,7 +18,7 @@
             $("#btnDuyet").click(function () {
                 var finder = new CKFinder();
                 finder.selectActionFunction = function (fileUrl) {
-                    $('#<%=txtHinhAnh.ClientID %>').val(fileUrl);
+                    
                 };
                 finder.popup();
             });
@@ -150,7 +150,7 @@
                                     <asp:CheckBox ID="ckbSanPhamMoi" runat="server" Text="Đây là sản phẩm mới" />
                                 </td>
                             </tr>--%>
-                            <tr class="text" valign="top">
+                            <%--<tr class="text" valign="top">
                                 <td>Thêm ảnh cho sản phẩm:
                                 </td>
                                 <td>
@@ -187,7 +187,7 @@
                                         </ContentTemplate>
                                     </asp:UpdatePanel>
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr>
                                 <td colspan="2">Chi tiết sản phẩm:<br />
                                     <CKEditor:CKEditorControl ID="txtChiTietVn" Height="300" runat="server">

@@ -32,30 +32,31 @@ public partial class View_ProductDetail : System.Web.UI.Page
         ltrTenSanPham.Text = pr.ProductName;      
         ltrOldPrice.Text = showMoney(pr.OldPrice).ToString();       
         ltrMoTa.Text = pr.Description;
-        ltrChiTietSanPham.Text = pr.Detail;      
+        ltrChiTietSanPham.Text = pr.Detail;
+        figure.Src = pr.Thumbnail;
 
-        List<Img> album = new List<Img>();
-        int idimg = 0;
-        string listimg = pr.Image;
-        string[] str = listimg.Split('\'');
-        foreach (var item in str)
-        {
-            if (item.ToString() != "")
-            {
-                Img dataimg = new Img();
-                dataimg.ID = idimg;
-                dataimg.Ten = pr.ProductName;
-                dataimg.HinhAnh = item.ToString();
-                album.Add(dataimg);
-                idimg++;
-            }
-        }
-        rptListImg.DataSource = album;
-        rptListImg.DataBind();
+        //List<Img> album = new List<Img>();
+        //int idimg = 0;
+        //string listimg = pr.Image;
+        //string[] str = listimg.Split('\'');
+        //foreach (var item in str)
+        //{
+        //    if (item.ToString() != "")
+        //    {
+        //        Img dataimg = new Img();
+        //        dataimg.ID = idimg;
+        //        dataimg.Ten = pr.ProductName;
+        //        dataimg.HinhAnh = item.ToString();
+        //        album.Add(dataimg);
+        //        idimg++;
+        //    }
+        //}
+        //rptListImg.DataSource = album;
+        //rptListImg.DataBind();
 
-        figureLarge.HRef = str.First().Trim().ToString();
-        //figureLarge.Title = pr.ProductName;
-        figureThumb.Src = ToThumb(str.First().Trim().ToString());
+        //figureLarge.HRef = str.First().Trim().ToString();
+        ////figureLarge.Title = pr.ProductName;
+        //figureThumb.Src = ToThumb(str.First().Trim().ToString());
     }
     public string ToThumb(string input)
     {

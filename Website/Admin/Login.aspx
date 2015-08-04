@@ -1,12 +1,18 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Admin_Login" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head id="Head1" runat="server">
-    <title>Đang nhập Quản Trị</title>
-    <link rel="Shurtcut Icon" href="images/icon_login.png" type="image/x-icon" />
-    <link href="stylesheets/login.css" rel="stylesheet" type="text/css" />
-    <script src="lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Quản trị nước khoáng Tasty
+    </title>
+    <link rel="Shurtcut Icon" href="/Admin/images/icon_login.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/Admin/LoginPage/animate.min.css">
+    <link rel="stylesheet" href="/Admin/LoginPage/login.css">
+
+
+    <script src="/Styles/JS/jquery-10.2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             var txtUserName = $("#txtTenDangNhap");
@@ -18,7 +24,8 @@
                 }
                 else {
                     $('#lbtitle').html("Kiểm tra...");
-                    $.ajax({ type: "POST",
+                    $.ajax({
+                        type: "POST",
                         url: "Login.asmx/KiemTraTenDangNhap",
                         data: "{tenDangNhap:'" + $('#txtTenDangNhap').val() + "'}",
                         contentType: "application/json; charset=utf-8",
@@ -26,14 +33,14 @@
                         success: function (response) {
                             var result = response.d;
                             if (result == true) {
-                                $('#lbtitle').css("color", "black");
+                                //$('#lbtitle').css("color", "black");
                                 $('#lbtitle').html("Vui lòng nhập mật khẩu!");
-                                $('#txtTenDangNhap').css("border", "1px solid #006cb2");
+                                //$('#txtTenDangNhap').css("border", "1px solid #006cb2");
                             }
                             else {
-                                $('#lbtitle').css("color", "#ff0000");
+                                //$('#lbtitle').css("color", "#ff0000");
                                 $('#lbtitle').html("Tên đăng nhập không tồn tại!");
-                                $('#txtTenDangNhap').css("border", "1px solid red");
+                                //$('#txtTenDangNhap').css("border", "1px solid red");
                             }
                         },
                         error: function (msg) {
@@ -46,58 +53,17 @@
     </script>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div class="container">
-        <div class="middleEdit">
-            <div class="clear">
-            </div>
-            <div class="frmheader">
-            </div>
-            <div class=" frmcontent">
-                <div class="Tam">
-                </div>
-                <div class="Title">
-                    <p>
-                        <asp:Label ID="lbtitle" runat="server" Text="Vui lòng nhập tên đăng nhập và mật khẩu!"
-                            CssClass="lbtitle" /></p>
-                </div>
-                <div class="content">
-                    <table class="login">
-                        <tr>
-                            <td class="text">
-                                Tên đăng nhập
-                            </td>
-                            <td>
-                                <asp:TextBox runat="server" ID="txtTenDangNhap" CssClass="txt" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text">
-                                Mật khẩu
-                            </td>
-                            <td>
-                                <asp:TextBox runat="server" TextMode="Password" ID="txtMatKhau" CssClass="txt" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                &nbsp;
-                            </td>
-                            <td>
-                                <asp:Button ID="btnDangNhap" runat="server" Text="Đăng nhập" CssClass="btn" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <asp:CheckBox ID="ckbGhiNho" runat="server" Text="Ghi nhớ tôi!" />
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+    <div class="form animated flipInX">
+        <h2 style="font-family: Tahoma;">Đăng nhập quản trị</h2>
+        <div class="Title">
+            <asp:Label ID="lbtitle" runat="server" Text="" CssClass="lbtitle" />
         </div>
+        <form runat="server" id="MainForm">
+            <asp:TextBox runat="server" ID="txtTenDangNhap" placeholder="Tên đăng nhập" />
+            <asp:TextBox runat="server" TextMode="Password" ID="txtMatKhau" placeholder="Mật khẩu" />
+            <asp:Button ID="btnDangNhap" runat="server" CssClass="animated infinite pulse" OnClick="btnDangNhap_Click" Text="Đăng nhập"></asp:Button>
+        </form>
     </div>
-    <!-- End div container-->
-    </form>
 </body>
 </html>
+

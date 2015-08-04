@@ -21,7 +21,7 @@ public partial class Admin_Login : System.Web.UI.Page
         base.OnInit(e);
         btnDangNhap.Click += new EventHandler(btnDangNhap_Click);
     }
-    void btnDangNhap_Click(object sender, EventArgs e)
+    public void btnDangNhap_Click(object sender, EventArgs e)
     {
         if (txtTenDangNhap.Text != "" && txtMatKhau.Text != "")
         {
