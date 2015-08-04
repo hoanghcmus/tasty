@@ -124,8 +124,8 @@ public partial class Admin_EditProduct : System.Web.UI.Page
     {
         base.OnInit(e);
         btnLuu.Click += new EventHandler(btnLuu_Click);
-        btnaddimg.Click += new EventHandler(btnaddimg_Click);
-        dlListImg.ItemCommand += new DataListCommandEventHandler(dlListImg_ItemCommand);
+        //btnaddimg.Click += new EventHandler(btnaddimg_Click);
+        //dlListImg.ItemCommand += new DataListCommandEventHandler(dlListImg_ItemCommand);
     }
     void dlListImg_ItemCommand(object source, DataListCommandEventArgs e)
     {
@@ -140,34 +140,34 @@ public partial class Admin_EditProduct : System.Web.UI.Page
                     break;
                 }
             }
-            dlListImg.DataSource = album;
-            dlListImg.DataBind();
+           // dlListImg.DataSource = album;
+           // dlListImg.DataBind();
         }
     }
-    void btnaddimg_Click(object sender, EventArgs e)
-    {
-        Label1.Text = "";
-        if (txtHinhAnh.Text != "")
-        {
-            int stt;
-            if (album == null)
-            {
-                stt = 0;
-                album = new List<Img>();
-            }
-            else
-                stt = album.Count;
-            Img dataimg = new Img();
-            dataimg.ID = stt;
-            dataimg.HinhAnh = txtHinhAnh.Text.Trim();
-            album.Add(dataimg);
-            dlListImg.DataSource = album;
-            dlListImg.DataBind();
-            txtHinhAnh.Text = "";
-        }
-        else
-            lbhinhanh.Visible = true;
-    }
+    //void btnaddimg_Click(object sender, EventArgs e)
+    //{
+    //    Label1.Text = "";
+    //    if (txtHinhAnh.Text != "")
+    //    {
+    //        int stt;
+    //        if (album == null)
+    //        {
+    //            stt = 0;
+    //            album = new List<Img>();
+    //        }
+    //        else
+    //            stt = album.Count;
+    //        Img dataimg = new Img();
+    //        dataimg.ID = stt;
+    //        dataimg.HinhAnh = txtHinhAnh.Text.Trim();
+    //        album.Add(dataimg);
+    //        dlListImg.DataSource = album;
+    //        dlListImg.DataBind();
+    //        txtHinhAnh.Text = "";
+    //    }
+    //    else
+    //        lbhinhanh.Visible = true;
+    //}
     public int KiemTraDieuKien()
     {
         int kq = 0;
@@ -189,8 +189,9 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         //txtGiamGia.Text = "";
         //txtXuatXu.Text = "";
         //txtBaoHanh.Text = "";
-        dlListImg.DataSource = album;
-        dlListImg.DataBind();
+
+        //dlListImg.DataSource = album;
+        //dlListImg.DataBind();
     }
     protected string showMoney(decimal input)
     {
@@ -216,22 +217,22 @@ public partial class Admin_EditProduct : System.Web.UI.Page
         //else
         //    ckbSanPhamMoi.Checked = false;
 
-        int idimg = 0;
-        string listimg = data.Image;
-        string[] str = listimg.Split('\'');
-        foreach (var item in str)
-        {
-            if (item.ToString() != "")
-            {
-                Img dataimg = new Img();
-                dataimg.ID = idimg;
-                dataimg.HinhAnh = item.ToString();
-                album.Add(dataimg);
-                idimg++;
-            }
-        }
-        dlListImg.DataSource = album;
-        dlListImg.DataBind();
+        //int idimg = 0;
+        //string listimg = data.Image;
+        //string[] str = listimg.Split('\'');
+        //foreach (var item in str)
+        //{
+        //    if (item.ToString() != "")
+        //    {
+        //        Img dataimg = new Img();
+        //        dataimg.ID = idimg;
+        //        dataimg.HinhAnh = item.ToString();
+        //        album.Add(dataimg);
+        //        idimg++;
+        //    }
+        //}
+        //dlListImg.DataSource = album;
+        //dlListImg.DataBind();
     }
     private DataAccess.Classes.Product GetData()
     {

@@ -56,7 +56,7 @@
                             <tr>
                                 <td class="text" valign="top">
                                     <br />
-                                    Tên Video-Clips (Tiếng việt):
+                                    Tên Video-Clips :
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtTenVn"
@@ -66,35 +66,10 @@
                                     <asp:TextBox ID="txtTenVn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
                             </tr>
+                          
                             <tr>
                                 <td class="text" valign="top">
-                                    <br />
-                                    Tên Video-Clips (EngLish):
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtTenEn"
-                                        CssClass="red">(Nhập tên 'EngLish')</asp:RequiredFieldValidator>
-                                    <asp:CustomValidator ID="valTenEn" ControlToValidate="txtTenEn" Text="(Tên 'EngLish' < 100 ký tự)"
-                                        runat="server" OnServerValidate="valTenEn_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtTenEn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
-                                </td>
-                            </tr>
-                            <%--<tr>
-                                <td class="text" valign="top">
-                                    <br />
-                                    Tên Video-Clips (Russia):
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtTenRu"
-                                        CssClass="red">(Nhập tên 'Russia')</asp:RequiredFieldValidator>
-                                    <asp:CustomValidator ID="valTenRu" ControlToValidate="txtTenRu" Text="(Tên 'Russia' < 100 ký tự)"
-                                        runat="server" OnServerValidate="valTenRu_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtTenRu" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
-                                </td>
-                            </tr>--%>
-                            <tr>
-                                <td class="text" valign="top">
-                                    Mô tả (Tiếng việt):
+                                    Mô tả :
                                 </td>
                                 <td>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtmoTaVn"
@@ -104,30 +79,7 @@
                                     <asp:TextBox ID="txtmoTaVn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="text" valign="top">
-                                    Mô tả (EngLish):
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtmoTaEn"
-                                        CssClass="red">(Nhập mô tả 'EngLish')</asp:RequiredFieldValidator>
-                                    <asp:CustomValidator ID="valmotaEn" ControlToValidate="txtmoTaEn" Text="(Mô tả 'EngLish'< 150 ký tự)"
-                                        runat="server" OnServerValidate="valmotaEn_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtmoTaEn" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
-                                </td>
-                            </tr>
-                            <%--<tr>
-                                <td class="text" valign="top">
-                                    Mô tả (Russia):
-                                </td>
-                                <td>
-                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtmoTaRu"
-                                        CssClass="red">(Nhập mô tả 'Russia')</asp:RequiredFieldValidator>
-                                    <asp:CustomValidator ID="valmotaRu" ControlToValidate="txtmoTaRu" Text="(Mô tả 'Russia'< 150 ký tự)"
-                                        runat="server" OnServerValidate="valmotaRu_ServerValidate" /><br />
-                                    <asp:TextBox ID="txtmoTaRu" runat="server" Text="" TextMode="MultiLine" CssClass="txtNewMin"></asp:TextBox>
-                                </td>
-                            </tr>--%>
+                           
                             <tr class="text">
                                 <td valign="top">
                                     Ảnh đại diện:

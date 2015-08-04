@@ -84,6 +84,9 @@
                         <uc1:UC_MenuNgang runat="server" ID="UC_MenuNgang" />
                     </div>
                 </div>
+
+                <asp:ContentPlaceHolder ID="SlideShowContentPlaceHolder" runat="server">
+                </asp:ContentPlaceHolder>                
                 <div class="body">
 
                     <asp:ContentPlaceHolder ID="LeftContent" runat="server">
@@ -125,7 +128,8 @@
             $("html").niceScroll();
             $(".left-wrap").niceScroll();
             $(".contact-wrapper").niceScroll();
-            $(".block-body").niceScroll();
+            //$(".block-body").niceScroll();
+            $(".right-wrap").niceScroll();
         });
 
     </script>

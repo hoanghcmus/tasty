@@ -30,6 +30,7 @@
                     <div class="content_mid">
                         <input type="button" value="Thêm bài viết" class="btnedit" onclick="location.href = 'EditArticle.aspx'" />
                         <asp:Button Text="Xóa bài đã chọn" runat="server" ID="btnDelete" CssClass="multidelete" />
+
                         |&nbsp;<asp:TextBox ID="txtTimKiem" runat="server" CssClass="txtsreach" />
                         <asp:Button Text=" Tìm" runat="server" ID="btnTimKiem" CssClass="btnsreach" />
                         <input type="button" value="Làm mới" class="btnedit" onclick="location.href = 'MgerArticle.aspx?Status=1'" />

@@ -12,12 +12,20 @@
 <asp:Content ID="Header" ContentPlaceHolderID="HeadExtender" runat="Server">
 </asp:Content>
 
+
+
+<asp:Content ID="SlideShow" ContentPlaceHolderID="SlideShowContentPlaceHolder" runat="Server">
+    <div class="slideshow">
+        <uc1:UC_SlideShow runat="server" ID="UC_SlideShow" />
+    </div>
+</asp:Content>
+
 <asp:Content ID="Background" ContentPlaceHolderID="BackGroundPlaceHolder" runat="Server">
     <div class="bg ss">
-        <uc1:UC_SlideShow runat="server" ID="UC_SlideShow1" />
+        <%--<uc1:UC_SlideShow runat="server" ID="UC_SlideShow1" />--%>
     </div>
     <div class="bg bs">
-        <uc1:UC_BSlideShow runat="server" id="UC_BSlideShow" />
+        <%--<uc1:UC_BSlideShow runat="server" id="UC_BSlideShow" />--%>
     </div>
 </asp:Content>
 

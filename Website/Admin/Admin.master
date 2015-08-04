@@ -168,7 +168,7 @@
             <i class="icon-credit-card"></i>Danh sách Album ảnh</asp:HyperLink>
                 </li>
             </ul>
-            <%--  <asp:HyperLink ID="lnkMgerVideo" class="nav-header collapsed" data-toggle="collapse"
+            <asp:HyperLink ID="lnkMgerVideo" class="nav-header collapsed" data-toggle="collapse"
                 NavigateUrl="#videos" runat="server">
             <i class="icon-camera"></i>Quản lý Video-Clips <i class="icon-chevron-up"></i>
             </asp:HyperLink>
@@ -181,7 +181,7 @@
                     <asp:HyperLink ID="lnkListVideo" NavigateUrl="MgerVideo.aspx" runat="server">
             <i class="icon-credit-card"></i>Danh sách Video-Clips</asp:HyperLink>
                 </li>
-            </ul>--%>
+            </ul>
             <%-- 
             <asp:HyperLink ID="hlDatTiec" class="nav-header" NavigateUrl="MgerDatTiec.aspx?Status=0"
                 runat="server">

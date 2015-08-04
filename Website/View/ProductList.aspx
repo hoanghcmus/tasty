@@ -11,6 +11,7 @@
 </asp:Content>
 
 <asp:Content ID="Main" ContentPlaceHolderID="MainContent" runat="Server">
+    <span id="a"></span>
     <div class="product">
         <div id="sanpham" class="scroll-img">
             <ul>
@@ -18,7 +19,7 @@
                     <ItemTemplate>
                         <li>
                             <a href="/<%#Eval("ProductCategoryID") %>/<%#Eval("ID") %>/detail-product.html">
-                                <img src="<%#Eval("Thumbnail") %>" alt="img" style="margin-bottom: -10px;" />
+                                <img src="<%#Eval("Thumbnail") %>" alt="img" class="proimg<%#Container.ItemIndex %>" />
                                 <div class="pro-title">
                                     <h1><%#Eval("ProductName") %></h1>
                                 </div>
@@ -48,6 +49,25 @@
         $('#sanpham-forward').click(function () {
             $('#sanpham').trigger('forward');
         });
+    
+
+        $("document").ready(function () {
+            setTimeout(function () {
+
+                //var txt = "";
+                $(".scroll-img > ul > li > a > img").each(function () {
+                    var ProImgWidth = $(this).width();
+                    var ParentWidth = $(this).parent().width();
+                    //txt += "img width: " + ProImgWidth + "   --  a width: " + ParentWidth + "</br>";
+                    var ml = (100 - ((ProImgWidth * 100) / ParentWidth)) / 2;
+                    $(this).css("left", ml + "%");
+                });
+               // $("#a").html(txt);
+
+            }, 10);
+        });
+
+
     </script>
 </asp:Content>
 

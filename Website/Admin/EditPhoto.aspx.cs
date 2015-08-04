@@ -59,12 +59,8 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
     private void SetData(ImageAndClips data)
     {
         txtTenVn.Text = data.Ten_Vn;
-        txtTenEn.Text = data.Ten_En;
-        
-
         txtmoTaVn.Text = data.MoTa_Vn;
-        txtmoTaEn.Text = data.MoTa_En;
-        
+
 
         lblId.Text = data.ID.ToString();
         int idimg = 0;
@@ -92,12 +88,12 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
         else
             data = new ImageAndClips();//Them moi
         data.Ten_Vn = txtTenVn.Text;
-        data.Ten_En = txtTenEn.Text;
+        data.Ten_En = "";
         data.Ten_Ru = "";
         data.Ten_Cn = "";
 
         data.MoTa_Vn = txtmoTaVn.Text;
-        data.MoTa_En = txtmoTaEn.Text;
+        data.MoTa_En = "";
         data.MoTa_Ru = "";
         data.MoTa_Cn = "";
 
@@ -115,12 +111,7 @@ public partial class Admin_EditPhoto : System.Web.UI.Page
     private void ResetForm()
     {
         txtTenVn.Text = "";
-        txtTenEn.Text = "";
-      
-
         txtmoTaVn.Text = "";
-        txtmoTaEn.Text = "";
-     
 
         txtHinhAnh.Text = "";
         dlListImg.DataSource = null;

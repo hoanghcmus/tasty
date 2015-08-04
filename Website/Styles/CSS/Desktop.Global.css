@@ -68,7 +68,8 @@ html, #aspnetForm, .contaner
 
 .bg
 {
-    background-image: url("/Design/bg.jpg");
+    /*background-image: url("/Design/bg.jpg");*/
+    background-image: url("/Design/bg-main.jpg");
 }
 
 .bg-sub
@@ -79,7 +80,7 @@ html, #aspnetForm, .contaner
 .logo-bg
 {
     float: left;
-    width: 43%;
+    width: 38%;
     height: 369px;
     position: fixed;
     top: 0px;
@@ -99,34 +100,12 @@ html, #aspnetForm, .contaner
     display: none;
 }
 
-@media screen and (min-height : 810px)
-{
-    .bg
-    {
-        background-image: url("/Design/bg-b.jpg");
-    }
-
-    .bg-sub
-    {
-        background-image: url("/Design/bg-main-b.jpg");
-    }
-
-    .ss
-    {
-        display: none;
-    }
-
-    .bs
-    {
-        display: block;
-    }
-}
 
 .contaner-wrap
 {
     float: left;
-    width: 74.074%;
-    margin-left: 12.693%;
+    width: 81.481%;
+    margin-left: 9.2%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -135,12 +114,20 @@ html, #aspnetForm, .contaner
 
 .logo
 {
-    float: left;
+    /*float: left;
     width: 16.9%;
     height: 16.323%;
     position: absolute;
     top: 0px;
     left: 2%;
+    z-index: 1;*/
+    float: left;
+    width: 11.5%;
+    height: 119px;
+    position: absolute;
+    top: 9px;
+    left: 4%;
+    z-index: 1;
 }
 
 /*CSS for menu ngang*/
@@ -165,8 +152,8 @@ html, #aspnetForm, .contaner
     height: 100%;
     margin-left: 20%;*/
     float: left;
-    width: 49%;
-    margin-left: 13%;
+    width: 54%;
+    margin-left: 9%;
     position: fixed;
     z-index: 1;
 }
@@ -209,7 +196,7 @@ html, #aspnetForm, .contaner
     padding: 13px;
     margin-top: 5px;
     color: #FFF;
-    font-size: 14px;
+    font-size: 1vw;
     float: left;
 }
 
@@ -362,6 +349,16 @@ html, #aspnetForm, .contaner
         background-color: rgba(74, 155, 237, 0.8);
     }
 
+
+.slideshow
+{
+    float: left;
+    width: 88%;
+    height: 500px;
+    position: absolute;
+    bottom: 45px;
+    left: 6%;
+}
 /*CSS For footer*/
 .footer
 {
@@ -413,7 +410,8 @@ html, #aspnetForm, .contaner
 .left, .right
 {
     float: left;
-    height: 70.588%;
+    /*height: 70.588%;*/
+    height: 75.6%;
     background-color: rgba(255,255,255,0.8);
     position: absolute;
     bottom: 0px;
@@ -423,8 +421,8 @@ html, #aspnetForm, .contaner
 
 .left
 {
-    width: 25.9%;
-    margin-right: 2.9%;
+    width: 25.5%;
+    margin-right: 2%;
     left: 0px;
 }
 
@@ -451,9 +449,13 @@ html, #aspnetForm, .contaner
 
         .hnav > ul > li
         {
+            /*float: left;
+            width: 100%;
+            padding-bottom: 11px;*/
             float: left;
             width: 100%;
-            padding-bottom: 11px;
+            padding-top: 9px;
+            margin-bottom: 2px;
         }
 
             .hnav > ul > li > a
@@ -462,6 +464,16 @@ html, #aspnetForm, .contaner
                 font-size: 15px;
                 color: #0359ad;
             }
+
+            .hnav > ul > li:last-child
+            {
+                padding-bottom: 10px;
+            }
+
+.item-active, .item-link:hover
+{
+    background-color: rgba(1, 81, 133, 0.1);
+}
 
 .dot
 {
@@ -487,7 +499,7 @@ html, #aspnetForm, .contaner
 
 .right
 {
-    width: 71%;
+    width: 72.5%;
     right: 0px;
 }
 
@@ -498,8 +510,8 @@ html, #aspnetForm, .contaner
     height: 59.5%;
     margin-left: 4.25%;
     margin-top: 5%;
-    /*overflow: scroll;*/
-    overflow: hidden;
+    overflow: scroll;
+    /*overflow: hidden;*/
 }
 
 .block, .block-head, .block-body
@@ -530,13 +542,13 @@ html, #aspnetForm, .contaner
 
 .block-body
 {
-    height: 83.7%;
+    /*height: 83.7%;*/
     font-family: Arial;
     font-size: 13px;
     color: #343434;
     text-align: justify;
     line-height: 16px;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
     .block-body img
@@ -580,7 +592,8 @@ html, #aspnetForm, .contaner
     .scroll-img ul
     {
         float: left;
-        width: 1500px;
+        /*width: 1500px;*/
+        width: 134.77%;
         height: auto;
         margin: 0;
         padding: 0;
@@ -590,9 +603,30 @@ html, #aspnetForm, .contaner
 
         .scroll-img ul li
         {
-            display: inline-block;
-            /*margin: 5px;*/
-            margin-right: -27px;
+            /*display: inline-block;
+            margin-right: -27px;*/
+            float: left;
+            width: 13.84%;
+            height: 315px;
+            margin-right: 1%;
+        }
+
+    .scroll-img > ul > li > a
+    {
+        float: left;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+        .scroll-img > ul > li > a > img
+        {
+            float: left;
+            position: absolute;
+            bottom: 36px;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 100%;
         }
 
 #sanpham-btn
@@ -610,8 +644,10 @@ html, #aspnetForm, .contaner
     background-image: url("/Design/title-bg.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 144px;
-    margin: 0 auto;
+    width: 80%;
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
 }
 
     .pro-title h1
@@ -630,7 +666,7 @@ html, #aspnetForm, .contaner
     width: 100%;
     height: 441px;
     position: absolute;
-    top: 8%;
+    top: 9%;
 }
 
 .product1
@@ -684,17 +720,17 @@ a.nextpre
 {
     float: left;
     width: 100%;
-    /*border-bottom: 1px solid #C0C0C0;*/
     padding-bottom: 10px;
 }
 
     .product-detail-header h1
     {
         float: left;
-        width: 100%;
+        width: 40%;
         font-family: Tahoma,Arial,sans-serif;
         color: #0066a8;
         font-size: 27px;
+        text-align: center;
     }
 
 
@@ -703,7 +739,7 @@ a.nextpre
     float: left;
     /*width: 80%;*/
     width: 100%;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .thumms
@@ -718,13 +754,18 @@ a.nextpre
     float: left;
     width: 90%;
     margin-top: 10px;
+    max-height: 270px;
 }
 
     .thumb img
     {
-        float: left;
+        /*float: left;
         width: 90%;
+        margin: 5%;*/
+        float: left;
         margin: 5%;
+        max-width: 90%;
+        max-height: 100%;
     }
 
     .thumb:first-child
@@ -742,7 +783,8 @@ a.nextpre
 .figure
 {
     float: left;
-    width: 42%;
+    /*width: 42%;*/
+    width: 36%;
     height: 360px;
 }
 
@@ -768,10 +810,30 @@ a.nextpre
             max-height: 100%;
         }
 
+.product-figure
+{
+    float: left;
+    width: 40%;
+    height: 324px;
+    overflow: hidden;
+    text-align: center;
+}
+
+    .product-figure img
+    {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
 .product-infos
 {
     float: left;
-    width: 46%;
+    width: 50%;
+    background-color: rgba(255,255,255,0.5);
+    padding: 9px;
+    border-radius: 5px;
+    height: 315px;
+    overflow: scroll;
 }
 
 .product-label, .product-info
@@ -806,6 +868,8 @@ a.nextpre
     {
         width: 14%;
     }
+
+
 
 .buy
 {
@@ -846,7 +910,7 @@ a.nextpre
     height: 34px;
     position: fixed;
     top: 0;
-    right: 13.2%;
+    right: 9.2%;
     z-index: 1;
     font-family: Arial;
     font-size: 12px;
@@ -969,3 +1033,100 @@ a.nextpre
     margin-top: 10px;
     padding-bottom: 9px;
 }
+
+@media screen and (min-height : 810px)
+{
+    .bg
+    {
+        /*background-image: url("/Design/bg-b.jpg");*/
+        background-image: url("/Design/bg-main-b.jpg");
+    }
+
+    .bg-sub
+    {
+        background-image: url("/Design/bg-main-b.jpg");
+    }
+
+    .ss
+    {
+        display: none;
+    }
+
+    .bs
+    {
+        display: block;
+    }
+
+    .product
+    {
+        top: 20%;
+    }
+
+    .product1
+    {
+        top: 20%;
+    }
+}
+
+
+@media screen and (min-height : 1100px)
+{
+    html, body, #aspnetForm, .contaner, .bg-sub, .contaner-wrap, .ss, .bs
+    {
+        height: 900px;
+    }
+
+    .footer
+    {
+        top: 753px;
+    }
+
+    .nav ul li a
+    {
+        font-size: 0.9vw;
+    }
+
+    .vnav-wrap
+    {
+        float: left;
+        width: 85%;
+        margin-left: 15%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .has-sub > ul
+    {
+        position: fixed;
+        z-index: 1;
+        top: 99px;
+        left: 0px;
+    }
+
+    .shopping-cart
+    {
+        width: 36%;
+    }
+
+    .thumb
+    {
+        max-height: 180px;
+    }
+}
+
+.namevideo
+{
+    float: left;
+    width: 100%;
+}
+
+    .namevideo h1
+    {
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #106fd3;
+        font-family: Tahoma;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
